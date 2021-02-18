@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Data;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
 
 
 namespace PrototypeSWE
@@ -35,20 +36,32 @@ namespace PrototypeSWE
             string pass2 = confirmPass.Password;
             string username = txtUser.Text;
             string seq = seqAns.Text;
+            string pattern = @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,15}$";
+            
             if (pass1 == pass2)
             {
-                int id = Security.GetUserIdByUsernameAndPassword(username, pass1);
-                if(id == 0)
+                if(Regex.IsMatch(pass1, pattern))
                 {
-                    Security.AddUser(username, pass1,seq);
-                    loginScreen lg = new loginScreen();
-                    lg.Show();
-                    this.Close();
+
+                    int id = Security.GetUserIdByUsernameAndPassword(username, pass1);
+                    if (id == 0)
+                    {
+                        Security.AddUser(username, pass1, seq);
+                        loginScreen lg = new loginScreen();
+                        lg.Show();
+                        this.Close();
+                    }
+                    else
+                    {
+                        ExistUser.Content = " UserName  Exists";
+                    }
                 }
                 else
                 {
-                    ExistUser.Content = " UserName  Exists";
+                    ExistUser.Content = " Wrong  Password Format";
                 }
+                
+
             }
             else
             {
