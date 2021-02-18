@@ -10,34 +10,23 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace PrototypeSWE
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for BSWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class BSWindow : Window
     {
-        public MainWindow()
+        public BSWindow()
         {
             InitializeComponent();
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            BSWindow bs = new BSWindow();
-            bs.Show();
-            this.Close();
-           
-        }
 
-        private void BACMP1_Click(object sender, RoutedEventArgs e)
-        {
-            BAWindow ba = new BAWindow();
-            ba.Show();
-            this.Close();
         }
     }
 }

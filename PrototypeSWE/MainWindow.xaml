@@ -7,7 +7,12 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="95,96,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
-
+        <Grid HorizontalAlignment="Left" Height="345" Margin="49,36,0,0" VerticalAlignment="Top" Width="702">
+            <Label x:Name="Heading" Content="&#x9;Welcome to Major Map&#xD;&#xA;" HorizontalAlignment="Left" Height="66" Margin="78,1,0,0" VerticalAlignment="Top" Width="595" FontSize="22" FontWeight="Bold" FontStyle="Italic" Foreground="#FF2269E6"/>
+            <Label x:Name="headingSmall" Content="Suggested program plan for a Computer Science major" HorizontalAlignment="Left" Height="25" Margin="131,33,0,0" VerticalAlignment="Top" Width="302" Foreground="#FF2269E6"/>
+            <Button x:Name="BSCMPS" Content="BS" HorizontalAlignment="Left" Height="40" Margin="45,108,0,0" VerticalAlignment="Top" Width="201" Click="Button_Click_1" Background="#F4F9FE" Foreground="#FF2269E6" FontSize="20" FontWeight="Bold" FontStyle="Italic"/>
+            <Button x:Name="BACMP1" Content="BA" HorizontalAlignment="Left" Height="40" Margin="472,108,0,0" VerticalAlignment="Top" Width="201" Background="#F4F9FE"  Foreground="#FF2269E6" FontWeight="Bold" FontSize="20" FontStyle="Italic" Click="BACMP1_Click"/>
+        </Grid>
+        <Separator Height="2" Margin="0,104,53,0" VerticalAlignment="Top" Foreground="#FF080808"/>
     </Grid>
 </Window>
