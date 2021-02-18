@@ -34,20 +34,21 @@
                         <LineBreak />
                         - 1 Speacial Character
                         <LineBreak />
-
+                        - 8 - 15 Charcters
+                        <LineBreak />
                     </TextBlock>
 
                 </StackPanel>
             </PasswordBox.ToolTip>
         </PasswordBox>
-        <Button Content="Submit" HorizontalAlignment="Left" Margin="328,10,0,0" VerticalAlignment="Top" Width="185" Background="#0288D1" Click="Button_Click" RenderTransformOrigin="0.607,2.698" Grid.Row="1" Height="41" FontSize="18"/>
-        <Label x:Name="ExistUser" Content="" HorizontalAlignment="Left" Margin="499,50,0,0" VerticalAlignment="Top" Width="328" Height="34"/>
+        <Button Content="Submit" HorizontalAlignment="Left" Margin="310,0,0,0" VerticalAlignment="Top" Width="185" Background="#0288D1" Click="Button_Click" RenderTransformOrigin="0.607,2.698" Grid.Row="2" Height="41" FontSize="18"/>
+        <Label x:Name="ExistUser" Content="" HorizontalAlignment="Left" Margin="535,55,0,0" VerticalAlignment="Top" Width="328" Height="34" Foreground="#FFE80B0B"/>
         <Label Content="Confirm Password *" HorizontalAlignment="Left" Margin="14,217,0,0" VerticalAlignment="Top" Height="29" Width="167" FontSize="18"/>
-        <Label x:Name="incorrect" Content="" HorizontalAlignment="Left" Margin="34,290,0,0" VerticalAlignment="Top" Width="277" Height="29"/>
+        <Label x:Name="incorrect" Content="" HorizontalAlignment="Left" Margin="215,10,0,0" VerticalAlignment="Top" Width="277" Height="29" Grid.Row="1" Foreground="#FFF30606"/>
         <PasswordBox x:Name="confirmPass" HorizontalAlignment="Left" Margin="215,209,0,0" VerticalAlignment="Top" Width="309" AutomationProperties.IsRequiredForForm="True" Height="37"/>
-        <Label Content="Security Question: &#xD;&#xA; favorite color*" HorizontalAlignment="Left" Height="77" Margin="22,285,0,0" VerticalAlignment="Top" Width="419" FontSize="20"/>
+        <Label Content="Security Question: &#xD;&#xA; favorite color*" HorizontalAlignment="Left" Height="77" Margin="22,285,0,0" VerticalAlignment="Top" Width="188" FontSize="20"/>
         <TextBox x:Name="seqAns" HorizontalAlignment="Left" Height="41" Margin="215,285,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="309" AutomationProperties.IsRequiredForForm="True"/>
-        <Label x:Name="PassFormat" Content="" HorizontalAlignment="Left" Height="37" Margin="512,194,0,0" VerticalAlignment="Top" Width="315"/>
+        <Label x:Name="PassFormat" Content="" HorizontalAlignment="Left" Height="37" Margin="548,209,0,0" VerticalAlignment="Top" Width="315"/>
 
     </Grid>
 </Window>

@@ -54,11 +54,16 @@ namespace PrototypeSWE
                     else
                     {
                         ExistUser.Content = " UserName  Exists";
+                        txtUser.Clear();
+                        confirmPass.Clear();
+                        txtpass.Clear();
                     }
                 }
                 else
                 {
-                    ExistUser.Content = " Wrong  Password Format";
+                    PassFormat.Content = " Wrong  Password Format";
+                    confirmPass.Clear();
+                    txtpass.Clear();
                 }
                 
 
@@ -66,7 +71,6 @@ namespace PrototypeSWE
             else
             {
                 incorrect.Content = "password not the same";
-                txtUser.Text = "";
                 txtUser.Clear();
                 confirmPass.Clear();
                 txtpass.Clear();

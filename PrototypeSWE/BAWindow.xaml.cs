@@ -23,5 +23,12 @@ namespace PrototypeSWE
         {
             InitializeComponent();
         }
+
+        private void BackBtnBA_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mw = new MainWindow();
+            mw.Show();
+            this.Close();
+        }
     }
 }
