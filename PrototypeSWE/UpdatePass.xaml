@@ -1,0 +1,21 @@
+﻿<Window x:Class="PrototypeSWE.UpdatePass"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PrototypeSWE"
+        mc:Ignorable="d"
+        Title="UpdatePass" Height="450" Width="800">
+    <Grid HorizontalAlignment="Left" Height="384" Margin="42,31,0,-36" VerticalAlignment="Top" Width="394" RenderTransformOrigin="0.5,0.5"  Background="#B3E5FC">
+        <Label Content="UserName * :" HorizontalAlignment="Left" Height="23" Margin="41,34,0,0" VerticalAlignment="Top" Width="179"/>
+        <TextBox x:Name="UserName" HorizontalAlignment="Left" Height="26" Margin="41,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" AutomationProperties.IsRequiredForForm="True"/>
+        <Label Content="Security Question: Name of your favorite color" HorizontalAlignment="Left" Height="26" Margin="33,103,0,0" VerticalAlignment="Top" Width="275"/>
+        <TextBox x:Name="SeqAnswer" HorizontalAlignment="Left" Height="25" Margin="41,134,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" AutomationProperties.IsRequiredForForm="True" />
+        <Label Content="New Password" HorizontalAlignment="Left" Height="30" Margin="41,164,0,0" VerticalAlignment="Top" Width="114"/>
+        <TextBox x:Name="NewPass" HorizontalAlignment="Left" Height="31" Margin="41,194,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" AutomationProperties.IsRequiredForForm="True" />
+        <Label Content="Re enter Password" HorizontalAlignment="Left" Margin="41,239,0,0" VerticalAlignment="Top" Width="114"/>
+        <TextBox x:Name="RnewPass" HorizontalAlignment="Left" Height="26" Margin="41,270,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" AutomationProperties.IsRequiredForForm="True"/>
+        <Button Content="Submit" HorizontalAlignment="Left" Height="22" Margin="97,328,0,0" VerticalAlignment="Top" Width="114" Background="#0288D1"/>
+
+    </Grid>
+</Window>
