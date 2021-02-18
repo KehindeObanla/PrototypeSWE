@@ -8,14 +8,15 @@
         Title="UpdatePass" Height="450" Width="800">
     <Grid HorizontalAlignment="Left" Height="384" Margin="42,31,0,-36" VerticalAlignment="Top" Width="394" RenderTransformOrigin="0.5,0.5"  Background="#B3E5FC">
         <Label Content="UserName * :" HorizontalAlignment="Left" Height="23" Margin="41,34,0,0" VerticalAlignment="Top" Width="179"/>
-        <TextBox x:Name="UserName" HorizontalAlignment="Left" Height="26" Margin="41,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" AutomationProperties.IsRequiredForForm="True"/>
+        <TextBox x:Name="UserName" HorizontalAlignment="Left" Height="26" Margin="41,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="248" AutomationProperties.IsRequiredForForm="True"/>
         <Label Content="Security Question: Name of your favorite color" HorizontalAlignment="Left" Height="26" Margin="33,103,0,0" VerticalAlignment="Top" Width="275"/>
-        <TextBox x:Name="SeqAnswer" HorizontalAlignment="Left" Height="25" Margin="41,134,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" AutomationProperties.IsRequiredForForm="True" />
+        <TextBox x:Name="SeqAnswer" HorizontalAlignment="Left" Height="25" Margin="41,134,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="248" AutomationProperties.IsRequiredForForm="True" />
         <Label Content="New Password" HorizontalAlignment="Left" Height="30" Margin="41,164,0,0" VerticalAlignment="Top" Width="114"/>
-        <TextBox x:Name="NewPass" HorizontalAlignment="Left" Height="31" Margin="41,194,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" AutomationProperties.IsRequiredForForm="True" />
-        <Label Content="Re enter Password" HorizontalAlignment="Left" Margin="41,239,0,0" VerticalAlignment="Top" Width="114"/>
-        <TextBox x:Name="RnewPass" HorizontalAlignment="Left" Height="26" Margin="41,270,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" AutomationProperties.IsRequiredForForm="True"/>
-        <Button Content="Submit" HorizontalAlignment="Left" Height="22" Margin="97,328,0,0" VerticalAlignment="Top" Width="114" Background="#0288D1"/>
+        <TextBox x:Name="NewPass" HorizontalAlignment="Left" Height="31" Margin="41,194,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="248" AutomationProperties.IsRequiredForForm="True" />
+        <Label Content="Re enter Password" HorizontalAlignment="Left" Margin="41,230,0,0" VerticalAlignment="Top" Width="114"/>
+        <TextBox x:Name="RnewPass" HorizontalAlignment="Left" Height="26" Margin="41,256,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="248" AutomationProperties.IsRequiredForForm="True"/>
+        <Button Content="Submit" HorizontalAlignment="Left" Height="22" Margin="91,337,0,0" VerticalAlignment="Top" Width="114" Background="#0288D1" Click="Button_Click"/>
+        <Label x:Name="wrngpass" Content="" HorizontalAlignment="Left" Height="27" Margin="41,287,0,0" VerticalAlignment="Top" Width="193"/>
 
     </Grid>
 </Window>

@@ -20,17 +20,17 @@
                 <TranslateTransform/>
             </TransformGroup>
         </Grid.RenderTransform>
-        <Label Content="UserName *" HorizontalAlignment="Left" Margin="34,31,0,0" VerticalAlignment="Top" Height="40" Width="147"/>
+        <Label Content="UserName *" HorizontalAlignment="Left" Margin="34,44,0,0" VerticalAlignment="Top" Height="40" Width="147" FontSize="18"/>
         <TextBox Name="txtUser" HorizontalAlignment="Left" Height="34" Margin="34,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="309"  AutomationProperties.IsRequiredForForm="True"  />
-        <Label Content="Password *" HorizontalAlignment="Left" Margin="34,128,0,0" VerticalAlignment="Top" Height="29" Width="77" FontSize="16"/>
+        <Label Content="Password *" HorizontalAlignment="Left" Margin="34,128,0,0" VerticalAlignment="Top" Height="29" Width="116" FontSize="18"/>
         <PasswordBox Name="txtpass" HorizontalAlignment="Left" Margin="34,162,0,0" VerticalAlignment="Top" Width="309" Height="37" AutomationProperties.IsRequiredForForm="True"/>
         <Button Content="Submit" HorizontalAlignment="Left" Margin="207,76,0,0" VerticalAlignment="Top" Width="136" Background="#0288D1" Click="Button_Click" RenderTransformOrigin="0.607,2.698" Grid.Row="2" Height="23"/>
         <Label x:Name="ExistUser" Content="" HorizontalAlignment="Left" Margin="135,100,0,0" VerticalAlignment="Top" Width="116" Height="29"/>
-        <Label Content="Confirm Password *" HorizontalAlignment="Left" Margin="34,225,0,0" VerticalAlignment="Top" Height="29" Width="167" FontSize="16"/>
+        <Label Content="Confirm Password *" HorizontalAlignment="Left" Margin="34,225,0,0" VerticalAlignment="Top" Height="29" Width="167" FontSize="18"/>
         <Label x:Name="incorrect" Content="" HorizontalAlignment="Left" Margin="34,290,0,0" VerticalAlignment="Top" Width="277" Height="29"/>
         <PasswordBox x:Name="confirmPass" HorizontalAlignment="Left" Margin="34,254,0,0" VerticalAlignment="Top" Width="309" AutomationProperties.IsRequiredForForm="True" Height="31"/>
-        <Label Content="Security Question: Name of your favorite color" HorizontalAlignment="Left" Height="34" Margin="34,319,0,0" VerticalAlignment="Top" Width="416" FontSize="18" Grid.RowSpan="2"/>
-        <TextBox x:Name="seqAns" HorizontalAlignment="Left" Height="47" Margin="34,0,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="325" AutomationProperties.IsRequiredForForm="True" TextChanged="TextBox_TextChanged"/>
+        <Label Content="Security Question: Name of your favorite color" HorizontalAlignment="Left" Height="34" Margin="34,319,0,0" VerticalAlignment="Top" Width="440" FontSize="20" Grid.RowSpan="2"/>
+        <TextBox x:Name="seqAns" HorizontalAlignment="Left" Height="47" Margin="34,0,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="325" AutomationProperties.IsRequiredForForm="True" />
 
     </Grid>
 </Window>

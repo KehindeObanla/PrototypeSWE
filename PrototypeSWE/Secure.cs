@@ -62,7 +62,8 @@ namespace PrototypeSWE
             SqlConnection con = new SqlConnection(connectString);
             try
             {
-                using (SqlCommand cmd = new SqlCommand("SELECT Id, Password, UserGuid FROM [tbl_login] WHERE username=@username", con))
+                string query = "SELECT Id, Password, UserGuid FROM[tbl_login] WHERE username = @username";
+                using (SqlCommand cmd = new SqlCommand(query, con))
                 {
                     cmd.Parameters.AddWithValue("@username", username);
                     con.Open();
@@ -74,7 +75,7 @@ namespace PrototypeSWE
                         int dbUserId = Convert.ToInt32(dr["Id"]);
                         string dbPassword = Convert.ToString(dr["Password"]);
                         string dbUserGuid = Convert.ToString(dr["UserGuid"]);
-
+                       
                         // Now we hash the UserGuid from the database with the password we wan't to check
                         // In the same way as when we saved it to the database in the first place. (see AddUser() function)
                         string hashedPassword = HashSHA1(password + dbUserGuid);
@@ -96,6 +97,68 @@ namespace PrototypeSWE
             }
             // Return the user id which is 0 if we did not found a user.
             return userId;
+        }
+        public static int CheckAnswer(string username,string answer)
+        {
+            
+            int userId = 0;
+            SqlConnection con = new SqlConnection(connectString);
+            try
+            {
+                string query = "SELECT Id, Password, UserGuid,SecureAnswer FROM [tbl_login] WHERE username=@username";
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@username", username);
+                    con.Open();
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        // dr.Read() = we found user(s) with matching username!
+
+                        int dbUserId = Convert.ToInt32(dr["Id"]);
+                        string dbPassword = Convert.ToString(dr["Password"]);
+                        string dbUserGuid = Convert.ToString(dr["UserGuid"]);
+                        string dbSeqAnswer = Convert.ToString(dr["SecureAnswer"]);
+                        string hashedans = HashSHA1(answer + dbUserGuid);
+                        if (dbSeqAnswer == hashedans)
+                        {
+                            // The password is correct
+                            userId = dbUserId;
+                        }
+                    }
+                    con.Close();
+                }
+            }
+           
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+            return userId;
+        }
+        public static bool Updatetable (string newpass,string username,int id)
+        {
+            SqlConnection con = new SqlConnection(connectString);
+            string hashedans = HashSHA1(newpass + id);
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand("UPDATE  [tbl_login] SET Password = @Password WHERE Username = @username", con))
+                {
+                    cmd.Parameters.AddWithValue("@username", username);
+                    cmd.Parameters.AddWithValue("@Password", hashedans);
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                }
+            }
+
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+            return true;
         }
 
     }

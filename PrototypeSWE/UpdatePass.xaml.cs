@@ -24,6 +24,47 @@ namespace PrototypeSWE
             InitializeComponent();
         }
 
-      
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            string username = UserName.Text;
+            string seqanswer = SeqAnswer.Text;
+            string newpass = NewPass.Text;
+            string Renter = RnewPass.Text;
+            if (newpass == Renter)
+            {
+                int same = Security.CheckAnswer(username, seqanswer);
+                if (same != 0)
+                {
+                   bool update =  Security.Updatetable(newpass, username,same);
+                    if(update == true)
+                    {
+                        wrngpass.Content = "password Updated";
+                        UserName.Clear();
+                        SeqAnswer.Clear();
+                        NewPass.Clear();
+                        RnewPass.Clear();
+                        loginScreen lg = new loginScreen();
+                        lg.Show();
+                        this.Close();
+                    }
+                    else
+                    {
+                        wrngpass.Content = "invalid username";
+
+                    }
+                }
+                else
+                {
+                    wrngpass.Content = "False Answer";
+                }
+            }
+            else
+            {
+                wrngpass.Content = "Password is not same";
+            }
+           
+        }
+
+        
     }
 }

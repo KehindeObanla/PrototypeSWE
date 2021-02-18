@@ -60,7 +60,9 @@ namespace PrototypeSWE
 
         private void Click_Handler(object sender, RoutedEventArgs e)
         {
-
+            UpdatePass fgpass = new UpdatePass();
+            fgpass.Show();
+            this.Close();
         }
     }
 }
