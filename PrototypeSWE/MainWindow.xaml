@@ -12,9 +12,9 @@
         <Grid >
             <Label   x:Name="Heading" Content="&#x9;&#x9;Welcome to Major Map&#xA;&#x9;"  HorizontalAlignment="Center" Height="66" Margin="72,47,0,0" VerticalAlignment="Top" Width="595" FontSize="22" FontWeight="Bold" FontStyle="Italic" Foreground="#FF2269E6"/>
             <Label   x:Name="headingSmall" Content="&#x9;Suggested program plan for a Computer Science major" Height="25" Margin="204,73,178,0" VerticalAlignment="Top" Width="380" Foreground="#FF2269E6"/>
-            <Button x:Name="BSCMPS" Content="BS" HorizontalAlignment="Left" Height="40" Margin="20,155,0,0" VerticalAlignment="Top" Width="201" Click="Button_Click_1" Background="#F4F9FE" Foreground="#FF2269E6" FontSize="20" FontWeight="Bold" FontStyle="Italic"/>
-            <Button x:Name="BACMP1" Content="BA" HorizontalAlignment="Right" Height="40" Margin="0,155,31,0" VerticalAlignment="Top" Width="201" Background="#F4F9FE"  Foreground="#FF2269E6" FontWeight="Bold" FontSize="20" FontStyle="Italic" Click="BACMP1_Click"/>
-            <Button x:Name="Exit" Content="X" Margin="721,10,0,0" Width="31" RenderTransformOrigin="-2.573,0.527" FontSize="20" Background="#FFF5EDED" Click="Exit_Click" VerticalAlignment="Top" HorizontalAlignment="Right"/>
+            <Button x:Name="BSCMPS" Content="BS" HorizontalAlignment="Left" Height="40" Margin="20,155,0,0" VerticalAlignment="Top" Width="201" Click="OpenWindowBS" Background="#F4F9FE" Foreground="#FF2269E6" FontSize="20" FontWeight="Bold" FontStyle="Italic"/>
+            <Button x:Name="BACMP1" Content="BA" HorizontalAlignment="Right" Height="40" Margin="0,155,31,0" VerticalAlignment="Top" Width="201" Background="#F4F9FE"  Foreground="#FF2269E6" FontWeight="Bold" FontSize="20" FontStyle="Italic" Click="OpenWindowBA"/>
+            <Button x:Name="Exit" Content="X" Margin="721,10,0,0" Width="31" RenderTransformOrigin="-2.573,0.527" FontSize="20" Background="#FFF5EDED" Click="CloseWindow" VerticalAlignment="Top" HorizontalAlignment="Right"/>
         </Grid>
         <Separator Height="2" Margin="0,104,0,0" VerticalAlignment="Top" Foreground="#FF080808"/>
     </Grid>

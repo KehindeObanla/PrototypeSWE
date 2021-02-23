@@ -18,8 +18,8 @@
         <Border BorderBrush="#FF0655A4" BorderThickness="2" HorizontalAlignment="Left" Height="337" Margin="7,65,0,0" VerticalAlignment="Top" Width="240"/>
         <Label Content="Arrows show relationships" HorizontalAlignment="Left" Height="29" Margin="90,201,0,0" VerticalAlignment="Top" Width="148"/>
         <Button x:Name="EditBS" Content="Edit Map" HorizontalAlignment="Right" Margin="0,0,21,107" VerticalAlignment="Bottom" Width="75" Height="26" Background="#FF075DB2" Foreground="#FFF7F6F6" VerticalContentAlignment="Center"/>
-        <Button x:Name="Backbtn" Content="Back" HorizontalAlignment="Right" Margin="0,65,21,0" VerticalAlignment="Top" Width="75" Height="28" Background="#FF075DB2" Click="Backbtn_Click" Foreground="#FFFBFAFA"/>
-        <Button x:Name="DownloadBtnBS" Content="Download" HorizontalAlignment="Left" Margin="914,0,0,103" Width="75" Height="26" Background="#FF075DB2" Foreground="#FFF7F6F6" VerticalContentAlignment="Center" VerticalAlignment="Bottom" Click="DownloadBtnBS_Click"/>
+        <Button x:Name="Backbtn" Content="Back" HorizontalAlignment="Right" Margin="0,65,21,0" VerticalAlignment="Top" Width="75" Height="28" Background="#FF075DB2" Click="BsbackTomainWindow" Foreground="#FFFBFAFA"/>
+        <Button x:Name="DownloadBtnBS" Content="Download" HorizontalAlignment="Left" Margin="914,0,0,103" Width="75" Height="26" Background="#FF075DB2" Foreground="#FFF7F6F6" VerticalContentAlignment="Center" VerticalAlignment="Bottom" Click="DownloadBS"/>
 
     </Grid>
 </Window>

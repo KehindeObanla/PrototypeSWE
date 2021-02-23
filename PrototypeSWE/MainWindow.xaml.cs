@@ -25,7 +25,7 @@ namespace PrototypeSWE
             InitializeComponent();
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void OpenWindowBS(object sender, RoutedEventArgs e)
         {
             BSWindow bs = new BSWindow();
             bs.Show();
@@ -33,14 +33,14 @@ namespace PrototypeSWE
            
         }
 
-        private void BACMP1_Click(object sender, RoutedEventArgs e)
+        private void OpenWindowBA(object sender, RoutedEventArgs e)
         {
             BAWindow ba = new BAWindow();
             ba.Show();
             this.Close();
         }
 
-        private void Exit_Click(object sender, RoutedEventArgs e)
+        private void CloseWindow(object sender, RoutedEventArgs e)
         {
             this.Close();
         }

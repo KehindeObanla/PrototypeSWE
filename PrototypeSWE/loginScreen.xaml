@@ -13,12 +13,12 @@
         <TextBox Name="txtUser" Height="31" Margin="33,134,303,0" TextWrapping="Wrap" VerticalAlignment="Top" TextChanged="TextBox_TextChanged" AutomationProperties.IsRequiredForForm="True" />
         <Label Content="Password *"  Margin="35,165,469,0" VerticalAlignment="Top" FontSize="20" RenderTransformOrigin="0.592,1.529" Height="34" FontStyle="Italic"/>
         <PasswordBox Name="txtpass"  Margin="34,215,303,0" VerticalAlignment="Top" Height="33" AutomationProperties.IsRequiredForForm="True"/>
-        <Button Content="Submit"  Margin="199,323,279,0" VerticalAlignment="Top" Background="#0288D1" Click="Button_Click" RenderTransformOrigin="0.513,1.033" Height="23" FontWeight="Bold" FontStyle="Italic"/>
-        <Button Content="Create New Account" Height="26" Margin="179,422,261,0" VerticalAlignment="Top" Background="#00C853" Click="Button_Click_1" RenderTransformOrigin="1.213,0.215" FontStyle="Italic" FontSize="16"/>
+        <Button Content="Submit"  Margin="199,323,279,0" VerticalAlignment="Top" Background="#0288D1" Click="Login" RenderTransformOrigin="0.513,1.033" Height="23" FontWeight="Bold" FontStyle="Italic"/>
+        <Button Content="Create New Account" Height="26" Margin="179,422,261,0" VerticalAlignment="Top" Background="#00C853" Click="CallCreate" RenderTransformOrigin="1.213,0.215" FontStyle="Italic" FontSize="16"/>
         <Label x:Name="loginError" Content="" Height="27" Margin="0,270,290,0" VerticalAlignment="Top" RenderTransformOrigin="0.515,0.957" HorizontalAlignment="Right" Width="277">
 
         </Label>
-        <Button Content="Forgot password?" Click="Click_Handler"  x:Name="forgotpass"  HorizontalAlignment="Left" Margin="209,363,0,0" VerticalAlignment="Top" Width="124" FontStyle="Italic" Foreground="#FF0445F1" RenderTransformOrigin="0.571,-0.624" Height="19" FontWeight="Bold" FontSize="12">
+        <Button Content="Forgot password?" Click="ForgotPAss"  x:Name="forgotpass"  HorizontalAlignment="Left" Margin="209,363,0,0" VerticalAlignment="Top" Width="124" FontStyle="Italic" Foreground="#FF0445F1" RenderTransformOrigin="0.571,-0.624" Height="19" FontWeight="Bold" FontSize="12">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <ContentPresenter />

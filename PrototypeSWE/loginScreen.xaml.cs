@@ -38,7 +38,7 @@ namespace PrototypeSWE
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Login(object sender, RoutedEventArgs e)
         {
             Username = txtUser.Text;
             Password = txtpass.Password;
@@ -59,14 +59,14 @@ namespace PrototypeSWE
             }
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void CallCreate(object sender, RoutedEventArgs e)
         {
             CA = new CreateAccount();
             CA.Show();
             this.Close();
         }
 
-        private void Click_Handler(object sender, RoutedEventArgs e)
+        private void ForgotPAss(object sender, RoutedEventArgs e)
         {
             fgpass = new UpdatePass();
             fgpass.Show();

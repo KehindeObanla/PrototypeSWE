@@ -42,7 +42,7 @@ namespace PrototypeSWE
          * then it adds the user to the database
          * and goes to th elogin page
          */
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void CreateUserAccount(object sender, RoutedEventArgs e)
         {
              Password1 = txtpass.Password;
              Password2 = confirmPass.Password;

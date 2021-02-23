@@ -32,7 +32,7 @@ namespace PrototypeSWE
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Updatepassword(object sender, RoutedEventArgs e)
         {
             username = UserName.Text;
             seqanswer = SeqAnswer.Text;

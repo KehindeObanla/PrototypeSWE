@@ -35,7 +35,7 @@
                 </StackPanel>
             </PasswordBox.ToolTip>
         </PasswordBox>
-        <Button Content="Submit" HorizontalAlignment="Left" Margin="255,380,0,0" VerticalAlignment="Top" Width="185" Background="#0288D1" Click="Button_Click" RenderTransformOrigin="0.607,2.698" Height="41" FontSize="18"/>
+        <Button Content="Submit" HorizontalAlignment="Left" Margin="255,380,0,0" VerticalAlignment="Top" Width="185" Background="#0288D1" Click="CreateUserAccount" RenderTransformOrigin="0.607,2.698" Height="41" FontSize="18"/>
         <Label x:Name="ExistUser" Content="" HorizontalAlignment="Left" Margin="237,95,0,0" VerticalAlignment="Top" Width="217" Height="27" Foreground="#FFE80B0B"/>
         <Label Content="Confirm Password *" HorizontalAlignment="Left" Margin="14,217,0,0" VerticalAlignment="Top" Height="29" Width="167" FontSize="18"/>
         <Label x:Name="incorrect" Content="" HorizontalAlignment="Left" Margin="230,331,0,0" VerticalAlignment="Top" Width="277" Height="29" Foreground="#FFF30606"/>

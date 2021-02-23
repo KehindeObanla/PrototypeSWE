@@ -26,14 +26,14 @@ namespace PrototypeSWE
             InitializeComponent();
         }
 
-        private void BackBtnBA_Click(object sender, RoutedEventArgs e)
+        private void BacktoMainWindow(object sender, RoutedEventArgs e)
         {
             mw = new MainWindow();
             mw.Show();
             this.Close();
         }
 
-        private void DownloadBtnBA_Click(object sender, RoutedEventArgs e)
+        private void DownloadBA(object sender, RoutedEventArgs e)
         {
             string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             double screenLeft = SystemParameters.VirtualScreenLeft;

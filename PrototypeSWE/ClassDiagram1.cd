@@ -12,7 +12,7 @@
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAQAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AQAAAAAAAAAAAAAAAAAAAAAAAAAEAAACAAAAAAAAAAA=</HashCode>
       <FileName>BAWindow.xaml.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -23,7 +23,7 @@
   <Class Name="PrototypeSWE.BSWindow">
     <Position X="9.75" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAEAAAAAAAAAAAAEAAAAAAgAAAAAAAA=</HashCode>
+      <HashCode>AACAAAAAAAAAAAAAAAAAAAAAAAAEAAAAgAAAAAAAAAA=</HashCode>
       <FileName>BSWindow.xaml.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -31,7 +31,7 @@
   <Class Name="PrototypeSWE.CreateAccount">
     <Position X="2.75" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AEAAAAAAAAAAAAgAAQAAAAEAEAAAAAACAAAAAAAAAAI=</HashCode>
+      <HashCode>AEAAAAAAAAACAAgAAQAAAAAAEAAAAAACAAAAAAAAAAI=</HashCode>
       <FileName>CreateAccount.xaml.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -43,7 +43,7 @@
   <Class Name="PrototypeSWE.loginScreen">
     <Position X="5" Y="2" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>IAAAAEgSAAABgAAAAQAAAEEAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <HashCode>IAEAAGgSAAAAgAAAAQAAAAAAAAAAAAACAAAQAAAAAAA=</HashCode>
       <FileName>loginScreen.xaml.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -56,7 +56,7 @@
   <Class Name="PrototypeSWE.MainWindow">
     <Position X="12.5" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAABAAAAAQAAAAAAQAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>EAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>MainWindow.xaml.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -64,7 +64,7 @@
   <Class Name="PrototypeSWE.UpdatePass">
     <Position X="14.25" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAgAAAAAAAEAAAgAAAgQAAAAAAAAgAA=</HashCode>
+      <HashCode>AgAAAAAAAAAAAAgAAAAAAAEAAAgAAAgQAAAAAAAAgAA=</HashCode>
       <FileName>UpdatePass.xaml.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
