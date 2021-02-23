@@ -36,7 +36,12 @@ namespace PrototypeSWE
             InitializeComponent();
         }
        
-
+        /*THIS  functions checks the usesername Exist
+         * checks if the password matches the pattern
+         * checks if the two passwords are the same
+         * then it adds the user to the database
+         * and goes to th elogin page
+         */
         private void Button_Click(object sender, RoutedEventArgs e)
         {
              Password1 = txtpass.Password;
@@ -49,7 +54,6 @@ namespace PrototypeSWE
             {
                 if(Regex.IsMatch(Password1, pattern))
                 {
-
                     int id = checkSec.GetUserIdByUsernameAndPassword(Username, Password1);
                     if (id == 0)
                     {
@@ -77,6 +81,7 @@ namespace PrototypeSWE
             }
             else
             {
+
                 incorrect.Content = "password not the same";
                 txtUser.Clear();
                 confirmPass.Clear();

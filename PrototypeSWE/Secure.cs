@@ -11,7 +11,7 @@ namespace PrototypeSWE
 {
     internal class Security
     {
-        private static string connectString = Properties.Settings.Default.Connection_String;
+        private  string connectString = Properties.Settings.Default.Connection_String;
         
         public  string HashSHA1(string value)
         {
