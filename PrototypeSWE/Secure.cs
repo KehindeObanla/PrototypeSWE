@@ -12,7 +12,8 @@ namespace PrototypeSWE
     internal class Security
     {
         private static string connectString = Properties.Settings.Default.Connection_String;
-        public static string HashSHA1(string value)
+        
+        public  string HashSHA1(string value)
         {
             var sha1 = System.Security.Cryptography.SHA1.Create();
             var inputBytes = Encoding.ASCII.GetBytes(value);
@@ -25,13 +26,13 @@ namespace PrototypeSWE
             }
             return sb.ToString();
         }
-        public static bool AddUser(string username, string password, string Answer)
+        public  bool AddUser(string username, string password, string Answer)
         {
             Guid userGuid = Guid.NewGuid();
             string hashedPassword = HashSHA1(password + userGuid.ToString());
             string hashedseq = HashSHA1(Answer + userGuid.ToString());
-            SqlConnection con = new SqlConnection(connectString);
-            string queryInsert = "INSERT INTO tbl_login ([Username],[Password], [UserGuid],[SecureAnswer])  VALUES (@username, @password,@userguid,@ans )";
+             SqlConnection con = new SqlConnection(connectString);
+        string queryInsert = "INSERT INTO tbl_login ([Username],[Password], [UserGuid],[SecureAnswer])  VALUES (@username, @password,@userguid,@ans )";
             try
             {
                 using (SqlCommand cmd = new SqlCommand(queryInsert, con))
@@ -54,11 +55,10 @@ namespace PrototypeSWE
             return true;
 
         }
-        public static int GetUserIdByUsernameAndPassword(string username, string password)
+        public  int GetUserIdByUsernameAndPassword(string username, string password)
         {
             // this is the value we will return
             int userId = 0;
-
             SqlConnection con = new SqlConnection(connectString);
             try
             {
@@ -98,7 +98,7 @@ namespace PrototypeSWE
             // Return the user id which is 0 if we did not found a user.
             return userId;
         }
-        public static int CheckAnswer(string username,string answer)
+        public  int CheckAnswer(string username,string answer)
         {
             
             int userId = 0;
@@ -137,7 +137,7 @@ namespace PrototypeSWE
             }
             return userId;
         }
-        public static bool Updatetable (string newpass,string username,int id)
+        public  bool Updatetable (string newpass,string username,int id)
         {
             SqlConnection con = new SqlConnection(connectString);
             string hashedans = HashSHA1(newpass + id);

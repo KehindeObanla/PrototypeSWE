@@ -21,6 +21,13 @@ namespace PrototypeSWE
     /// </summary>
     public partial class loginScreen : Window
     {
+        private string Username;
+        private string Password;
+        private int ID;
+        private Security Securelogin;
+        private MainWindow dashboard;
+        private CreateAccount CA;
+        private UpdatePass fgpass;
         public loginScreen()
         {
             InitializeComponent();
@@ -33,11 +40,12 @@ namespace PrototypeSWE
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            string username = txtUser.Text;
-            string password = txtpass.Password;
-            int id = Security.GetUserIdByUsernameAndPassword(username, password);
+            Username = txtUser.Text;
+            Password = txtpass.Password;
+            Securelogin = new Security();
+            ID = Securelogin.GetUserIdByUsernameAndPassword(Username, Password);
             
-            if(id == 0)
+            if(ID == 0)
             {
                 loginError.Content = " invalid username or password";
                 txtpass.Clear();
@@ -45,7 +53,7 @@ namespace PrototypeSWE
             }
             else
             {
-                MainWindow dashboard = new MainWindow();
+                dashboard = new MainWindow();
                 dashboard.Show();
                 this.Close();
             }
@@ -53,14 +61,14 @@ namespace PrototypeSWE
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            CreateAccount CA = new CreateAccount();
+            CA = new CreateAccount();
             CA.Show();
             this.Close();
         }
 
         private void Click_Handler(object sender, RoutedEventArgs e)
         {
-            UpdatePass fgpass = new UpdatePass();
+            fgpass = new UpdatePass();
             fgpass.Show();
             this.Close();
         }

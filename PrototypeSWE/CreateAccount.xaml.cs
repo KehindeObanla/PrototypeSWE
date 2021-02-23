@@ -24,6 +24,13 @@ namespace PrototypeSWE
     public partial class CreateAccount : Window
     {
         private static string connectString = Properties.Settings.Default.Connection_String;
+        private string Username;
+        private string Password1;
+        private string Password2;
+        private string Ans1;
+        private Security checkSec = new Security();
+        private loginScreen lg;
+
         public CreateAccount()
         {
             InitializeComponent();
@@ -32,22 +39,22 @@ namespace PrototypeSWE
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            string pass1 = txtpass.Password;
-            string pass2 = confirmPass.Password;
-            string username = txtUser.Text;
-            string seq = seqAns.Text;
+             Password1 = txtpass.Password;
+             Password2 = confirmPass.Password;
+             Username = txtUser.Text;
+             Ans1 = seqAns.Text;
             string pattern = @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,15}$";
             
-            if (pass1 == pass2)
+            if (Password1 == Password2)
             {
-                if(Regex.IsMatch(pass1, pattern))
+                if(Regex.IsMatch(Password1, pattern))
                 {
 
-                    int id = Security.GetUserIdByUsernameAndPassword(username, pass1);
+                    int id = checkSec.GetUserIdByUsernameAndPassword(Username, Password1);
                     if (id == 0)
                     {
-                        Security.AddUser(username, pass1, seq);
-                        loginScreen lg = new loginScreen();
+                        checkSec.AddUser(Username, Password1, Ans1);
+                         lg = new loginScreen();
                         lg.Show();
                         this.Close();
                     }

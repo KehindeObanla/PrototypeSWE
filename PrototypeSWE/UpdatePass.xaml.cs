@@ -20,6 +20,13 @@ namespace PrototypeSWE
     /// </summary>
     public partial class UpdatePass : Window
     {
+        private string username;
+        private string seqanswer;
+        private string newpass;
+        private string Renter;
+        private Security UpdatesPass = new Security();
+        private loginScreen lg;
+
         public UpdatePass()
         {
             InitializeComponent();
@@ -27,19 +34,19 @@ namespace PrototypeSWE
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            string username = UserName.Text;
-            string seqanswer = SeqAnswer.Text;
-            string newpass = NewPass.Text;
-            string Renter = RnewPass.Text;
+            username = UserName.Text;
+            seqanswer = SeqAnswer.Text;
+            newpass = NewPass.Text;
+             Renter = RnewPass.Text;
             string pattern = @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,15}$";
             if (newpass == Renter)
             {
                 if (Regex.IsMatch(newpass, pattern))
                 {
-                    int same = Security.CheckAnswer(username, seqanswer);
+                    int same = UpdatesPass.CheckAnswer(username, seqanswer);
                     if (same != 0)
                     {
-                        bool update = Security.Updatetable(newpass, username, same);
+                        bool update = UpdatesPass.Updatetable(newpass, username, same);
                         if (update == true)
                         {
                             wrngpass.Content = "password Updated";
@@ -47,7 +54,7 @@ namespace PrototypeSWE
                             SeqAnswer.Clear();
                             NewPass.Clear();
                             RnewPass.Clear();
-                            loginScreen lg = new loginScreen();
+                             lg = new loginScreen();
                             lg.Show();
                             this.Close();
                         }

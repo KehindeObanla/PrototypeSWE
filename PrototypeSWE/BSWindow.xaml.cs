@@ -20,6 +20,7 @@ namespace PrototypeSWE
     /// </summary>
     public partial class BSWindow : Window
     {
+        private MainWindow mw;
         public BSWindow()
         {
             InitializeComponent();
@@ -27,7 +28,7 @@ namespace PrototypeSWE
 
         private void Backbtn_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mw = new MainWindow();
+             mw = new MainWindow();
             mw.Show();
             this.Close();
         }
