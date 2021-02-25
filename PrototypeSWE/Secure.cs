@@ -11,9 +11,10 @@ namespace PrototypeSWE
 {
     internal class Security
     {
-        private  string connectString = Properties.Settings.Default.Connection_String;
-        
-        public  string HashSHA1(string value)
+        //database connection string
+        private  string connectString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\kehin\source\repos\PrototypeSWE\PrototypeSWE\data\DBSwe.mdf;Integrated Security=True";
+        //creates a hasvalue given a string
+        public  string Hashvalue(string value)
         {
             var sha1 = System.Security.Cryptography.SHA1.Create();
             var inputBytes = Encoding.ASCII.GetBytes(value);
@@ -26,11 +27,12 @@ namespace PrototypeSWE
             }
             return sb.ToString();
         }
+        //Adds a user to the database
         public  bool AddUser(string username, string password, string Answer)
         {
             Guid userGuid = Guid.NewGuid();
-            string hashedPassword = HashSHA1(password + userGuid.ToString());
-            string hashedseq = HashSHA1(Answer + userGuid.ToString());
+            string hashedPassword = Hashvalue(password + userGuid.ToString());
+            string hashedseq = Hashvalue(Answer + userGuid.ToString());
              SqlConnection con = new SqlConnection(connectString);
         string queryInsert = "INSERT INTO tbl_login ([Username],[Password], [UserGuid],[SecureAnswer])  VALUES (@username, @password,@userguid,@ans )";
             try
@@ -55,6 +57,36 @@ namespace PrototypeSWE
             return true;
 
         }
+        public bool prsentuser(string username) 
+        {
+            // this is the value we will return
+            bool user = false;
+            SqlConnection con = new SqlConnection(connectString);
+            try
+            {
+                string query = "SELECT Username FROM[tbl_login] WHERE username = @username";
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@username", username);
+                    con.Open();
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        user = true;
+                    }
+                    con.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+            // Return the user id which is 0 if we did not found a user.
+            return user;
+        }
+    
+        //checks if a user is in the database
         public  int GetUserIdByUsernameAndPassword(string username, string password)
         {
             // this is the value we will return
@@ -78,7 +110,7 @@ namespace PrototypeSWE
                        
                         // Now we hash the UserGuid from the database with the password we wan't to check
                         // In the same way as when we saved it to the database in the first place. (see AddUser() function)
-                        string hashedPassword = HashSHA1(password + dbUserGuid);
+                        string hashedPassword = Hashvalue(password + dbUserGuid);
 
                         // if its correct password the result of the hash is the same as in the database
                         if (dbPassword == hashedPassword)
@@ -98,10 +130,12 @@ namespace PrototypeSWE
             // Return the user id which is 0 if we did not found a user.
             return userId;
         }
-        public  int CheckAnswer(string username,string answer)
+        //checks if the sequrity question is correct
+        public  Tuple<int,string> CheckAnswer(string username,string answer)
         {
             
             int userId = 0;
+            string dbUserGuid ="";
             SqlConnection con = new SqlConnection(connectString);
             try
             {
@@ -117,9 +151,9 @@ namespace PrototypeSWE
 
                         int dbUserId = Convert.ToInt32(dr["Id"]);
                         string dbPassword = Convert.ToString(dr["Password"]);
-                        string dbUserGuid = Convert.ToString(dr["UserGuid"]);
+                         dbUserGuid = Convert.ToString(dr["UserGuid"]);
                         string dbSeqAnswer = Convert.ToString(dr["SecureAnswer"]);
-                        string hashedans = HashSHA1(answer + dbUserGuid);
+                        string hashedans = Hashvalue(answer + dbUserGuid);
                         if (dbSeqAnswer == hashedans)
                         {
                             // The password is correct
@@ -135,12 +169,13 @@ namespace PrototypeSWE
 
                 MessageBox.Show(ex.Message);
             }
-            return userId;
+            var ans = Tuple.Create(userId, dbUserGuid);
+            return ans;
         }
-        public  bool Updatetable (string newpass,string username,int id)
+        public  bool Updatetable (string newpass,string username,string id)
         {
             SqlConnection con = new SqlConnection(connectString);
-            string hashedans = HashSHA1(newpass + id);
+            string hashedans = Hashvalue(newpass + id);
             try
             {
                 using (SqlCommand cmd = new SqlCommand("UPDATE  [tbl_login] SET Password = @Password WHERE Username = @username", con))

@@ -36,17 +36,20 @@ namespace PrototypeSWE
         {
             username = UserName.Text;
             seqanswer = SeqAnswer.Text;
-            newpass = NewPass.Text;
-             Renter = RnewPass.Text;
+            newpass = NewPass.Password;
+             Renter = RnewPass.Password;
+            
             string pattern = @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,15}$";
             if (newpass == Renter)
             {
                 if (Regex.IsMatch(newpass, pattern))
                 {
-                    int same = UpdatesPass.CheckAnswer(username, seqanswer);
-                    if (same != 0)
+                    var same = UpdatesPass.CheckAnswer(username, seqanswer);
+                    int ans1 = same.Item1;
+                    string ans2 = same.Item2;
+                    if (ans1 != 0)
                     {
-                        bool update = UpdatesPass.Updatetable(newpass, username, same);
+                        bool update = UpdatesPass.Updatetable(newpass, username, ans2);
                         if (update == true)
                         {
                             wrngpass.Content = "password Updated";

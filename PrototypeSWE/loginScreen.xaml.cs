@@ -37,15 +37,15 @@ namespace PrototypeSWE
         {
 
         }
-
+        /* checks if the user is a valid user*/
         private void Login(object sender, RoutedEventArgs e)
         {
             Username = txtUser.Text;
             Password = txtpass.Password;
             Securelogin = new Security();
             ID = Securelogin.GetUserIdByUsernameAndPassword(Username, Password);
-            
-            if(ID == 0)
+            Console.WriteLine(ID);
+            if (ID == 0)
             {
                 loginError.Content = " invalid username or password";
                 txtpass.Clear();
@@ -58,15 +58,15 @@ namespace PrototypeSWE
                 this.Close();
             }
         }
-
-        private void CallCreate(object sender, RoutedEventArgs e)
+        /*sends the user to the Create user page*/
+        public void CallCreate(object sender, RoutedEventArgs e)
         {
             CA = new CreateAccount();
             CA.Show();
             this.Close();
         }
-
-        private void ForgotPAss(object sender, RoutedEventArgs e)
+        /*sends the user to the forgot password page*/
+        public void ForgotPAss(object sender, RoutedEventArgs e)
         {
             fgpass = new UpdatePass();
             fgpass.Show();

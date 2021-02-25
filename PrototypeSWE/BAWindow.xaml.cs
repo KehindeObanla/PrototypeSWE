@@ -25,14 +25,15 @@ namespace PrototypeSWE
         {
             InitializeComponent();
         }
-
+        /* this function redirexts the user to the main window*/
         private void BacktoMainWindow(object sender, RoutedEventArgs e)
         {
             mw = new MainWindow();
             mw.Show();
             this.Close();
         }
-
+        /* THIS FUNCTION TAKES A SCREENSHOT OF 
+         * THE USERS SCRREN AND STORES IT IN THE DESKTOP*/
         private void DownloadBA(object sender, RoutedEventArgs e)
         {
             string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);

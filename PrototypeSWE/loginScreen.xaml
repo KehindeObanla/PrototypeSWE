@@ -3,8 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        WindowState="Maximized"
-        WindowStyle="None"
+       
         xmlns:local="clr-namespace:PrototypeSWE"
         mc:Ignorable="d"
         Title="login" Height="626.688" Width="717.458" FontSize="14" Background="White">
@@ -27,9 +26,7 @@
         </Button>
         <Label x:Name="loginlbl" Content="LOGIN" HorizontalAlignment="Left" Margin="35,10,0,0" VerticalAlignment="Top" Width="356" Height="41" FontSize="24" FontStyle="Italic"/>
 
-        <Border BorderBrush="#FF2862DE" BorderThickness="2" HorizontalAlignment="Left" Height="554" VerticalAlignment="Top" Width="589" Margin="2,-3,0,0">
-            <Separator HorizontalAlignment="Left" Height="1" Margin="18,405,0,0" VerticalAlignment="Top" Width="584"/>
-        </Border>
+        
 
     </Grid>
 

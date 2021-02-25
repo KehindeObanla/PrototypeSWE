@@ -24,10 +24,10 @@ namespace PrototypeSWE
     public partial class CreateAccount : Window
     {
         private static string connectString = Properties.Settings.Default.Connection_String;
-        private string Username;
-        private string Password1;
-        private string Password2;
-        private string Ans1;
+        private string Username { get; set; }
+        private string Password1 { get; set; }
+        private string Password2 { get; set; }
+        private string Ans1 { get; set; }
         private Security checkSec = new Security();
         private loginScreen lg;
 
@@ -35,49 +35,19 @@ namespace PrototypeSWE
         {
             InitializeComponent();
         }
+
        
-        /*THIS  functions checks the usesername Exist
-         * checks if the password matches the pattern
-         * checks if the two passwords are the same
-         * then it adds the user to the database
-         * and goes to th elogin page
-         */
+        /*check if the two passwords are the same*/
         private void CreateUserAccount(object sender, RoutedEventArgs e)
         {
-             Password1 = txtpass.Password;
-             Password2 = confirmPass.Password;
-             Username = txtUser.Text;
-             Ans1 = seqAns.Text;
-            string pattern = @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,15}$";
-            
+
+            Password1 = txtpass.Password;
+            Password2 = confirmPass.Password;
+            Username = txtUser.Text;
+            Ans1 = seqAns.Text;
             if (Password1 == Password2)
             {
-                if(Regex.IsMatch(Password1, pattern))
-                {
-                    int id = checkSec.GetUserIdByUsernameAndPassword(Username, Password1);
-                    if (id == 0)
-                    {
-                        checkSec.AddUser(Username, Password1, Ans1);
-                         lg = new loginScreen();
-                        lg.Show();
-                        this.Close();
-                    }
-                    else
-                    {
-                        ExistUser.Content = " UserName  Exists";
-                        txtUser.Clear();
-                        confirmPass.Clear();
-                        txtpass.Clear();
-                    }
-                }
-                else
-                {
-                    PassFormat.Content = " Wrong  Password Format";
-                    confirmPass.Clear();
-                    txtpass.Clear();
-                }
-                
-
+                checkFormat(Password1, Username);
             }
             else
             {
@@ -86,13 +56,46 @@ namespace PrototypeSWE
                 txtUser.Clear();
                 confirmPass.Clear();
                 txtpass.Clear();
+
             }
-
-
-
-
         }
-
        
+       /* check password format
+        password must have 1 lower case,1 uppercase,
+        1 number and between 8-15 characters long*/
+        private void checkFormat(string Password1,string username)
+        {
+            string pattern = @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,15}$";
+            if (Regex.IsMatch(Password1, pattern))
+            {
+                checkUser(username, Password1);
+               
+            }
+            else
+            {
+                PassFormat.Content = " Wrong  Password Format";
+                confirmPass.Clear();
+                txtpass.Clear();
+            }
+        }
+        /* check if user exist in database*/
+        private void checkUser(string Username,string Password1)
+        {
+            int id = checkSec.GetUserIdByUsernameAndPassword(Username, Password1);
+            if (id == 0)
+            {
+                checkSec.AddUser(Username, Password1, Ans1);
+                lg = new loginScreen();
+                lg.Show();
+                this.Close();
+            }
+            else
+            {
+                ExistUser.Content = " UserName  Exists";
+                txtUser.Clear();
+                confirmPass.Clear();
+                txtpass.Clear();
+            }
+        }
     }
 }

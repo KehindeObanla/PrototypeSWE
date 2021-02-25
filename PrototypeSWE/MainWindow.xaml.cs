@@ -24,6 +24,7 @@ namespace PrototypeSWE
         {
             InitializeComponent();
         }
+        /*this function redirects the user to BsCatalogue*/
 
         private void OpenWindowBS(object sender, RoutedEventArgs e)
         {
@@ -32,7 +33,7 @@ namespace PrototypeSWE
             this.Close();
            
         }
-
+        /*this function redirects the user to BACatalogue*/
         private void OpenWindowBA(object sender, RoutedEventArgs e)
         {
             BAWindow ba = new BAWindow();
@@ -40,9 +41,9 @@ namespace PrototypeSWE
             this.Close();
         }
 
-        private void CloseWindow(object sender, RoutedEventArgs e)
+       /* private void CloseWindow(object sender, RoutedEventArgs e)
         {
             this.Close();
-        }
+        }*/
     }
 }

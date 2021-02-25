@@ -1,16 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
   <Class Name="PrototypeSWE.BAWindow">
-    <Position X="7.5" Y="2" Width="1.5" />
-    <AssociationLine Name="mw" Type="PrototypeSWE.MainWindow" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
-      <Path>
-        <Point X="8.312" Y="3.617" />
-        <Point X="8.312" Y="3.867" />
-        <Point X="12.125" Y="3.867" />
-        <Point X="12.125" Y="3.5" />
-        <Point X="12.5" Y="3.5" />
-      </Path>
-    </AssociationLine>
+    <Position X="8" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AQAAAAAAAAAAAAAAAAAAAAAAAAAEAAACAAAAAAAAAAA=</HashCode>
       <FileName>BAWindow.xaml.cs</FileName>
@@ -21,17 +12,20 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="PrototypeSWE.BSWindow">
-    <Position X="9.75" Y="2" Width="1.5" />
+    <Position X="10.25" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AACAAAAAAAAAAAAAAAAAAAAAAAAEAAAAgAAAAAAAAAA=</HashCode>
       <FileName>BSWindow.xaml.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="mw" />
+    </ShowAsAssociation>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="PrototypeSWE.CreateAccount">
-    <Position X="2.75" Y="2" Width="1.5" />
+    <Position X="2.75" Y="2" Width="2" />
     <TypeIdentifier>
-      <HashCode>AEAAAAAAAAACAAgAAQAAAAAAEAAAAAACAAAAAAAAAAI=</HashCode>
+      <HashCode>AEAAAAAAAAACAAgAAQAAAAAIEAAAAAAKAAAAAAAAAAI=</HashCode>
       <FileName>CreateAccount.xaml.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -41,20 +35,21 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="PrototypeSWE.loginScreen">
-    <Position X="5" Y="2" Width="1.75" />
+    <Position X="5.5" Y="2" Width="1.75" />
     <TypeIdentifier>
       <HashCode>IAEAAGgSAAAAgAAAAQAAAAAAAAAAAAACAAAQAAAAAAA=</HashCode>
       <FileName>loginScreen.xaml.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Field Name="Securelogin" />
+      <Field Name="dashboard" />
       <Field Name="CA" />
       <Field Name="fgpass" />
     </ShowAsAssociation>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="PrototypeSWE.MainWindow">
-    <Position X="12.5" Y="2.25" Width="1.5" />
+    <Position X="12.5" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>EAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>MainWindow.xaml.cs</FileName>
@@ -62,9 +57,9 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="PrototypeSWE.UpdatePass">
-    <Position X="14.25" Y="2.25" Width="1.5" />
+    <Position X="14.75" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AgAAAAAAAAAAAAgAAAAAAAEAAAgAAAgQAAAAAAAAgAA=</HashCode>
+      <HashCode>QgAAAAAAAAACAAgAAAAAAAEAAAgAAAgQAAAAAAAAgAA=</HashCode>
       <FileName>UpdatePass.xaml.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -74,18 +69,18 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="PrototypeSWE.Security">
-    <Position X="7.5" Y="5.25" Width="1.5" />
+    <Position X="8.75" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AEAAQAAAAAAAAAAAAAACAEAAAAAEAAAgAAAAAAAAAAA=</HashCode>
       <FileName>Secure.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="System.Windows.Window" Collapsed="true">
-    <Position X="8.5" Y="0.5" Width="1.5" />
+    <Position X="8.75" Y="0.5" Width="1.5" />
     <TypeIdentifier />
   </Class>
   <Class Name="System.Data.SqlClient.SqlConnection" Collapsed="true">
-    <Position X="4.5" Y="6" Width="1.5" />
+    <Position X="17.25" Y="0.5" Width="1.5" />
     <TypeIdentifier />
     <Lollipop Position="0.2" />
   </Class>
