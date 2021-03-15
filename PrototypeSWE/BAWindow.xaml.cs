@@ -113,5 +113,10 @@ namespace PrototypeSWE
 
 
         }
+
+        private void EditBA1_Click(object sender, RoutedEventArgs e)
+        {
+            SaveEdit.Visibility= Visibility.Visible;
+        }
     }
 }
