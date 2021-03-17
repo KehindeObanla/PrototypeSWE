@@ -23,6 +23,7 @@ namespace PrototypeSWE
     {
         private MainWindow mw;
         List<Button> coloredButtons = new List<Button>();
+       
         public BAWindow()
         {
             InitializeComponent();
@@ -90,15 +91,7 @@ namespace PrototypeSWE
             coloredButtons.Add(CMPS1044);
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-           
-        }
+       
 
         private void CMPS1063__Click(object sender, RoutedEventArgs e)
         {
@@ -117,6 +110,226 @@ namespace PrototypeSWE
         private void EditBA1_Click(object sender, RoutedEventArgs e)
         {
             SaveEdit.Visibility= Visibility.Visible;
+            MATH1534box.Visibility = Visibility.Visible;
+            math1233box.Visibility = Visibility.Visible;
+            MATH1443box.Visibility = Visibility.Visible;
+            stat3573box.Visibility = Visibility.Visible;
+            CMPS4991box.Visibility = Visibility.Visible;
+            CMPS1044box.Visibility = Visibility.Visible;
+            CMPS4143box.Visibility = Visibility.Visible;
+            CMPS1063box.Visibility = Visibility.Visible;
+            CMPS4113box.Visibility = Visibility.Visible;
+            CMPS2084box.Visibility = Visibility.Visible;
+            CMPS3023box.Visibility = Visibility.Visible;
+            CMPS4103box.Visibility = Visibility.Visible;
+            CMPS3013box.Visibility = Visibility.Visible;
+            CMPS2143box.Visibility = Visibility.Visible;
+            CMPS2433box.Visibility = Visibility.Visible;
+            CSAE1box.Visibility = Visibility.Visible;
+            CSAE2box.Visibility = Visibility.Visible;
+            CSAE3box.Visibility = Visibility.Visible;
+            CSAE4box.Visibility = Visibility.Visible;
+            CSAE5box.Visibility = Visibility.Visible;
+            CSAE6box.Visibility = Visibility.Visible;
+            CSAE7box.Visibility = Visibility.Visible;
+            var communicationlist = Communication.Items.OfType<MenuItem>().ToList();
+            makecheckable(communicationlist);
+            var LPSlist = LPSy.Children.OfType<MenuItem>().ToList();
+            makecheckable(LPSlist);
+            var CreativeArtslist = CreativeArtsy.Children.OfType<MenuItem>().ToList();
+            makecheckable(CreativeArtslist);
+            var AHistorylist = AHistoryy.Children.OfType<MenuItem>().ToList();
+            makecheckable(AHistorylist);
+            var GPSlist = GPSy.Children.OfType<MenuItem>().ToList();
+            makecheckable(GPSlist);
+            var SBSlist = SBSy.Children.OfType<MenuItem>().ToList();
+            makecheckable(SBSlist);
+            var CGUlist = CGUy.Children.OfType<MenuItem>().ToList();
+            makecheckable(CGUlist);
+            var UIClist = UICy.Children.OfType<MenuItem>().ToList();
+            makecheckable(UIClist);
+        }
+
+        private void SaveEdit_Click(object sender, RoutedEventArgs e)
+        {
+
+            SaveEdit.Visibility = Visibility.Hidden;
+            MATH1534box.Visibility = Visibility.Hidden;
+            math1233box.Visibility = Visibility.Hidden;
+            MATH1443box.Visibility = Visibility.Hidden;
+            stat3573box.Visibility = Visibility.Hidden;
+            CMPS4991box.Visibility = Visibility.Hidden;
+            CMPS1044box.Visibility = Visibility.Hidden;
+            CMPS4143box.Visibility = Visibility.Hidden;
+            CMPS1063box.Visibility = Visibility.Hidden;
+            CMPS4113box.Visibility = Visibility.Hidden;
+            CMPS2084box.Visibility = Visibility.Hidden;
+            CMPS3023box.Visibility = Visibility.Hidden;
+            CMPS4103box.Visibility = Visibility.Hidden;
+            CMPS3013box.Visibility = Visibility.Hidden;
+            CMPS2143box.Visibility = Visibility.Hidden;
+            CMPS2433box.Visibility = Visibility.Hidden;
+            CSAE1box.Visibility = Visibility.Hidden;
+            CSAE2box.Visibility = Visibility.Hidden;
+            CSAE3box.Visibility = Visibility.Hidden;
+            CSAE4box.Visibility = Visibility.Hidden;
+            CSAE5box.Visibility = Visibility.Hidden;
+            CSAE6box.Visibility = Visibility.Hidden;
+            CSAE7box.Visibility = Visibility.Hidden;
+            var communicationlist = Communication.Items.OfType<MenuItem>().ToList();
+            checkitem(communicationlist, Communication);
+            makecheckable(communicationlist,false);
+            var LPSlist = LPSy.Children.OfType<MenuItem>().ToList();
+            checkitem(LPSlist, LPS);
+            makecheckable(LPSlist,false);
+            var CreativeArtslist = CreativeArtsy.Children.OfType<MenuItem>().ToList(); 
+            checkitem(CreativeArtslist, CreativeArts);
+            makecheckable(CreativeArtslist,false);
+            var AHistorylist = AHistoryy.Children.OfType<MenuItem>().ToList();
+            checkitem(AHistorylist, AHistory);
+            makecheckable(AHistorylist,false);
+            var GPSlist = GPSy.Children.OfType<MenuItem>().ToList();
+            checkitem(GPSlist, GPS);
+            makecheckable(GPSlist,false);
+            var SBSlist = SBSy.Children.OfType<MenuItem>().ToList();
+            checkitem(SBSlist, SBS);
+            makecheckable(SBSlist,false);
+            var CGUlist = CGUy.Children.OfType<MenuItem>().ToList();
+            checkitem(CGUlist, CGU);
+            makecheckable(CGUlist,false);
+            var UIClist = UICy.Children.OfType<MenuItem>().ToList();
+            checkitem(UIClist, UIC);
+            makecheckable(UIClist,false);
+        }
+        private void makecheckable(List<MenuItem> list,bool check =true)
+        {
+            if (check == true)
+            {
+                foreach (MenuItem item in list)
+                {
+                    item.IsCheckable = true;
+                }
+            }
+            else
+            {
+                foreach (MenuItem item in list)
+                {
+                    item.IsCheckable = false;
+                }
+            }
+           
+        }
+
+        private void checkitem(List<IEnumerable<MenuItem>> j, MenuItem lPS)
+        {
+            int countedcheckbox = 0;
+            foreach (MenuItem item in j)
+            {
+                
+                if (item.IsChecked)
+                {
+                    countedcheckbox++;
+                }
+            }
+            if (countedcheckbox >= 2)
+            {
+                lPS.IsEnabled = false;
+            }
+        }
+
+        private void checkitem(List<MenuItem> list,MenuItem tolock)
+        {
+            int countedcheckbox = 0;
+            foreach (MenuItem item in list)
+            {
+                if (item.IsChecked)
+                {
+                    countedcheckbox++;
+                }
+            }
+            if(countedcheckbox >=2)
+            {
+                tolock.IsEnabled = false;
+            }
+            
+
+        }
+
+        private void MATH1534_Click(object sender, RoutedEventArgs e)
+        {
+            checkbuttons();
+            MATH1534Popup.IsOpen = true;
+        }
+
+        private void MATH1233_Click(object sender, RoutedEventArgs e)
+        {
+            checkbuttons();
+            MATH1233Popup.IsOpen = true;
+        }
+
+        private void MATH1443_Click(object sender, RoutedEventArgs e)
+        {
+            checkbuttons();
+            MATH1443Popup.IsOpen = true;
+        }
+
+        private void CMPS4143_Click(object sender, RoutedEventArgs e)
+        {
+            checkbuttons();
+            CMPS4143Popup.IsOpen = true;
+        }
+
+        private void CMPS2143_Click(object sender, RoutedEventArgs e)
+        {
+            checkbuttons();
+            CMPS2143Popup.IsOpen =  true;
+        }
+
+        private void CMPS4113_Click(object sender, RoutedEventArgs e)
+        {
+            checkbuttons();
+            CMPS4113Popup.IsOpen = true;
+        }
+
+        private void CMPS2084_Click(object sender, RoutedEventArgs e)
+        {
+            checkbuttons();
+            CMPS2084Popup.IsOpen = true;
+        }
+
+        private void CMPS2433_Click(object sender, RoutedEventArgs e)
+        {
+            checkbuttons();
+            CMPS2433Popup.IsOpen = true;
+        }
+
+        private void CMPS3233_Click(object sender, RoutedEventArgs e)
+        {
+            checkbuttons();
+            CMPS3233Popup.IsOpen = true;
+        }
+
+        private void CMPS3013_Click(object sender, RoutedEventArgs e)
+        {
+            checkbuttons();
+            CMPS3013Popup.IsOpen = true;
+        }
+
+        private void CMPS3023_Click(object sender, RoutedEventArgs e)
+        {
+            checkbuttons();
+            CMPS3023Popup.IsOpen = true;
+        }
+
+        private void CMPS4103_Click(object sender, RoutedEventArgs e)
+        {
+            checkbuttons();
+            CMPS4103Popup.IsOpen = true;
+        }
+
+        private void CMPS4991_Click(object sender, RoutedEventArgs e)
+        {
+            CMPS4991Popup.IsOpen = true;
         }
     }
 }
