@@ -271,65 +271,139 @@ namespace PrototypeSWE
         {
             checkbuttons();
             MATH1443Popup.IsOpen = true;
+            MATH1443.Background = new SolidColorBrush(Colors.Brown);
+            MATH1233.Background = new SolidColorBrush(Colors.Yellow);
+            coloredButtons.Add(MATH1443);
+            coloredButtons.Add(MATH1233);
         }
 
         private void CMPS4143_Click(object sender, RoutedEventArgs e)
         {
             checkbuttons();
             CMPS4143Popup.IsOpen = true;
+            CMPS4143.Background = new SolidColorBrush(Colors.Brown);
+            CMPS2143.Background = new SolidColorBrush(Colors.Yellow);
+            coloredButtons.Add(CMPS4143);
+            coloredButtons.Add(CMPS2143);
         }
 
         private void CMPS2143_Click(object sender, RoutedEventArgs e)
         {
             checkbuttons();
             CMPS2143Popup.IsOpen =  true;
+            CMPS2143.Background = new SolidColorBrush(Colors.Brown);
+            CMPS1063.Background = new SolidColorBrush(Colors.Yellow);
+            CMPS4103.Background = new SolidColorBrush(Colors.Aqua);
+            CMPS4143.Background = new SolidColorBrush(Colors.Aqua);
+            coloredButtons.Add(CMPS2143);
+            coloredButtons.Add(CMPS1063);
+            coloredButtons.Add(CMPS4103);
+            coloredButtons.Add(CMPS4143);
         }
 
         private void CMPS4113_Click(object sender, RoutedEventArgs e)
         {
             checkbuttons();
             CMPS4113Popup.IsOpen = true;
+            CMPS4113.Background = new SolidColorBrush(Colors.Brown);
+            CMPS3013.Background = new SolidColorBrush(Colors.Yellow);
+            CMPS2143.Background = new SolidColorBrush(Colors.Yellow);
+            coloredButtons.Add(CMPS4113);
+            coloredButtons.Add(CMPS3013);
+            coloredButtons.Add(CMPS2143);
         }
 
         private void CMPS2084_Click(object sender, RoutedEventArgs e)
         {
             checkbuttons();
             CMPS2084Popup.IsOpen = true;
+            CMPS2084.Background = new SolidColorBrush(Colors.Brown);
+            CMPS1044.Background = new SolidColorBrush(Colors.Yellow);
+            CMPS3023.Background = new SolidColorBrush(Colors.Aqua);
+            CMPS4103.Background = new SolidColorBrush(Colors.Aqua);
+            coloredButtons.Add(CMPS2084);
+            coloredButtons.Add(CMPS1044);
+            coloredButtons.Add(CMPS3023);
+            coloredButtons.Add(CMPS4103);
+
         }
 
         private void CMPS2433_Click(object sender, RoutedEventArgs e)
         {
             checkbuttons();
             CMPS2433Popup.IsOpen = true;
+           
+            CMPS2433.Background = new SolidColorBrush(Colors.Brown);
+            CMPS1063.Background = new SolidColorBrush(Colors.Yellow);
+            CMPS3013.Background = new SolidColorBrush(Colors.Aqua);
+            coloredButtons.Add(CMPS2433);
+            coloredButtons.Add(CMPS1063);
+            coloredButtons.Add(CMPS3013);
+           
         }
 
         private void CMPS3233_Click(object sender, RoutedEventArgs e)
         {
             checkbuttons();
             CMPS3233Popup.IsOpen = true;
+            CMPS3233.Background = new SolidColorBrush(Colors.Brown);
+            CMPS2433.Background = new SolidColorBrush(Colors.Yellow);
+            coloredButtons.Add(CMPS3233);
+            coloredButtons.Add(CMPS2433);
         }
 
         private void CMPS3013_Click(object sender, RoutedEventArgs e)
         {
             checkbuttons();
             CMPS3013Popup.IsOpen = true;
+            CMPS3013.Background = new SolidColorBrush(Colors.Brown);
+            CMPS2433.Background = new SolidColorBrush(Colors.Yellow);
+            CMPS4103.Background = new SolidColorBrush(Colors.Aqua);
+            CMPS4113.Background = new SolidColorBrush(Colors.Aqua);
+            coloredButtons.Add(CMPS3013);
+            coloredButtons.Add(CMPS2433);
+            coloredButtons.Add(CMPS4103);
+            coloredButtons.Add(CMPS4113);
         }
 
         private void CMPS3023_Click(object sender, RoutedEventArgs e)
         {
             checkbuttons();
             CMPS3023Popup.IsOpen = true;
+            CMPS3023.Background = new SolidColorBrush(Colors.Brown);
+            CMPS2084.Background = new SolidColorBrush(Colors.Yellow);
+            coloredButtons.Add(CMPS3023);
+            coloredButtons.Add(CMPS2084);
+           
         }
 
         private void CMPS4103_Click(object sender, RoutedEventArgs e)
         {
             checkbuttons();
             CMPS4103Popup.IsOpen = true;
+            CMPS4103.Background = new SolidColorBrush(Colors.Brown);
+            CMPS2084.Background = new SolidColorBrush(Colors.Yellow);
+            coloredButtons.Add(CMPS3233);
+            coloredButtons.Add(CMPS2433);
         }
 
         private void CMPS4991_Click(object sender, RoutedEventArgs e)
         {
+            checkbuttons();
             CMPS4991Popup.IsOpen = true;
+        }
+
+        private void STAT3573_Click(object sender, RoutedEventArgs e)
+        {
+            checkbuttons();
+            STAT3573Popup.IsOpen = true;
+            STAT3573.Background = new SolidColorBrush(Colors.Brown);
+            MATH1233.Background = new SolidColorBrush(Colors.Yellow);
+            MATH1534.Background = new SolidColorBrush(Colors.Yellow);
+            coloredButtons.Add(STAT3573);
+            coloredButtons.Add(MATH1233);
+            coloredButtons.Add(MATH1534);
+
         }
     }
 }

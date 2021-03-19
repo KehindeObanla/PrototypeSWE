@@ -6,10 +6,11 @@
         xmlns:local="clr-namespace:PrototypeSWE"
         mc:Ignorable="d"
         
-        Title="BSComputerScience" Height="777" Width="1136">
+        Title="BSComputerScience"  Height="859" Width="1174">
     <Grid>
 
-        <Label Content="GET THE Courses You Need" Margin="0,10,0,0" VerticalAlignment="Top"  Background="#FF075DB2" Foreground="#FFFBF8F8" FontSize="14" HorizontalContentAlignment="Center" />
+
+        <Label Content="GET THE Courses You Need" Margin="0,10,0,0" VerticalAlignment="Top"  Background="#FF075DB2" Foreground="#FFFBF8F8" FontSize="14" HorizontalContentAlignment="Center" Grid.ColumnSpan="2" />
         <Grid HorizontalAlignment="Left" Height="337" Margin="10,65,0,0" VerticalAlignment="Top" Width="237">
             <Label x:Name="legend" Content="&#x9;Legend" HorizontalAlignment="Left" Height="26" Margin="20,20,0,0" VerticalAlignment="Top" Width="178" Foreground="#FFF9F9F9" Background="#FF075DB2"/>
             <Button Content="CourseID" HorizontalAlignment="Left" Height="30" Margin="10,81,0,0" VerticalAlignment="Top" Width="59" />
@@ -17,9 +18,1645 @@
         </Grid>
         <Border BorderBrush="#FF0655A4" BorderThickness="2" HorizontalAlignment="Left" Height="337" Margin="7,65,0,0" VerticalAlignment="Top" Width="240"/>
         <Label Content="Arrows show relationships" HorizontalAlignment="Left" Height="29" Margin="90,201,0,0" VerticalAlignment="Top" Width="148"/>
-        <Button x:Name="EditBS" Content="Edit Map" HorizontalAlignment="Right" Margin="0,0,21,107" VerticalAlignment="Bottom" Width="75" Height="26" Background="#FF075DB2" Foreground="#FFF7F6F6" VerticalContentAlignment="Center"/>
-        <Button x:Name="Backbtn" Content="Back" HorizontalAlignment="Right" Margin="0,65,21,0" VerticalAlignment="Top" Width="75" Height="28" Background="#FF075DB2" Click="BsbackTomainWindow" Foreground="#FFFBFAFA"/>
-        <Button x:Name="DownloadBtnBS" Content="Download" HorizontalAlignment="Left" Margin="914,0,0,103" Width="75" Height="26" Background="#FF075DB2" Foreground="#FFF7F6F6" VerticalContentAlignment="Center" VerticalAlignment="Bottom" Click="DownloadBS"/>
+        <Button x:Name="EditBS" Content="Edit Map" HorizontalAlignment="Right" Margin="0,0,23,40" VerticalAlignment="Bottom" Width="98" Height="26" Background="#FF075DB2" Foreground="#FFF7F6F6" VerticalContentAlignment="Center" Click="EditBS_Click"/>
+        <Button x:Name="Backbtn" Content="Back" HorizontalAlignment="Right" Margin="0,9.31,21,0" VerticalAlignment="Top" Width="75" Height="28" Background="#FF075DB2" Click="BsbackTomainWindow" Foreground="#FFFBFAFA" Grid.Column="1"/>
+        <Button x:Name="DownloadBtnBS" Content="Download" HorizontalAlignment="Left" Margin="855,0,0,35" Width="95" Height="26" Background="#FF075DB2" Foreground="#FFF7F6F6" VerticalContentAlignment="Center" VerticalAlignment="Bottom" Click="DownloadBS"/>
+        <Button x:Name="CMPS3233" Content="CMPS 3233 " HorizontalAlignment="Left" Margin="649.704,251.046,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.144,-1.348" Click="CMPS3233_Click">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsChecked, ElementName=CMPS3233box}"
+                             Value="True">
+                            <Setter Property="IsEnabled" Value="False"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Popup  x:Name="CMPS3233Popup" StaysOpen = "false" Placement="Top" PlacementTarget = "{Binding ElementName=CMPS3233}"
+            PopupAnimation = "Slide">
+            <Grid>
+
+                <StackPanel  >
+                    <Label x:Name="CMPS3233Label1" Content="CMPS 3233:Theory of Computation" Foreground="#FFF9F9F9" Background="#FF075DB2" />
+                </StackPanel>
+                <TextBlock  x:Name ="CMPS3233Textbox1" TextWrapping = "Wrap" Foreground = "White"
+                    FontFamily="Verdana"
+                    LineStackingStrategy="MaxHeight" 
+                    LineHeight="10"
+                    Width="200" Margin="10,32,10,10"><Run Text="Study of the fundamental mathematical properties of hardware, software, and their applications. Emphasis is on the capabilities and limitation of computers, including finite automata, push-down automata, and Turing machines. "/><LineBreak/><Run Text="3 Credit hours"/></TextBlock>
+            </Grid>
+        </Popup>
+
+        <Button x:Name="CMPS2433" Content="CMPS 2433 " HorizontalAlignment="Left" Margin="649.704,181.706,0,0" VerticalAlignment="Top" Width="75" Click="CMPS2433_Click">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsChecked, ElementName=CMPS2433box}"
+                             Value="True">
+                            <Setter Property="IsEnabled" Value="False"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Popup  x:Name="CMPS2433Popup" StaysOpen = "false" Placement="Top" PlacementTarget = "{Binding ElementName=CMPS2433}"
+            PopupAnimation = "Slide">
+            <Grid>
+
+                <StackPanel  >
+                    <Label x:Name="CMPS2433Labe1" Content="CMPS 2433 :Discrete Structures and Analysis" Foreground="#FFF9F9F9" Background="#FF075DB2" />
+                </StackPanel>
+                <TextBlock  x:Name ="CMPS2433Textbox1" TextWrapping = "Wrap" Foreground = "White"
+                    FontFamily="Verdana"
+                    LineStackingStrategy="MaxHeight" 
+                    LineHeight="10"
+                    Width="200" Margin="10,32,10,10"><Run Text="Introduction to the fundamental techniques of algorithm analysis. Also, Boolean logic, combinatorics, functions, graphs, algebraic structures, recursion, recurrence relations, finite state machines, and computability."/><LineBreak/><Run Text="3 Credit hours"/></TextBlock>
+            </Grid>
+        </Popup>
+        <Button x:Name="CMPS1044" Content="CMPS 1044" HorizontalAlignment="Left" Margin="526.082,102.24,0,0" VerticalAlignment="Top" Width="81" Click="CMPS1044_Click" Height="23">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsChecked, ElementName=CMPS1044box}"
+                             Value="True">
+                            <Setter Property="IsEnabled" Value="False"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Popup  x:Name="CMPS1044Popup" StaysOpen = "false" Placement="Top" PlacementTarget = "{Binding ElementName=CMPS1044}"
+            PopupAnimation = "Slide">
+            <Grid>
+
+                <StackPanel  >
+                    <Label x:Name="CMPS1044Label1" Content="CMPS 1044:Computer Science 1" Foreground="#FFF9F9F9" Background="#FF075DB2" />
+                </StackPanel>
+                <TextBlock  x:Name ="CMPS1044Textbox1" TextWrapping = "Wrap" Foreground = "White"
+                    FontFamily="Verdana"
+                    LineStackingStrategy="MaxHeight" 
+                    LineHeight="10"
+                    Width="200" Margin="10,32,10,10"><Run Text="Introduction to methods of problem solving and algorithm development. A high-level programming language is taught with an emphasis on program design, coding,debugging, testing, and documentation. Discussion of ethical , social, and legal issues related to computing"/><LineBreak/><Run Text="4 Credit hours"/></TextBlock>
+            </Grid>
+
+
+
+        </Popup>
+        <Button x:Name="CMPS2143" Content="CMPS 2143 " HorizontalAlignment="Left" Margin="516,254.833,0,0" VerticalAlignment="Top" Width="75" Click="CMPS2143_Click">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsChecked, ElementName=CMPS2143box}"
+                             Value="True">
+                            <Setter Property="IsEnabled" Value="False"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Popup  x:Name="CMPS2143Popup" StaysOpen = "false" Placement="Top" PlacementTarget = "{Binding ElementName=CMPS2143}"
+            PopupAnimation = "Slide">
+            <Grid  >
+                <StackPanel >
+                    <Label x:Name="CMPS2143Label" Content="CMPS 1063: Object-Oriented Programming" Foreground="#FFF9F9F9" Background="#FF075DB2"/>
+                </StackPanel>
+                <Grid >
+                    <TextBlock  x:Name ="CMPS2143Textbox" TextWrapping = "Wrap" Foreground = "White" 
+                        FontFamily="Verdana"
+                        LineStackingStrategy="MaxHeight" 
+                        LineHeight="10"
+                        Width="200" Margin="10,32,10,10"><Run Text="Introduction to object-oriented programming techniques including but not limited to classes, objects, inheritance, polymorphism, and overloading. Various object-oriented languages will be considered."/><LineBreak/><Run Text="3 Credit hours"/></TextBlock>
+                </Grid>
+
+            </Grid>
+        </Popup>
+
+        <Button x:Name="CMPS1063" Content="CMPS 1063 " HorizontalAlignment="Left" Margin="521,181.706,0,0" VerticalAlignment="Top" Width="75" Click="CMPS1063__Click">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsChecked, ElementName=CMPS1063box}"
+                             Value="True">
+                            <Setter Property="IsEnabled" Value="False"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Popup  x:Name="CMPS1063Popup" StaysOpen = "false" Placement="Top" PlacementTarget = "{Binding ElementName=CMPS1063}"
+            PopupAnimation = "Slide">
+            <Grid  >
+                <StackPanel >
+                    <Label x:Name="CMPS1063Label" Content="CMPS 1063: Data Structures and ADT" Foreground="#FFF9F9F9" Background="#FF075DB2"/>
+                </StackPanel>
+                <Grid >
+                    <TextBlock  x:Name ="CMPS1063Textbox" TextWrapping = "Wrap" Foreground = "White" 
+                        FontFamily="Verdana"
+                        LineStackingStrategy="MaxHeight" 
+                        LineHeight="10"
+                        Width="200" Margin="10,32,10,10"><Run Text="A continuation of the development of a disciplined approach to the design, coding, debugging, and testing of programs. Introduction to data structures, abstract data types (ADT), recursion, and algorithm analysis using a high-level language"/><LineBreak/><Run Text="3 Credit hours"/></TextBlock>
+                </Grid>
+
+            </Grid>
+        </Popup>
+        <Button x:Name="CMPS4143" Content="CMPS 4143 " HorizontalAlignment="Left" Margin="397,250.34,0,0" VerticalAlignment="Top" Width="75" Click="CMPS4143_Click">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsChecked, ElementName=CMPS4143box}"
+                             Value="True">
+                            <Setter Property="IsEnabled" Value="False"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Popup  x:Name="CMPS4143Popup" StaysOpen = "false" Placement="Top" PlacementTarget = "{Binding ElementName=CMPS4143}"
+            PopupAnimation = "Slide">
+            <Grid  >
+                <StackPanel >
+                    <Label x:Name="CMPS4143Label" Content="CMPS 4143: Topics in Contemporary Programming Languages" Foreground="#FFF9F9F9" Background="#FF075DB2"/>
+                </StackPanel>
+                <Grid >
+                    <TextBlock  x:Name ="CMPS4143Textbox" TextWrapping = "Wrap" Foreground = "White" 
+                        FontFamily="Verdana"
+                        LineStackingStrategy="MaxHeight" 
+                        LineHeight="10"
+                        Width="200" Margin="10,32,10,10"><Run Text="A study of the syntax, semantics, and implementation of a contemporary programming language with emphasis on program development, program structuring, and the program development environment of the language. Assignments focus on representative applications of the language. May be repeated for credit with approval of the department chair."/><LineBreak/><Run Text="3 Credit hours"/></TextBlock>
+                </Grid>
+
+            </Grid>
+        </Popup>
+        <Button x:Name="MATH1534" Content=" MATH 1534" HorizontalAlignment="Left" Margin="310.5,84.29,0,0" VerticalAlignment="Top" Width="75" Click="MATH1534_Click" RenderTransformOrigin="0.6,2.05">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsChecked, ElementName=MATH1534box}"
+                             Value="True">
+                            <Setter Property="IsEnabled" Value="False"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Popup  x:Name="MATH1534Popup" StaysOpen = "false" Placement="Top" PlacementTarget = "{Binding ElementName=MATH1534}"
+            PopupAnimation = "Slide">
+            <Grid>
+
+                <StackPanel  >
+                    <Label x:Name="MATH1534Label1" Content="MATH 1534:Precalculus" Foreground="#FFF9F9F9" Background="#FF075DB2" />
+                </StackPanel>
+                <TextBlock  x:Name ="MATH1534Textbox1" TextWrapping = "Wrap" Foreground = "White"
+                    FontFamily="Verdana"
+                    LineStackingStrategy="MaxHeight" 
+                    LineHeight="10"
+                    Width="200" Margin="10,32,10,10"><Run Text="Applications of algebra and trigonometry to the study of elementary functions and their graphs including polynomial, rational, exponential, logarithmic and trigonometric functions. Each student must have a graphing calculator. This course is intended for students planning to take MATH 1634. "/><LineBreak/><Run Text="3 Credit hours"/></TextBlock>
+            </Grid>
+        </Popup>
+        <Button x:Name="MATH1233" Content="MATH 1233" HorizontalAlignment="Left" Margin="310.5,133.87,0,0" VerticalAlignment="Top" Width="75" Click="MATH1233_Click">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsChecked, ElementName=math1233box}"
+                             Value="True">
+                            <Setter Property="IsEnabled" Value="False"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Popup  x:Name="MATH1233Popup" StaysOpen = "false" Placement="Top" PlacementTarget = "{Binding ElementName=MATH1233}"
+            PopupAnimation = "Slide">
+            <Grid>
+
+                <StackPanel  >
+                    <Label x:Name="MATH1233Label1" Content="MATH 1233:College Algebra" Foreground="#FFF9F9F9" Background="#FF075DB2" />
+                </StackPanel>
+                <TextBlock  x:Name ="MATH1233Textbox1" TextWrapping = "Wrap" Foreground = "White"
+                    FontFamily="Verdana"
+                    LineStackingStrategy="MaxHeight" 
+                    LineHeight="10"
+                    Width="200" Margin="10,32,10,10"><Run Text="In-depth study of polynomials, rational, radical, exponential and logarithmic functions, including applications for these functions and methods for solving related equations and inequalities.  Additional topics, such as systems of linear equations, may be included.  (This course is designed for students planning to take additional mathematics.) "/><LineBreak/><Run Text="3 Credit hours"/></TextBlock>
+            </Grid>
+        </Popup>
+        <Button x:Name="CMPS3023" Content="CMPS 3023" HorizontalAlignment="Left" Margin="814.8,102.24,0,0" VerticalAlignment="Top" Width="75" Click="CMPS3023_Click">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsChecked, ElementName=CMPS3023box}"
+                             Value="True">
+                            <Setter Property="IsEnabled" Value="False"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Popup  x:Name="CMPS3023Popup" StaysOpen = "false" Placement="Top" PlacementTarget = "{Binding ElementName=CMPS3023}"
+            PopupAnimation = "Slide">
+            <Grid>
+
+                <StackPanel  >
+                    <Label x:Name="CMPS3023Label1" Content="CMPS 3023: Logic Design" Foreground="#FFF9F9F9" Background="#FF075DB2" />
+                </StackPanel>
+                <TextBlock  x:Name ="CMPS3023Textbox1" TextWrapping = "Wrap" Foreground = "White"
+                    FontFamily="Verdana"
+                    LineStackingStrategy="MaxHeight" 
+                    LineHeight="10"
+                    Width="200" Margin="10,32,10,10"><Run Text="Study of topics related to the design of modern microprocessors, including Boolean algebra, logic gates, design simplification techniques, memory design, programmable control units, and use of hardware description languages. "/><LineBreak/><Run Text="3 Credit hours"/></TextBlock>
+            </Grid>
+        </Popup>
+        <Button x:Name="CMPS4991" Content="CMPS 4991 " HorizontalAlignment="Left" Margin="1049,386,0,0" VerticalAlignment="Top" Width="75" Click="CMPS4991_Click" >
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsChecked, ElementName=CMPS4991box}"
+                             Value="True">
+                            <Setter Property="IsEnabled" Value="False"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Popup  x:Name="CMPS4991Popup" StaysOpen = "false" Placement="Top" PlacementTarget = "{Binding ElementName=CMPS4991}"
+            PopupAnimation = "Slide">
+            <Grid>
+
+                <StackPanel  >
+                    <Label x:Name="CMPS4991Label1" Content="CMPS 4991:Seminar in Social Responsibility " Foreground="#FFF9F9F9" Background="#FF075DB2" />
+                </StackPanel>
+                <TextBlock  x:Name ="CMPS4991Textbox1" TextWrapping = "Wrap" Foreground = "White"
+                    FontFamily="Verdana"
+                    LineStackingStrategy="MaxHeight" 
+                    LineHeight="10"
+                    Width="200" Margin="10,32,10,10"><Run Text="A self-study in the ethical, legal, and social issues related to computing. Students research, prepare, and present a talk on a related issue."/><LineBreak/><Run Text="Senior year"/><LineBreak/><Run Text="1 Credit hours"/></TextBlock>
+            </Grid>
+        </Popup>
+        <Button x:Name="CMPS4103" Content="CMPS 4103 " HorizontalAlignment="Left" Margin="929.167,257.833,0,0" VerticalAlignment="Top" Width="75" Click="CMPS4103_Click">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsChecked, ElementName=CMPS4103box}"
+                             Value="True">
+                            <Setter Property="IsEnabled" Value="False"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Popup  x:Name="CMPS4103Popup" StaysOpen = "false" Placement="Top" PlacementTarget = "{Binding ElementName=CMPS4103}"
+            PopupAnimation = "Slide">
+            <Grid>
+
+                <StackPanel  >
+                    <Label x:Name="CMPS4103Label1" Content="CMPS 4103:Introduction to Operating Systems " Foreground="#FFF9F9F9" Background="#FF075DB2" />
+                </StackPanel>
+                <TextBlock  x:Name ="CMPS4103Textbox1" TextWrapping = "Wrap" Foreground = "White"
+                    FontFamily="Verdana"
+                    LineStackingStrategy="MaxHeight" 
+                    LineHeight="10"
+                    Width="200" Margin="10,32,10,10"><Run Text="An introduction to operating systems for contemporary multitasking, single processor computers. Topics include processes, process management and scheduling, interprocess synchronization and communication, memory management, and file management. Selected theories and concepts are supplemented with an examination of their implementation in contemporary operating systems. Discussion of legal, social, and ethical issues.  "/><LineBreak/><Run Text="3 Credit hours"/></TextBlock>
+            </Grid>
+        </Popup>
+        <Button x:Name="CMPS4113" Content="CMPS 4113 " HorizontalAlignment="Left" Margin="516,326.333,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.685,1.617" Click="CMPS4113_Click">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsChecked, ElementName=CMPS4113box}"
+                             Value="True">
+                            <Setter Property="IsEnabled" Value="False"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Popup  x:Name="CMPS4113Popup" StaysOpen = "false" Placement="Top" PlacementTarget = "{Binding ElementName=CMPS4113}"
+            PopupAnimation = "Slide">
+            <Grid>
+
+                <StackPanel  >
+                    <Label x:Name="CMPS4113Label1" Content="CMPS4113:Software Engineering  " Foreground="#FFF9F9F9" Background="#FF075DB2" />
+                </StackPanel>
+                <TextBlock  x:Name ="CMPS4113Textbox1" TextWrapping = "Wrap" Foreground = "White"
+                    FontFamily="Verdana"
+                    LineStackingStrategy="MaxHeight" 
+                    LineHeight="10"
+                    Width="200" Margin="10,32,10,10"><Run Text=" Application of structured methodology and formal methods to the design, implementation, and documentation of computer software systems. Includes an introduction to the management of software development teams, requirements analysis, testing procedures, and user interface design. Discussion of legal, social, and ethical issues. "/><LineBreak/><Run Text=" Prerequisite(s):CMPS 3013; and 6 advanced hours in computer science, exclusive of CMPS 3023, CMPS 3233, and CMPS 4453."/><LineBreak/><Run Text="3 Credit hours"/></TextBlock>
+            </Grid>
+        </Popup>
+        <Button x:Name="CMPS3013" Content="CMPS 3013 " HorizontalAlignment="Left" Margin="761.967,177.906,0,0" VerticalAlignment="Top" Width="75" Click="CMPS3013_Click">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsChecked, ElementName=CMPS3013box}"
+                             Value="True">
+                            <Setter Property="IsEnabled" Value="False"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Popup  x:Name="CMPS3013Popup" StaysOpen = "false" Placement="Top" PlacementTarget = "{Binding ElementName=CMPS3013}"
+            PopupAnimation = "Slide">
+            <Grid>
+
+                <StackPanel  >
+                    <Label x:Name="CMPS3013Labe1" Content="CMPS 3013  :Advanced Structures and Algorithms" Foreground="#FFF9F9F9" Background="#FF075DB2" />
+                </StackPanel>
+                <TextBlock  x:Name ="CMPS3013Textbox1" TextWrapping = "Wrap" Foreground = "White"
+                    FontFamily="Verdana"
+                    LineStackingStrategy="MaxHeight" 
+                    LineHeight="10"
+                    Width="200" Margin="10,32,10,10"><Run Text="In-depth study of complexity analysis and variety of advanced structures and related algorithms. Topics will be selected from trees, heaps, priority queues, graphs, hashing, sorting, pattern matching, recursion, and others as appropriate."/><LineBreak/><Run Text="3 Credit hours"/></TextBlock>
+            </Grid>
+        </Popup>
+        <Button x:Name="CMPS2084" Content="CMPS 2084 " HorizontalAlignment="Left" Margin="671.05,102.24,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="1.891,-0.02" Click="CMPS2084_Click">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsChecked, ElementName=CMPS2084box}"
+                             Value="True">
+                            <Setter Property="IsEnabled" Value="False"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Popup  x:Name="CMPS2084Popup" StaysOpen = "false" Placement="Top" PlacementTarget = "{Binding ElementName=CMPS2084}"
+            PopupAnimation = "Slide">
+            <Grid>
+
+                <StackPanel  >
+                    <Label x:Name="CMPS2084Label1" Content="CMPS 2084 :Introduction to Computer Architecture" Foreground="#FFF9F9F9" Background="#FF075DB2" />
+                </StackPanel>
+                <TextBlock  x:Name ="CMPS2084Textbox1" TextWrapping = "Wrap" Foreground = "White"
+                    FontFamily="Verdana"
+                    LineStackingStrategy="MaxHeight" 
+                    LineHeight="10"
+                    Width="200" Margin="10,32,10,10"><Run Text="An introduction to the components, functions, and logical relationships present in current scalar computers, including the central processing unit, different levels of memory, control signals, bus systems, data channels, and input/output devices. Also covered are instruction sets and assembly language programming."/><LineBreak/><Run Text="4 Credit hours"/></TextBlock>
+            </Grid>
+        </Popup>
+        <Path Data="M7.332871,0.50000001 C7.6656469,53.998686 7.4995292,53.332605 7.4995292,53.332605 L0.50000001,48.166307 M7.4488105,0.50000001 C7.127759,53.998686 7.2880198,53.332603 7.2880198,53.332603 L14.041014,48.16631" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="53.833" Margin="547.163,125.24,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="14.541" Style="{DynamicResource downarrow}" RenderTransformOrigin="3.45,0.454"/>
+        <Label Content="OR" HorizontalAlignment="Left" Height="27.82" Margin="448.406,99.24,0,0" VerticalAlignment="Top" Width="28.494" RenderTransformOrigin="1,0.471" FontWeight="Bold"/>
+        <Path Data="M492.8,80.6 C440.8,111.6 439.29999,111.1 439.29999,111.1 439.29999,111.1 502.29999,144.10102 491.29999,139.10094" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="60.016" Margin="389.035,82.593,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="60" RenderTransformOrigin="0.5,0.5"
+>
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+        <Path Data="M7.332871,0.50000001 C7.6656469,53.998686 7.4995292,53.332605 7.4995292,53.332605 L0.50000001,48.166307 M7.4488105,0.50000001 C7.127759,53.998686 7.2880198,53.332603 7.2880198,53.332603 L14.041014,48.16631" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="46.852" Margin="445,138.148,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="13.51" Style="{DynamicResource downarrow}" RenderTransformOrigin="4.384,0.638">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="89.118"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+        <Path Data="M7.332871,0.50000001 C7.6656469,53.998686 7.4995292,53.332605 7.4995292,53.332605 L0.50000001,48.166307 M7.4488105,0.50000001 C7.127759,53.998686 7.2880198,53.332603 7.2880198,53.332603 L14.041014,48.16631" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="59.831" Margin="583.628,44.145,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="14.541" Style="{DynamicResource downarrow}" RenderTransformOrigin="3.45,0.454">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-91.531"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+        <Path Data="M7.332871,0.50000001 C7.6656469,53.998686 7.4995292,53.332605 7.4995292,53.332605 L0.50000001,48.166307 M7.4488105,0.50000001 C7.127759,53.998686 7.2880198,53.332603 7.2880198,53.332603 L14.041014,48.16631" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="50.432" Margin="547.163,201.666,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="14.541" Style="{DynamicResource downarrow}" RenderTransformOrigin="3.45,0.454"/>
+        <Path Data="M7.332871,0.50000001 C7.6656469,53.998686 7.4995292,53.332605 7.4995292,53.332605 L0.50000001,48.166307 M7.4488105,0.50000001 C7.127759,53.998686 7.2880198,53.332603 7.2880198,53.332603 L14.041014,48.16631" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="38.226" Margin="463.05,274.913,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="9.84" Style="{DynamicResource downarrow}" RenderTransformOrigin="3.45,0.454">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="89.939"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+        <Path Data="M7.332871,0.50000001 C7.6656469,53.998686 7.4995292,53.332605 7.4995292,53.332605 L0.50000001,48.166307 M7.4488105,0.50000001 C7.127759,53.998686 7.2880198,53.332603 7.2880198,53.332603 L14.041014,48.16631" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="50.363" Margin="547.163,275.97,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="14.541" Style="{DynamicResource downarrow}" RenderTransformOrigin="3.45,0.454"/>
+        <Path Data="M7.332871,0.50000001 C7.6656469,53.998686 7.4995292,53.332605 7.4995292,53.332605 L0.50000001,48.166307 M7.4488105,0.50000001 C7.127759,53.998686 7.2880198,53.332603 7.2880198,53.332603 L14.041014,48.16631" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="67.422" Margin="722.903,36.295,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="15.558" Style="{DynamicResource downarrow}" RenderTransformOrigin="3.45,0.454">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90.467"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+        <Path Data="M7.332871,0.50000001 C7.6656469,53.998686 7.4995292,53.332605 7.4995292,53.332605 L0.50000001,48.166307 M7.4488105,0.50000001 C7.127759,53.998686 7.2880198,53.332603 7.2880198,53.332603 L14.041014,48.16631" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="46.359" Margin="571.609,125.837,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="14.541" Style="{DynamicResource downarrow}" RenderTransformOrigin="3.45,0.454">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="270.171"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+        <Path Data="M7.332871,0.50000001 C7.6656469,53.998686 7.4995292,53.332605 7.4995292,53.332605 L0.50000001,48.166307 M7.4488105,0.50000001 C7.127759,53.998686 7.2880198,53.332603 7.2880198,53.332603 L14.041014,48.16631" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="49.38" Margin="671.05,201.666,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="14.541" Style="{DynamicResource downarrow}" RenderTransformOrigin="3.45,0.454"/>
+        <Path Data="M7.332871,0.50000001 C7.6656469,53.998686 7.4995292,53.332605 7.4995292,53.332605 L0.50000001,48.166307 M7.4488105,0.50000001 C7.127759,53.998686 7.2880198,53.332603 7.2880198,53.332603 L14.041014,48.16631" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="38.315" Margin="690.076,131.165,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="14.541" Style="{DynamicResource downarrow}" RenderTransformOrigin="3.45,0.454">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-91.386"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+        <Border HorizontalAlignment="Left" Height="25.5" Margin="743.8,293.1,0,0" VerticalAlignment="Top" Width="26.667" >
+            <Border/>
+        </Border>
+        <Label Content="And" HorizontalAlignment="Left" Height="24.97" Margin="849.3,251,0,0" VerticalAlignment="Top" Width="32.167" FontWeight="Bold"/>
+        <Path Data="M642.8,134.93333 L642.29999,148.43367 822.96665,146.43395" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="15.443" Margin="690.967,122.2,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="181.667" RenderTransformOrigin="0.5,0.5">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.193"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+        <Path Data="M823.46667,146.93333 C826.42928,184.95352 823.63598,226.80625 824.13333,265.6" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="122.14" Margin="870.251,133.87,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="2.383"/>
+        <Path Data="M752.8,215.6" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="1" Margin="752.8,215.6,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="1"/>
+        <Path Data="M751.8,215.1 L752.29999,300.60001" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="96.944" Margin="788.8,196.656,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="2.75"/>
+        <Path Data="M788.8,304.1" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="1" Margin="788.8,304.1,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="1"/>
+        <Path Data="M771.3,305.1 C830.8,305.1 830.29999,304.60001 830.29999,304.60001 L830.80011,272.60001" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="24.113" Margin="813.294,275.97,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="59.34" RenderTransformOrigin="0.795,-0.138"/>
+        <Path Data="M849.3,267.6" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="1" Margin="849.3,267.6,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="1"/>
+        <Path Data="M7.332871,0.50000001 C7.6656469,53.998686 7.4995292,53.332605 7.4995292,53.332605 L0.50000001,48.166307 M7.4488105,0.50000001 C7.127759,53.998686 7.2880198,53.332603 7.2880198,53.332603 L14.041014,48.16631" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="42.723" Margin="853.396,205.407,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="14.541" Style="{DynamicResource downarrow}" RenderTransformOrigin="3.45,0.454">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-91.386"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+        <Border x:Name="andlabel" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="19.96" Margin="849.3,256.01,0,0" VerticalAlignment="Top" Width="35.667"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="22.905" Margin="448.406,102.335,0,0" VerticalAlignment="Top" Width="28.494"/>
+        <Path Data="M551.8,264.85 L583.04999,264.10001 582.79999,303.60001 745.04999,305.35001" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="42.25" Margin="589.55,257.833,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="194.25"/>
+        <Button x:Name="CSAE3" Content=" CS Advanced Elective" HorizontalAlignment="Left" Margin="290,386,0,0" VerticalAlignment="Top" Width="123">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsChecked, ElementName=CSAE3box}"
+                             Value="True">
+                            <Setter Property="IsEnabled" Value="False"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Button x:Name="CSAE6" Content="CS Advanced Elective" HorizontalAlignment="Left" Margin="735,390,0,0" VerticalAlignment="Top" Width="140" Height="20">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsChecked, ElementName=CSAE6box}"
+                             Value="True">
+                            <Setter Property="IsEnabled" Value="False"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Button x:Name="CSAE1" Content=" CS Advanced Elective" HorizontalAlignment="Left" Margin="970.814,138.88,0,0" VerticalAlignment="Top" Width="123">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsChecked, ElementName=CSAE1box}"
+                             Value="True">
+                            <Setter Property="IsEnabled" Value="False"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Button x:Name="CSAE7" Content=" CS Advanced Elective" HorizontalAlignment="Left" Margin="900,388,0,0" VerticalAlignment="Top" Width="123" RenderTransformOrigin="0.352,0.576">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsChecked, ElementName=CSAE7box}"
+                             Value="True">
+                            <Setter Property="IsEnabled" Value="False"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Button x:Name="CSAE4" Content=" CS Advanced Elective" HorizontalAlignment="Left" Margin="441,387,0,0" VerticalAlignment="Top" Width="123" RenderTransformOrigin="0.656,0.211">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsChecked, ElementName=CSAE4box}"
+                             Value="True">
+                            <Setter Property="IsEnabled" Value="False"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Button x:Name="CSAE2" Content=" CS Advanced Elective" HorizontalAlignment="Left" Margin="972,193,0,0" VerticalAlignment="Top" Width="123" RenderTransformOrigin="1.849,5.08">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsChecked, ElementName=CSAE2box}"
+                             Value="True">
+                            <Setter Property="IsEnabled" Value="False"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Button x:Name="CSAE5" Content=" CS Advanced Elective" HorizontalAlignment="Left" Margin="592.3,386,0,0" VerticalAlignment="Top" Width="123">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsChecked, ElementName=CSAE5box}"
+                             Value="True">
+                            <Setter Property="IsEnabled" Value="False"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Path Data="M7.332871,0.50000001 C7.6656469,53.998686 7.4995292,53.332605 7.4995292,53.332605 L0.50000001,48.166307 M7.4488105,0.50000001 C7.127759,53.998686 7.2880198,53.332603 7.2880198,53.332603 L14.041014,48.16631" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="45.414" Margin="340.467,154.781,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="13.455" Style="{DynamicResource downarrow}" RenderTransformOrigin="3.45,0.454">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.977"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+        <Button x:Name="MATH1443" Content="MATH 1443" HorizontalAlignment="Left" Margin="310.5,201.65,0,0" VerticalAlignment="Top" Width="75" Click="MATH1443_Click">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsChecked, ElementName=CMPS3233box}"
+                             Value="True">
+                            <Setter Property="IsEnabled" Value="False"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Popup  x:Name="MATH1443Popup" StaysOpen = "false" Placement="Top" PlacementTarget = "{Binding ElementName=MATH1443}"
+            PopupAnimation = "Slide">
+            <Grid>
+
+                <StackPanel  >
+                    <Label x:Name="MATH1443Label1" Content="MATH 1443:Plane Trigonometry" Foreground="#FFF9F9F9" Background="#FF075DB2" />
+                </StackPanel>
+                <TextBlock  x:Name ="MATH1443Textbox1" TextWrapping = "Wrap" Foreground = "White"
+                    FontFamily="Verdana"
+                    LineStackingStrategy="MaxHeight" 
+                    LineHeight="10"
+                    Width="200" Margin="10,32,10,10"><Run Text="Trigonometric functions, identities and equations, complex numbers. Each student must have a graphing calculator."/><LineBreak/><Run Text="3 Credit hours"/></TextBlock>
+            </Grid>
+        </Popup>
+        <Button x:Name="STAT3573" Content="STAT 3573 " HorizontalAlignment="Left" Margin="419.5,178.05,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.951,-0.703" Click="STAT3573_Click">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsChecked, ElementName=stat3573box}"
+                             Value="True">
+                            <Setter Property="IsEnabled" Value="False"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Popup  x:Name="STAT3573Popup" StaysOpen = "false" Placement="Top" PlacementTarget = "{Binding ElementName=STAT3573}"
+            PopupAnimation = "Slide">
+            <Grid>
+
+                <StackPanel  >
+                    <Label x:Name="STAT3573Label1" Content="STAT 3573 :Probability and Statistics" Foreground="#FFF9F9F9" Background="#FF075DB2" />
+                </StackPanel>
+                <TextBlock  x:Name ="STAT3573Textbox1" TextWrapping = "Wrap" Foreground = "White"
+                    FontFamily="Verdana"
+                    LineStackingStrategy="MaxHeight" 
+                    LineHeight="10"
+                    Width="200" Margin="10,32,10,10"><Run Text="Descriptive analysis, probability, variability, confidence intervals, hypotheses testing, analysis of variance, correlation and regression, and nonparametric statistics. "/><LineBreak/><Run Text="3 Credit hours"/></TextBlock>
+            </Grid>
+        </Popup>
+        <Menu HorizontalAlignment="Left" Height="43.174" Margin="61.555,558.711,0,0" VerticalAlignment="Top" Width="156.826">
+
+            <MenuItem x:Name="Communication" Header="Communication" FontWeight="Bold" FontSize="16" Height="40" Width="502" >
+                <MenuItem.ToolTip>
+                    <ToolTip>6 Credit hours</ToolTip>
+                </MenuItem.ToolTip>
+                <MenuItem Header="ENGL 1143*"/>
+                <Separator />
+                <Label Content="Choose 3 Hours from"/>
+                <Separator />
+                <MenuItem Header="ENGL 1153" />
+                <MenuItem Header="ENGL 2123" />
+                <MenuItem Header="ENGL 2203" />
+                <MenuItem Header="MCOM 1243" />
+                <MenuItem Header="MCOM 2403" />
+                <MenuItem Header="SPCH 1133" />
+                <MenuItem Header="SPCH 2423" />
+            </MenuItem>
+        </Menu>
+
+        <Menu HorizontalAlignment="Left" Height="43" Margin="266,559,0,0" VerticalAlignment="Top" Width="228">
+
+            <MenuItem x:Name="LPS" Header="Life and Physical Science" FontWeight="Bold" FontSize="16" Height="40" Width="438" >
+
+                <MenuItem.ToolTip>
+                    <ToolTip>6 Credit hours</ToolTip>
+                </MenuItem.ToolTip>
+                <ScrollViewer VerticalScrollBarVisibility="Visible" Height="100">
+                    <StackPanel x:Name="LPSy">
+                        <MenuItem Header="BIOL 1013 - Introduction to Human Biology " >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock>
+                                       3 Credit hours
+                                        <LineBreak />
+                                        No Prequisite
+                                    </TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="BIOL 1023 - Introduction to Global Biology" >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock>
+                                       3 Credit hours
+                                        <LineBreak />
+                                        No Prequisite
+                                    </TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="BIOL 1103 - Introduction to Biology" >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock>
+                                       3 Credit hours
+                                        <LineBreak />
+                                        No Prequisite
+                                    </TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="BIOL 1114 - Life I: Molecular and Cellular Concepts" >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock>
+                                       4 Credit hours
+                                        <LineBreak />
+                                        Prequisite:cuncurrent or prior enrollment
+                                        <LineBreak/>
+                                        in CHEM 1143 and MATH 1233
+                                    </TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="BIOL 1133 - Anatomy and Physiology I for Health Sciences " >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock>
+                                       3 Credit hours
+                                        <LineBreak />
+                                        No Prequisite
+                                    </TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="BIOL 1134 - Anatomy and Physiology I" >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock>
+                                       4 Credit hours
+                                        <LineBreak />
+                                        No Prequisite
+                                    </TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="BIOL 1144 - General Zoology " >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock>
+                                       4 Credit hours
+                                        <LineBreak />
+                                        No Prequisite
+                                    </TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="BIOL 1214 - Life II: Evolution and Ecology" >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock>
+                                       4 Credit hours
+                                        <LineBreak />
+                                        Prequisite:BIO 1114
+                                    </TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="BIOL 1233 - Anatomy and Physiology II for Health Sciences" >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock>
+                                       4 Credit hours
+                                        <LineBreak />
+                                        Prequisite:BIO 1133
+                                    </TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="BIOL 1234 - Anatomy and Physiology II  " >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock>
+                                       4 Credit hours
+                                        <LineBreak />
+                                        Prequisite:BIO 1134
+                                    </TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="BIOL 1544 - General Botany " >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock>
+                                       4 Credit hours
+                                        <LineBreak />
+                                        No Prequisite
+                                    </TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="CHEM 1103 - Introductory Chemistry (Essentials of Chemistry) " >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock>
+                                       3 Credit hours
+                                        <LineBreak />
+                                        Prequisite:MATH 1003 
+                                        <LineBreak/>
+                                        OR MATH TSI Assment of 350
+                                        <LineBreak/>
+                                        or equivalent
+                                    </TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="CHEM 1143 - General Chemistry" >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock>
+                                       3 Credit hours
+                                        <LineBreak />
+                                        Prequisite:cuncurrent or prior enrollment
+                                        <LineBreak/>
+                                         MATH 1233 or 1534
+                                    </TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="CHEM 1243 - General Chemistry" >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock>
+                                       3 Credit hours
+                                        <LineBreak />
+                                        Prequisite:CHEM 1143 
+                                        <LineBreak/>
+                                         And MATH 1233 or 1534
+                                    </TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="CHEM 1303 - General-Organic-Biological Chemistry" >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock>
+                                       3 Credit hours
+                                        <LineBreak />
+                                        Prequisite:MATH 1003
+                                        <LineBreak/>
+                                        or Placement test Score
+                                    </TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="ENSC 1114 - Foundations of Environmental Science" >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock>
+                                       3 Credit hours
+                                        <LineBreak />
+                                        No Prequisite
+                                    </TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="GEOS 1134 - Physical Geology " >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock>
+                                       4 Credit hours
+                                        <LineBreak />
+                                        No Prequisite
+                                    </TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="GEOS 1234 - Historical Geology" >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock>
+                                       4 Credit hours
+                                        <LineBreak />
+                                        No Prequisite
+                                    </TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="GNSC 1104 - Life/Earth Science" >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock>
+                                       4 Credit hours
+                                        <LineBreak />
+                                        No Prequisite
+                                    </TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="GNSC 1204 - Physical Science" >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock>
+                                       4 Credit hours
+                                        <LineBreak />
+                                        No Prequisite
+                                    </TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="PHYS 1144 - General Physics" >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock>
+                                       4 Credit hours
+                                        <LineBreak />
+                                        Prequisite:MATH 1433
+                                        <LineBreak/>
+                                        or MATH 1534
+                                    </TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="PHYS 1244 - General Physics " >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock>
+                                       4 Credit hours
+                                        <LineBreak />
+                                        Prequisite:PHYS 1144
+                                    </TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="PHYS 1533 - Descriptive Astronomy " >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock>
+                                       4 Credit hours
+                                        <LineBreak />
+                                        Prequisite:MATH 1003 or
+                                        <LineBreak/>
+                                       equivalent
+                                    </TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="PHYS 1624 - Mechanics, Wave Motion, and Heat" >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock>
+                                       4 Credit hours
+                                        <LineBreak />
+                                        Prerequisite(s): MATH 1634
+                                        <LineBreak/>
+                                        or concurrent enrollment therein.
+                                    </TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="PHYS 2644 - Electricity and Magnetism and Optics" >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock>
+                                       4 Credit hours
+                                        <LineBreak />
+                                       Prerequisite(s): PHYS 1624, and credit 
+
+                                        <LineBreak/>
+                                        or concurrent enrollment in MATH 1734
+                                    </TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                    </StackPanel>
+                </ScrollViewer>
+
+
+            </MenuItem>
+
+        </Menu>
+        <Menu HorizontalAlignment="Left" Height="43.174" Margin="501.459,558.711,0,0" VerticalAlignment="Top" Width="269.008">
+            <MenuItem x:Name="LPC" Header="Language,Philosophy and Culture" FontWeight="Bold" FontSize="16" Height="43" Width="570"   >
+                <MenuItem.ToolTip>
+                    <ToolTip Content="3Credit hours"/>
+                </MenuItem.ToolTip>
+                <ScrollViewer VerticalScrollBarVisibility="Visible" Height="100">
+                    <StackPanel x:Name="LPCy">
+                        <MenuItem Header="ENGL 2413 - World Literature " >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="3 Credit hours"/><LineBreak /><Run Text="No Prequisite"/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="ENGL 2423 - World Literature" >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="3 Credit hours"/><LineBreak /><Run Text="No Prequisite"/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="ENGL 2613 - Survey of American Literature" >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="3 Credit hours"/><LineBreak /><Run Text="No Prequisite"/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="ENGL 2623 - Survey of American Literature"  >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="3 Credit hours"/><LineBreak /><Run Text="NO Prequisite"/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="ENGL 2813 - Survey of English Literature" >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="3 Credit hours"/><LineBreak /><Run Text="No Prequisite"/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="ENGL 2823 - Survey of English Literature " >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="3 Credit hours"/><LineBreak /><Run Text="No Prequisite"/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="FREN 1134 - Elementary French" >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="3 Credit hours"/><LineBreak /><Run Text="No Prequisite"/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="GERM 1134 - Elementary German" >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="3 Credit hours"/><LineBreak /><Run Text="NO Prequisite"/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="HIST 1333 - Survey of Western Civilization" >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="3 Credit hours"/><LineBreak /><Run Text="NO Prequisite"/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="HIST 1353 - World Civilizations to 1500 " >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="3 Credit hours"/><LineBreak /><Run Text="NO Prequisite"/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="HIST 1433 - Survey of Western Civilization  " >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="3 Credit hours"/><LineBreak /><Run Text="No Prequisite"/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="HIST 1453 - World Civilizations since 1500 " >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="3 Credit hours"/><LineBreak /><Run Text="NO Prequisite"/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="HUMN 2013 - Humanities: The Ancient World" >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="3 Credit hours"/><LineBreak /><Run Text="NO Prequisite"/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="HUMN 2023 - Humanities: Medieval Cultures " >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="3 Credit hours"/><LineBreak /><Run Text="NO Prequisite"/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="HUMN 2043 - Humanities: Mid-Nineteenth through Twentieth Centuries" >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="3 Credit hours"/><LineBreak /><Run Text="NO Prequisite:MATH 1003"/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="PHIL 1033 - Introduction to Philosophy " >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="3 Credit hours"/><LineBreak /><Run Text="No Prequisite"/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="PHIL 1533 - Critical Thinking and Reasoning Skills " >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="3 Credit hours"/><LineBreak /><Run Text="No Prequisite"/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="PHIL 2033 - Ethics" >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="3 Credit hours"/><LineBreak /><Run Text="No Prequisite"/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="PHIL 2133 - Political Philosophy" >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="3 Credit hours"/><LineBreak /><Run Text="No Prequisite"/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="PHIL 2213 - Asian Philosophy and Religion" >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="3 Credit hours"/><LineBreak /><Run Text="No Prequisite"/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="PHIL 2223 - Feminist Philosophy" >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="3 Credit hours"/><LineBreak /><Run Text="NO Prequisite"/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="PHIL 2333 - Philosophy of Religion  " >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="3 Credit hours"/><LineBreak /><Run Text="NO Prequisite"/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="SPAN 1134 - Elementary Spanish I " >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="3 Credit hours"/><LineBreak /><Run Text="NO Prequisite"/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+
+                    </StackPanel>
+                </ScrollViewer>
+
+            </MenuItem>
+
+        </Menu>
+        <Menu  HorizontalAlignment="Left" Height="43" Margin="62,482,0,0" VerticalAlignment="Top" Width="197">
+
+            <MenuItem x:Name="CreativeArts" Header="Creative Arts" FontWeight="Bold" FontSize="16" Height="40" Width="399" >
+                <MenuItem.ToolTip>
+                    <ToolTip>3Credit hours</ToolTip>
+                </MenuItem.ToolTip>
+                <ScrollViewer VerticalScrollBarVisibility="Visible" Height="100">
+                    <StackPanel x:Name="CreativeArtsy">
+                        <MenuItem Header="ART 1413 - Art Appreciation" >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="3 Credit hours"/><LineBreak /><Run Text="No Prequisite"/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="MCOM 2213 - Appreciation of Film " >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="3 Credit hours"/><LineBreak /><Run Text="No Prequisite"/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="MUSC 1033 - The Appreciation of Music " >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="3 Credit hours"/><LineBreak /><Run Text="No Prequisite"/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="MUSC 1043 - American Popular Music " >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="3 Credit hours"/><LineBreak /><Run Text="No Prequisite"/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="MUSC 2733 - Introduction to Western and World Music " >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="3 Credit hours"/><LineBreak /><Run Text="Prerequisite(s): MUSC 2621 "/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="THEA 1113 - Women and Theatre " >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="3 Credit hours"/><LineBreak /><Run Text="No Prequisite"/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="THEA 1503 - Appreciation of Theatre" >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="3 Credit hours"/><LineBreak /><Run Text="No Prequisite"/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="THEA 2423 - Dramatic Analysis " >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="3 Credit hours"/><LineBreak /><Run Text="No Prequisite"/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+
+                    </StackPanel>
+
+                </ScrollViewer>
+
+
+            </MenuItem>
+
+        </Menu>
+        <Menu HorizontalAlignment="Left" Height="43.174" Margin="290,482.062,0,0" VerticalAlignment="Top" Width="156.826">
+            <MenuItem x:Name="AHistory" Header="American History" FontWeight="Bold" FontSize="16" Height="40" Width="293" >
+                <MenuItem.ToolTip>
+                    <ToolTip Content="6 Credit hours"/>
+                </MenuItem.ToolTip>
+                <ScrollViewer VerticalScrollBarVisibility="Visible" Height="100">
+                    <StackPanel x:Name="AHistoryy">
+                        <MenuItem Header="HIST 1133 - Survey of American History to 1865 " >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="3 Credit hours"/><LineBreak /><Run Text="No Prequisite"/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="HIST 1233 - Survey of American History since 1865 " >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="3 Credit hours"/><LineBreak /><Run Text="No Prequisite"/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                    </StackPanel>
+                </ScrollViewer>
+            </MenuItem>
+        </Menu>
+        <Menu HorizontalAlignment="Left" Height="43.174" Margin="489.8,482.062,0,0" VerticalAlignment="Top" Width="280.667">
+            <MenuItem  x:Name="GPS" Header="Government and Political Science" FontWeight="Bold" FontSize="16" Height="40" Width="566"  >
+                <MenuItem.ToolTip>
+                    <ToolTip Content="6 Credit hours"/>
+                </MenuItem.ToolTip>
+                <ScrollViewer VerticalScrollBarVisibility="Visible" Height="100">
+                    <StackPanel x:Name="GPSy">
+                        <MenuItem Header="POLS 1333 - American Government " >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="3 Credit hours"/><LineBreak /><Run Text="No Prequisite"/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="POLS 1433 - American Government " >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="3 Credit hours"/><LineBreak /><Run Text="No Prequisite"/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                    </StackPanel>
+                </ScrollViewer>
+            </MenuItem>
+        </Menu>
+        <Menu HorizontalAlignment="Left" Height="43" Margin="815,482,0,0" VerticalAlignment="Top" Width="256">
+            <MenuItem  x:Name="SBS" Header="Social and Behavioral Sciences" FontWeight="Bold" FontSize="16" Height="40" Width="1197" FontFamily="Roboto"   >
+                <MenuItem.ToolTip>
+                    <ToolTip Content="3 Credit hours"/>
+                </MenuItem.ToolTip>
+                <ScrollViewer VerticalScrollBarVisibility="Visible" Height="100">
+                    <StackPanel x:Name="SBSy">
+                        <MenuItem Header="COUN 2023 - Human Development" >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="3 Credit hours"/><LineBreak /><Run Text="No Prequisite"/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="ECON 1333 - General Economics" >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="3 Credit hours"/><LineBreak /><Run Text="No Prequisite"/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="ECON 2333 - Macroeconomic Principles" >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="3 Credit hours"/><LineBreak /><Run Text="No Prequisite"/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="PSYC 1103 - General Psychology " >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="3 Credit hours"/><LineBreak /><Run Text="No Prequisite"/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="SOCL 1133 - Introductory Sociology" >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="3 Credit hours"/><LineBreak /><Run Text="No Prequisite"/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                    </StackPanel>
+                </ScrollViewer>
+            </MenuItem>
+        </Menu>
+        <Menu HorizontalAlignment="Left" Height="43" Margin="67,662,0,0" VerticalAlignment="Top" Width="283">
+            <MenuItem x:Name="CGU"  Header="Cultural and Global Understanding " FontWeight="Bold" FontSize="16" Height="43" Width="603" >
+
+                <MenuItem.ToolTip>
+                    <ToolTip Content="3Credit hours"/>
+                </MenuItem.ToolTip>
+                <ScrollViewer VerticalScrollBarVisibility="Visible" Height="100">
+                    <StackPanel x:Name="CGUy">
+                        <MenuItem Header="CMPS 1023 - The Digital Culture" >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="3 Credit hours"/><LineBreak /><Run Text="No Prequisite"/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="EDUC 2013 - School and Society " >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="3 Credit hours"/><LineBreak /><Run Text="No Prequisite"/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="FREN 1234 - Elementary French " >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="4 Credit hours"/><LineBreak /><Run Text="Prerequisite(s): FREN 1134."/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="GERM 1234 - Elementary German"  >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="4 Credit hours"/><LineBreak /><Run Text="Prerequisite(s): GERM 1134."/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="GLBS 2503 - Introduction to Global Studies" >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="3 Credit hours"/><LineBreak /><Run Text="No Prequisite"/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="HIST 1353 - World Civilizations to 1500 " >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="3 Credit hours"/><LineBreak /><Run Text="(WPF) No Prequisite"/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="HIST 1453 - World Civilizations since 1500 " >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="3 Credit hours"/><LineBreak /><Run Text="No Prequisite"/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="HSHS 1013 - Global Health and Wellness" >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="3 Credit hours"/><LineBreak /><Run Text="No Prequisite"/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="HUMN 2013 - Humanities: The Ancient World" >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="3 Credit hours"/><LineBreak /><Run Text="(WPF) No Prequisite"/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="HUMN 2023 - Humanities: Medieval Cultures " >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="3 Credit hours"/><LineBreak /><Run Text="(WPF) No Prequisite"/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="HUMN 2033 - Humanities: Renaissance through Realism" >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="3 Credit hours"/><LineBreak /><Run Text="(WPF) No Prequisite"/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="HUMN 2043 - Humanities: Mid-Nineteenth through Twentieth Centuries " >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="3 Credit hours"/><LineBreak /><Run Text="(WPF) No Prequisite"/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="MCOM 1233 - Mass Media and Society" >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="3 Credit hours"/><LineBreak /><Run Text="(WPF) No Prequisite"/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="MCOM 2523 - The Internet and Society" >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="3 Credit hours"/><LineBreak /><Run Text="(WPF) No Prequisite"/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="MUSC 2733 - Introduction to Western and World Music" >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="3 Credit hours"/><LineBreak /><Run Text="Prerequisite(s): MUSC 2621 (WPF)"/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="POLS 2523 - Foundations of Government and Politics " >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="3 Credit hours"/><LineBreak /><Run Text="No Prequisite"/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="SOCL 2233 - Global Social Problems" >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="3 Credit hours"/><LineBreak /><Run Text="No Prequisite"/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="SPAN 1234 - Elementary Spanish II" >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="3 Credit hours"/><LineBreak /><Run Text="Prerequisite(s): SPAN 1134."/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="WGST 2503 - Introduction to Women's and Gender Studies " >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="3Credit hours"/><LineBreak /><Run Text="No Prequisite"/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+
+                    </StackPanel>
+                </ScrollViewer>
+
+
+            </MenuItem>
+
+        </Menu>
+        <Menu  HorizontalAlignment="Left" Height="43" Margin="788.8,560.211,0,0" VerticalAlignment="Top" Width="323.258">
+            <MenuItem x:Name="UIC" Header="Undergraduate Inquiry and Creativity " FontWeight="Bold" FontSize="16" Height="40" Width="674"  >
+
+                <MenuItem.ToolTip>
+                    <ToolTip Content="3 Credit hours"/>
+                </MenuItem.ToolTip>
+                <ScrollViewer VerticalScrollBarVisibility="Visible" Height="100">
+                    <StackPanel x:Name="UICy">
+                        <MenuItem Header="BUAD 1033 - Foundations of Business " >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="3 Credit hours"/><LineBreak /><Run Text="No Prequisite"/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="CMPS 1044 - Computer Science I" >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="4 Credit hours"/><LineBreak /><Run Text="Prequisite:MATH 1233 or MATH 1534 "/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="COUN 2143 - Human Diversity" >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="3 Credit hours"/><LineBreak /><Run Text="No Prequisite"/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="ENGL 2123 - Rhetoric of Visuals and Infographics" >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="3 Credit hours"/><LineBreak /><Run Text="No Prequisite (WPF)"/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="MWSU 2003 - Creative Inquiry: Interdisciplinary Thinking  " >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="3 Credit hours"/><LineBreak /><Run Text="No Prequisite "/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="THEA 1113 - Women and Theatre " >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="3 Credit hours"/><LineBreak /><Run Text="No Prequisite"/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="SOCL 1143 - Sociological Inquiry" >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="3 Credit hours"/><LineBreak /><Run Text="No Prequisite"/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="THEA 2103 - Playwrights and Scientists: Interesting Bedfellows " >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="3 Credit hours"/><LineBreak /><Run Text="No Prequisite"/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+
+                    </StackPanel>
+                </ScrollViewer>
+            </MenuItem>
+        </Menu>
+        <Label Content="Program Requirements" HorizontalAlignment="Left" Height="37.91" Margin="943.86,84.29,0,0" VerticalAlignment="Top" Width="168.198" FontWeight="Bold" FontSize="14"/>
+        <CheckBox x:Name="math1233box" Content="" HorizontalAlignment="Left" Margin="311,117,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <CheckBox x:Name="MATH1443box" Content="" HorizontalAlignment="Left" Margin="313,182,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <CheckBox x:Name="stat3573box" Content="" HorizontalAlignment="Left" Margin="420,165,0,0" VerticalAlignment="Top" RenderTransformOrigin="3.5,-1.2" Height="13" Visibility="Hidden"/>
+        <CheckBox x:Name="CMPS4991box" Content="" HorizontalAlignment="Left" Margin="1049,366,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <CheckBox x:Name="CMPS1044box" Content="" HorizontalAlignment="Left" Margin="532,83,0,0" VerticalAlignment="Top"  Visibility="Hidden"/>
+        <CheckBox x:Name="CMPS4143box" Content="" HorizontalAlignment="Left" Margin="397,230,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <CheckBox x:Name="CMPS1063box" Content="" HorizontalAlignment="Left" Margin="522,162,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <CheckBox x:Name="CMPS2143box" Content="" HorizontalAlignment="Left" Margin="521,232,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <CheckBox x:Name="CMPS4113box" Content="" HorizontalAlignment="Left" Margin="521,306,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <CheckBox x:Name="CMPS2084box" Content="" HorizontalAlignment="Left" Margin="672,80,0,0" VerticalAlignment="Top"  Visibility="Hidden"/>
+        <CheckBox x:Name="CMPS3023box" Content="" HorizontalAlignment="Left" Margin="820,80,0,0" VerticalAlignment="Top"  Visibility="Hidden"/>
+        <CheckBox x:Name="CMPS2433box" Content="" HorizontalAlignment="Left" Margin="651,162,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <CheckBox x:Name="CMPS3233box" Content="" HorizontalAlignment="Left" Margin="648,229,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <CheckBox x:Name="CSAE1box" Content="" HorizontalAlignment="Left" Margin="971,119,0,0" VerticalAlignment="Top"    Visibility="Hidden"/>
+        <CheckBox x:Name="CMPS4103box" Content="" HorizontalAlignment="Left" Margin="932,237,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <CheckBox x:Name="CSAE2box" Content="" HorizontalAlignment="Left" Margin="976,172,0,0" VerticalAlignment="Top"    Visibility="Hidden"/>
+        <CheckBox x:Name="CMPS3013box" Content="" HorizontalAlignment="Left" Margin="768,160,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <CheckBox x:Name="CSAE3box" Content="" HorizontalAlignment="Left" Margin="293,363,0,0" VerticalAlignment="Top"    Visibility="Hidden"/>
+        <CheckBox x:Name="CSAE4box" Content="" HorizontalAlignment="Left" Margin="447,370,0,0" VerticalAlignment="Top"    Visibility="Hidden"/>
+        <CheckBox x:Name="CSAE5box" Content="" HorizontalAlignment="Left" Margin="595,365,0,0" VerticalAlignment="Top"    Visibility="Hidden"/>
+        <CheckBox x:Name="CSAE6box" Content="" HorizontalAlignment="Left" Margin="752,375,0,0" VerticalAlignment="Top"    Visibility="Hidden"/>
+        <CheckBox x:Name="CSAE7box" Content="" HorizontalAlignment="Left" Margin="903,366,0,0" VerticalAlignment="Top"    Visibility="Hidden"/>
+        <Button x:Name="SaveEdit" Content="Save" Background="#FF075DB2" Foreground="#FFF7F6F6" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="1074,712,0,0" VerticalAlignment="Top" Width="64" Height="28" FontWeight="Bold" FontSize="14" Click="SaveEdit_Click" Visibility="Hidden" />
+        <CheckBox x:Name="MATH1534box" Content="" HorizontalAlignment="Left" Margin="312,65,0,0" VerticalAlignment="Top"  Visibility="Hidden"/>
+        <Path Data="M7.332871,0.50000001 C7.6656469,53.998686 7.4995292,53.332605 7.4995292,53.332605 L0.50000001,48.166307 M7.4488105,0.50000001 C7.127759,53.998686 7.2880198,53.332603 7.2880198,53.332603 L14.041014,48.16631" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="49.396" Margin="453.504,126.799,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="13.455" Style="{DynamicResource downarrow}" RenderTransformOrigin="3.45,0.454">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.977"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="22.905" Margin="784.8,290.6,0,0" VerticalAlignment="Top" Width="28.494"/>
+        <Label Content="OR" HorizontalAlignment="Left" Height="28" Margin="784.8,290.6,0,0" VerticalAlignment="Top" Width="30" FontWeight="Bold"/>
+        <Menu HorizontalAlignment="Left" Height="42.8" Margin="441,663.827,0,0" VerticalAlignment="Top" Width="207.893">
+            <MenuItem  x:Name="ADDR" Header="Additional Requirements" FontWeight="Bold" FontSize="16" Height="40" Width="226" FontFamily="Roboto">
+                <ScrollViewer VerticalScrollBarVisibility="Visible" Height="100">
+                    <StackPanel x:Name="MAthreq">
+                        <MenuItem Header="MATH 1534 - Precalculus" >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="4 Credit hours"/><LineBreak /><Run Text="No Prequisite"/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="MATH 1634 - Calculus I" >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="4 Credit hours"/><LineBreak /><Run Text="Prerequisite(s): MATH 1433 or MATH 1534 "/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="MATH 1734 - Calculus II" >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="4 Credit hours"/><LineBreak /><Run Text="MATH 1634 "/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="PHYS 1624 - Mechanics, Wave Motion, and Heat " >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="4 Credit hours"/><LineBreak /><Run Text="Prerequisite(s): MATH 1634"/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="PHYS 2644 - Electricity and Magnetism and Optics" >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="4 Credit hours"/><LineBreak /><Run Text=": PHYS 1624, and credit or concurrent enrollment in MATH 1734"/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                    </StackPanel>
+                </ScrollViewer>
+            </MenuItem>
+        </Menu>
+        <Menu HorizontalAlignment="Left" Height="43" Margin="725,662,0,0" VerticalAlignment="Top" Width="270.975">
+            <MenuItem  x:Name="MM" Header="Government and Political Science" FontWeight="Bold" FontSize="16" Height="40" Width="270.975"  >
+                <MenuItem.ToolTip>
+                    <ToolTip Content="3 Credit hours"/>
+                </MenuItem.ToolTip>
+                <ScrollViewer VerticalScrollBarVisibility="Visible" Height="100">
+                    <StackPanel x:Name="MMY">
+                        <MenuItem Header="MATH 2753 - Linear Algebra" >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="3 Credit hours"/><LineBreak /><Run Text="Prerequisite(s): MATH 1634."/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="MATH 3533 - Numerical Analysis" >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="3 Credit hours"/><LineBreak /><Run Text="Prerequisite(s): CMPS 1044 and MATH 1734."/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                        <MenuItem Header="MATH 4243 - Operations Research" >
+                            <MenuItem.ToolTip>
+                                <StackPanel>
+                                    <TextBlock><Run Text="3 Credit hours"/><LineBreak /><Run Text="Prerequisite(s): MATH 1734 and CMPS 1044."/></TextBlock>
+                                </StackPanel>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                    </StackPanel>
+                </ScrollViewer>
+            </MenuItem>
+        </Menu>
 
     </Grid>
 </Window>

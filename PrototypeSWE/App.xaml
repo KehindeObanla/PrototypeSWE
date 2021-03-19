@@ -4,6 +4,8 @@
              xmlns:local="clr-namespace:PrototypeSWE"
              StartupUri="BAWindow.xaml">
     <Application.Resources>
-         
+       
+
     </Application.Resources>
+   
 </Application>
