@@ -12,7 +12,7 @@
     </Window.Background>
     <Viewbox Height="650" Stretch="Fill" Width="1060">
         <Grid Height="650" Width="1060">
-            <Label Content="update Password" HorizontalAlignment="Left" Height="65" Margin="450,125,0,0" VerticalAlignment="Top" Width="305" Foreground="#FF2F80ED" FontWeight="Normal" FontSize="36" FontFamily="Segoe UI Semibold"/>
+            <Label Content="Update Password" HorizontalAlignment="Left" Height="65" Margin="450,125,0,0" VerticalAlignment="Top" Width="305" Foreground="#FF2F80ED" FontWeight="Normal" FontSize="36" FontFamily="Segoe UI Semibold"/>
             <Label Content="UserName *" HorizontalAlignment="Left" Margin="308,199,0,0" VerticalAlignment="Top" Height="35" Width="87" FontSize="14" Foreground="#FF2F80ED"/>
             <TextBox x:Name="UserName" HorizontalAlignment="Left" Height="34" Margin="431,189,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="309"  AutomationProperties.IsRequiredForForm="True" Foreground="#FF2F80ED" FontSize="14" BorderBrush="#FF2F80ED"  />
             <Label Content="Password *" HorizontalAlignment="Left" Margin="310,255,0,0" VerticalAlignment="Top" Height="29" Width="90" FontSize="14" Foreground="#FF2F80ED"/>

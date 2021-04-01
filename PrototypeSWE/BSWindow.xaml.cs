@@ -25,6 +25,10 @@ namespace PrototypeSWE
         List<Button> coloredButtons = new List<Button>();
         string username = Properties.Settings.Default.userset;
         public static List<string> otherbuttons = new List<string>() { "DownloadBtnBS", "EditBS", "Backbtn", "SaveEdit", "EditBA1", "BackBtnBA1", "DownloadBtnBA1", "SaveEdit" };
+        public static Dictionary<string, bool> savedsettings = new Dictionary<string, bool>();
+        public static List<string> menuitemnames = new List<string>() { "Communication", "LPSy", "CreativeArtsy", "AHistoryy", "GPSy",
+        "SBSy","CGUy","UICy","MRlist","ADDrlist"};
+        public static List<string> box = new List<string>();
         Security updatesettings;
         public BSWindow()
         {
@@ -160,7 +164,96 @@ namespace PrototypeSWE
 
 
         }
+        public static void savesetting(List<Button> buttonlist)
+        {
+            foreach (var item in buttonlist)
+            {
+                if (!otherbuttons.Contains(item.Name))
+                {
 
+                    if (savedsettings.ContainsKey(item.Name))
+                    {
+                        if (box.Contains(item.Name))
+                        {
+                            savedsettings[item.Name] = false;
+                        }
+                        else
+                        {
+                            savedsettings[item.Name] = true;
+                        }
+                    }
+                    else
+                    {
+                        if (box.Contains(item.Name))
+                        {
+                            savedsettings.Add(item.Name, false);
+                        }
+                        else
+                        {
+                            savedsettings.Add(item.Name, true);
+                        }
+                    }
+
+
+                }
+            }
+        }
+        public static void savemenuitem(List<Menu> menus)
+        {
+            foreach (var item in menus)
+            {
+                var itemlist = item.Items.OfType<MenuItem>().ToList();
+                if (savedsettings.ContainsKey(itemlist[0].Name))
+                {
+                    if (!itemlist[0].IsEnabled)
+                    {
+                        savedsettings[itemlist[0].Name]= false;
+                    }
+                    else
+                    {
+                        savedsettings[itemlist[0].Name] = true;
+                    }
+                }
+                else
+                {
+                    if (!itemlist[0].IsEnabled)
+                    {
+                        savedsettings.Add(itemlist[0].Name, false);
+                    }
+                    else
+                    {
+                        savedsettings.Add(itemlist[0].Name, true);
+                    }
+                }
+                
+               
+            }
+        }
+        public string get_BsButtons_menu()
+        {
+           
+            var buttonlist = getbtn.Children.OfType<Button>().ToList();
+            var menus = getbtn.Children.OfType<Menu>().ToList();
+            savesetting(buttonlist);
+            savemenuitem(menus);
+            string jsonsavedbs = JsonConvert.SerializeObject(savedsettings, Formatting.Indented);
+            return jsonsavedbs;
+
+
+        }
+        public void checkedboxes()
+        {
+            var checkboxes = getbtn.Children.OfType<CheckBox>().ToList();
+            foreach (var item in checkboxes)
+            {
+                if (item.IsChecked == true)
+                {
+                    int length = item.Name.Length;
+                    string name = item.Name.Remove(length - 3, 3);
+                    box.Add(name);
+                }
+            }
+        }
         private void MATH1534_Click(object sender, RoutedEventArgs e)
         {
             checkbuttons();
@@ -365,6 +458,17 @@ namespace PrototypeSWE
             updatesettings.updatesavedsettingBs(settings, user);
             
         }
+        public void disablechecked()
+        {
+            var buttonlist = getbtn.Children.OfType<Button>().ToList();
+            foreach (var item in buttonlist)
+            {
+                if (box.Contains(item.Name))
+                {
+                    item.IsEnabled = false;
+                }
+            }
+        }
         private void SaveEdit_Click(object sender, RoutedEventArgs e)
         {
 
@@ -419,7 +523,9 @@ namespace PrototypeSWE
             checkitem(mathreqlist, ADDR);
             var MMlist = MM.Items.OfType<MenuItem>().ToList();
             checkitem(MMlist, MM);
-            string stoerebs = buttonSettings.get_BsButtons_menu();
+            checkedboxes();
+            disablechecked();
+            string stoerebs = get_BsButtons_menu();
             string name = Properties.Settings.Default.userset;
             calldb(stoerebs, name);
 
@@ -453,10 +559,26 @@ namespace PrototypeSWE
                 var usersettings = Securelogin.getusersettingsBaandbs(username);
                 var bs= usersettings.Item2;
                bsSettings = JsonConvert.DeserializeObject<Dictionary<string, bool>>(bs);
+            if(bsSettings!= null)
+            {
+                mergedic(bsSettings);
+            }
+               
             return bsSettings;
 
         }
-        
+        public void mergedic(Dictionary<string, bool> dic)
+        {
+            foreach (var item in dic)
+            {
+                if (!savedsettings.ContainsKey(item.Key))
+                {
+                    savedsettings.Add(item.Key, item.Value);
+                }
+
+               
+            }
+        }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {

@@ -29,6 +29,7 @@ namespace PrototypeSWE
         public static List<string> otherbuttons = new List<string>() { "DownloadBtnBS", "EditBS", "Backbtn", "SaveEdit", "EditBA1", "BackBtnBA1", "DownloadBtnBA1", "SaveEdit" };
         public static List<string> menuitemnames = new List<string>() { "Communication", "LPSy", "CreativeArtsy", "AHistoryy", "GPSy",
         "SBSy","CGUy","UICy","MRlist","ADDrlist"};
+        public static List<string> box = new List<string>();
         public static Dictionary<string, bool> savedsettingsBA = new Dictionary<string, bool>();
         public BAWindow()
         {
@@ -167,15 +168,29 @@ namespace PrototypeSWE
             {
                 if (!otherbuttons.Contains(item.Name))
                 {
-                    
-                    if (!item.IsEnabled)
+                    if (savedsettingsBA.ContainsKey(item.Name))
                     {
-                        savedsettingsBA.Add(item.Name, false);
+                        if (box.Contains(item.Name))
+                        {
+                            savedsettingsBA[item.Name] = false;
+                        }
+                        else
+                        {
+                            savedsettingsBA[item.Name] = true;
+                        }
                     }
                     else
                     {
-                        savedsettingsBA.Add(item.Name, true);
+                        if (box.Contains(item.Name))
+                        {
+                            savedsettingsBA.Add(item.Name, false);
+                        }
+                        else
+                        {
+                            savedsettingsBA.Add(item.Name, true);
+                        }
                     }
+                   
                     
 
                 }
@@ -186,16 +201,29 @@ namespace PrototypeSWE
             foreach (var item in menus)
             {
                 var itemlist = item.Items.OfType<MenuItem>().ToList();
-                
-                if (!itemlist[0].IsEnabled)
+                if (savedsettingsBA.ContainsKey(itemlist[0].Name))
                 {
-                    savedsettingsBA.Add(itemlist[0].Name, false);
+                    if (!itemlist[0].IsEnabled)
+                    {
+                        savedsettingsBA[itemlist[0].Name] = false;
+                    }
+                    else
+                    {
+                        savedsettingsBA[itemlist[0].Name] = true;
+                    }
                 }
                 else
                 {
-                    savedsettingsBA.Add(itemlist[0].Name, true);
+                    if (!itemlist[0].IsEnabled)
+                    {
+                        savedsettingsBA.Add(itemlist[0].Name, false);
+                    }
+                    else
+                    {
+                        savedsettingsBA.Add(itemlist[0].Name, true);
+                    }
                 }
-                
+
             }
         }
         public string get_BaButtons()
@@ -206,6 +234,30 @@ namespace PrototypeSWE
             savemenuitem(menu);
             string jsonsavedba = JsonConvert.SerializeObject(savedsettingsBA, Formatting.Indented);
             return jsonsavedba;
+        }
+        public void checkedboxes()
+        {
+            var checkboxes = MainGrid_Copy.Children.OfType<CheckBox>().ToList();
+            foreach (var item in checkboxes)
+            {
+                if (item.IsChecked == true)
+                {
+                    int length = item.Name.Length;
+                    string name = item.Name.Remove(length - 3, 3);
+                    box.Add(name);
+                }
+            }
+        }
+        public void disablechecked()
+        {
+            var buttonlist = MainGrid_Copy.Children.OfType<Button>().ToList();
+            foreach (var item in buttonlist)
+            {
+                if (box.Contains(item.Name))
+                {
+                    item.IsEnabled = false;
+                }
+            }
         }
         private void SaveEdit_Click(object sender, RoutedEventArgs e)
         {
@@ -257,6 +309,8 @@ namespace PrototypeSWE
             var UIClist = UICy.Children.OfType<MenuItem>().ToList();
             checkitem(UIClist, UIC);
             makecheckable(UIClist,false);
+            checkedboxes();
+            disablechecked();
             string stoerebs = get_BaButtons();
             string name = Properties.Settings.Default.userset;
             calldb(stoerebs, name);
@@ -494,10 +548,25 @@ namespace PrototypeSWE
             var usersettings = Securelogin.getusersettingsBaandbs(username);
             var ba = usersettings.Item1;
             baSettings = JsonConvert.DeserializeObject<Dictionary<string, bool>>(ba);
+            if (baSettings != null)
+            {
+                mergedic(baSettings);
+            }
+           
             return baSettings;
 
         }
-
+        public void  mergedic(Dictionary<string, bool> dic)
+        {
+            foreach (var item in dic)
+            {
+                if (!savedsettingsBA.ContainsKey(item.Key))
+                {
+                    savedsettingsBA.Add(item.Key, item.Value);
+                }
+                
+            }
+        }
         private void MainGrid_Copy_Loaded(object sender, RoutedEventArgs e)
         {
          var setting =  getsettings(username);

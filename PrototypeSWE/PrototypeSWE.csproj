@@ -101,12 +101,10 @@
     <Compile Include="BSWindow.xaml.cs">
       <DependentUpon>BSWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="buttonSettings.cs" />
     <Compile Include="Secure.cs" />
     <Compile Include="UpdatePass.xaml.cs">
       <DependentUpon>UpdatePass.xaml</DependentUpon>
     </Compile>
-    <Compile Include="User.cs" />
     <Page Include="BAWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
