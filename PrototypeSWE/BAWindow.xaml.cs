@@ -26,7 +26,7 @@ namespace PrototypeSWE
         List<Button> coloredButtons = new List<Button>();
         Security updatesettings;
         string username = Properties.Settings.Default.userset;
-        public static List<string> otherbuttons = new List<string>() { "DownloadBtnBS", "EditBS", "Backbtn", "SaveEdit", "EditBA1", "BackBtnBA1", "DownloadBtnBA1", "SaveEdit" };
+        public static List<string> otherbuttons = new List<string>() { "EditBA1", "BackBtnBA1", "DownloadBtnBA1", "SaveEdit" };
         public static List<string> menuitemnames = new List<string>() { "Communication", "LPSy", "CreativeArtsy", "AHistoryy", "GPSy",
         "SBSy","CGUy","UICy","MRlist","ADDrlist"};
         public static List<string> box = new List<string>();
@@ -548,10 +548,6 @@ namespace PrototypeSWE
             var usersettings = Securelogin.getusersettingsBaandbs(username);
             var ba = usersettings.Item1;
             baSettings = JsonConvert.DeserializeObject<Dictionary<string, bool>>(ba);
-            if (baSettings != null)
-            {
-                mergedic(baSettings);
-            }
            
             return baSettings;
 
@@ -572,6 +568,7 @@ namespace PrototypeSWE
          var setting =  getsettings(username);
             if(setting != null)
             {
+                mergedic(setting);
                 settingsBA(setting);
             }
          

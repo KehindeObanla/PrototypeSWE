@@ -24,7 +24,7 @@ namespace PrototypeSWE
         private MainWindow mw;
         List<Button> coloredButtons = new List<Button>();
         string username = Properties.Settings.Default.userset;
-        public static List<string> otherbuttons = new List<string>() { "DownloadBtnBS", "EditBS", "Backbtn", "SaveEdit", "EditBA1", "BackBtnBA1", "DownloadBtnBA1", "SaveEdit" };
+        public static List<string> otherbuttons = new List<string>() { "DownloadBtnBS", "EditBS", "Backbtn", "SaveEdit" };
         public static Dictionary<string, bool> savedsettings = new Dictionary<string, bool>();
         public static List<string> menuitemnames = new List<string>() { "Communication", "LPSy", "CreativeArtsy", "AHistoryy", "GPSy",
         "SBSy","CGUy","UICy","MRlist","ADDrlist"};
@@ -542,8 +542,6 @@ namespace PrototypeSWE
                 {
                     item.IsEnabled = set[name];
                 }
-               
-                
             }
             foreach (var item in menus)
             {
@@ -553,16 +551,13 @@ namespace PrototypeSWE
             }
         }
         public Dictionary<string, bool> getsettings(string username)
-         {
-                 Dictionary<string, bool> bsSettings = new Dictionary<string, bool>();
-                Security Securelogin = new Security();
-                var usersettings = Securelogin.getusersettingsBaandbs(username);
-                var bs= usersettings.Item2;
-               bsSettings = JsonConvert.DeserializeObject<Dictionary<string, bool>>(bs);
-            if(bsSettings!= null)
-            {
-                mergedic(bsSettings);
-            }
+        {
+             Dictionary<string, bool> bsSettings = new Dictionary<string, bool>();
+             Security Securelogin = new Security();
+             var usersettings = Securelogin.getusersettingsBaandbs(username);
+             var bs= usersettings.Item2;
+             bsSettings = JsonConvert.DeserializeObject<Dictionary<string, bool>>(bs);
+            
                
             return bsSettings;
 
@@ -585,6 +580,7 @@ namespace PrototypeSWE
           var setting =  getsettings(username);
             if (setting != null)
             {
+                mergedic(setting);
                 settings(setting);
 
             }
