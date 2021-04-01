@@ -81,8 +81,8 @@ namespace PrototypeSWE
         /* check if user exist in database*/
         private void checkUser(string Username,string Password1)
         {
-            int id = checkSec.GetUserIdByUsernameAndPassword(Username, Password1);
-            if (id == 0)
+            bool id = checkSec.prsentuser(Username);
+            if (id == false)
             {
                 checkSec.AddUser(Username, Password1, Ans1);
                 lg = new loginScreen();

@@ -25,14 +25,62 @@ namespace PrototypeSWE.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\kehin\\source\\repos\\P" +
-            "rototypeSWE\\PrototypeSWE\\data\\DBSwe.mdf;Integrated Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-R0I7FGT\\SQLEXPRESS;Initial Catalog=Advisingtool;Integrated Se" +
+            "curity=True")]
         public string Connection_String {
             get {
                 return ((string)(this["Connection_String"]));
             }
             set {
                 this["Connection_String"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string userset {
+            get {
+                return ((string)(this["userset"]));
+            }
+            set {
+                this["userset"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string password {
+            get {
+                return ((string)(this["password"]));
+            }
+            set {
+                this["password"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string BaSetting {
+            get {
+                return ((string)(this["BaSetting"]));
+            }
+            set {
+                this["BaSetting"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string bsSetting {
+            get {
+                return ((string)(this["bsSetting"]));
+            }
+            set {
+                this["bsSetting"] = value;
             }
         }
     }

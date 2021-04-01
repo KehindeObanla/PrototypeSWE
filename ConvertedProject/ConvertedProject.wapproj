@@ -118,5 +118,10 @@
   <ItemGroup>
     <ProjectReference Include="..\PrototypeSWE\PrototypeSWE.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>13.0.1</Version>
+    </PackageReference>
+  </ItemGroup>
   <Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />
 </Project>

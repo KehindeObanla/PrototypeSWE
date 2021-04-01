@@ -7,14 +7,28 @@
         xmlns:local="clr-namespace:PrototypeSWE"
         mc:Ignorable="d"
         Title="MainWindow" >
+    <Window.Background>
+        <ImageBrush ImageSource="C:\Users\kehin\source\repos\PrototypeSWE\PrototypeSWE\data\Home Page (5).jpg" />
+    </Window.Background>
     <Grid>
-        <Grid >
-            <Label   x:Name="Heading" Content="&#x9;&#x9;Welcome to Major Map&#xA;&#x9;"  HorizontalAlignment="Center" Height="66" Margin="72,47,0,0" VerticalAlignment="Top" Width="595" FontSize="22" FontWeight="Bold" FontStyle="Italic" Foreground="#FF2269E6"/>
-            <Label   x:Name="headingSmall" Content="&#x9;Suggested program plan for a Computer Science major" Height="25" Margin="204,73,178,0" VerticalAlignment="Top" Width="380" Foreground="#FF2269E6"/>
-            <Button x:Name="BSCMPS" Content="BS" HorizontalAlignment="Left" Height="40" Margin="20,155,0,0" VerticalAlignment="Top" Width="201" Click="OpenWindowBS" Background="#F4F9FE" Foreground="#FF2269E6" FontSize="20" FontWeight="Bold" FontStyle="Italic"/>
-            <Button x:Name="BACMP1" Content="BA" HorizontalAlignment="Right" Height="40" Margin="0,155,31,0" VerticalAlignment="Top" Width="201" Background="#F4F9FE"  Foreground="#FF2269E6" FontWeight="Bold" FontSize="20" FontStyle="Italic" Click="OpenWindowBA"/>
-           
+        <Grid Margin="-2,-10,1.6,9.6" >
+            <Label   x:Name="Heading" Content="&#x9;&#x9;Advising tool&#xA;&#x9;"  HorizontalAlignment="Center" Height="66" Margin="77,55.1,89.6,0" VerticalAlignment="Top" Width="595" FontSize="24" FontWeight="Bold" FontStyle="Italic" Foreground="#FFF7F3F3" FontFamily="Segoe UI Semibold"/>
+            <Label   x:Name="headingSmall" Content="&#x9;Suggested program plan for a Computer Science major" Height="40" Margin="167,81.1,238,0" VerticalAlignment="Top" Foreground="#FFE8E9EC" FontStyle="Italic"/>
+            <Button x:Name="BSCMPS" Content="BS" HorizontalAlignment="Left" Height="40" Margin="322.6,188.2,0,0" VerticalAlignment="Top" Width="201" Click="OpenWindowBS" Background="#F4F9FE" Foreground="#FF2F80ED" FontSize="20" FontWeight="Bold" FontStyle="Italic" BorderBrush="#FF2F80ED">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="7"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button x:Name="BACMP1" Content="BA" HorizontalAlignment="Right" Height="40" Margin="0,297.6,238,0" VerticalAlignment="Top" Width="201" Background="#F4F9FE"  Foreground="#FF2F80ED" FontWeight="Bold" FontSize="20" FontStyle="Italic" Click="OpenWindowBA" RenderTransformOrigin="0.542,-0.46" BorderBrush="#FF2F80ED">
+                <Button.Resources>
+                    
+                    <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="7"/>
+                </Style>
+                </Button.Resources>
+            </Button>
         </Grid>
-        <Separator Height="2" Margin="0,104,0,0" VerticalAlignment="Top" Foreground="#FF080808"/>
     </Grid>
 </Window>

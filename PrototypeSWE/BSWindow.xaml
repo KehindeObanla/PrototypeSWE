@@ -6,21 +6,24 @@
         xmlns:local="clr-namespace:PrototypeSWE"
         mc:Ignorable="d"
         
-        Title="BSComputerScience"  Height="859" Width="1174">
-    <Grid>
+        Title="BSComputerScience"  Height="859" Width="1174" Loaded="Window_Loaded">
+    <Window.Background>
+        <ImageBrush ImageSource="C:\Users\kehin\source\repos\WpfApp3\WpfApp3\Home Page (6).jpg" />
+    </Window.Background>
+    <Grid x:Name="getbtn">
 
 
-        <Label Content="GET THE Courses You Need" Margin="0,10,0,0" VerticalAlignment="Top"  Background="#FF075DB2" Foreground="#FFFBF8F8" FontSize="14" HorizontalContentAlignment="Center" Grid.ColumnSpan="2" />
+        <Label Content="GET THE Courses You Need" Margin="0,10,0,0" VerticalAlignment="Top"  Background="#FF2F80ED" Foreground="#FFFBF8F8" FontSize="14" HorizontalContentAlignment="Center" Grid.ColumnSpan="2" />
         <Grid HorizontalAlignment="Left" Height="337" Margin="10,65,0,0" VerticalAlignment="Top" Width="237">
             <Label x:Name="legend" Content="&#x9;Legend" HorizontalAlignment="Left" Height="26" Margin="20,20,0,0" VerticalAlignment="Top" Width="178" Foreground="#FFF9F9F9" Background="#FF075DB2"/>
             <Button Content="CourseID" HorizontalAlignment="Left" Height="30" Margin="10,81,0,0" VerticalAlignment="Top" Width="59" />
             <Label Content="Click to see Description" HorizontalAlignment="Left" Height="30" Margin="74,81,0,0" VerticalAlignment="Top" Width="135"/>
         </Grid>
-        <Border BorderBrush="#FF0655A4" BorderThickness="2" HorizontalAlignment="Left" Height="337" Margin="7,65,0,0" VerticalAlignment="Top" Width="240"/>
+        <Border BorderBrush="#FF2F80ED" BorderThickness="2" HorizontalAlignment="Left" Height="337" Margin="7,65,0,0" VerticalAlignment="Top" Width="240"/>
         <Label Content="Arrows show relationships" HorizontalAlignment="Left" Height="29" Margin="90,201,0,0" VerticalAlignment="Top" Width="148"/>
-        <Button x:Name="EditBS" Content="Edit Map" HorizontalAlignment="Right" Margin="0,0,23,40" VerticalAlignment="Bottom" Width="98" Height="26" Background="#FF075DB2" Foreground="#FFF7F6F6" VerticalContentAlignment="Center" Click="EditBS_Click"/>
-        <Button x:Name="Backbtn" Content="Back" HorizontalAlignment="Right" Margin="0,9.31,21,0" VerticalAlignment="Top" Width="75" Height="28" Background="#FF075DB2" Click="BsbackTomainWindow" Foreground="#FFFBFAFA" Grid.Column="1"/>
-        <Button x:Name="DownloadBtnBS" Content="Download" HorizontalAlignment="Left" Margin="855,0,0,35" Width="95" Height="26" Background="#FF075DB2" Foreground="#FFF7F6F6" VerticalContentAlignment="Center" VerticalAlignment="Bottom" Click="DownloadBS"/>
+        <Button x:Name="EditBS" Content="Edit Map" HorizontalAlignment="Right" Margin="0,0,21,40" VerticalAlignment="Bottom" Width="113" Height="51" Background="#FF2F80ED" Foreground="#FFF7F6F6" VerticalContentAlignment="Center" Click="EditBS_Click" BorderBrush="#FFFBF5F5" FontSize="20" FontFamily="Segoe UI Historic" FontWeight="Bold"/>
+        <Button x:Name="Backbtn" Content="Back" HorizontalAlignment="Right" Margin="0,9.31,21,0" VerticalAlignment="Top" Width="75" Height="28" Background="#FF2F80ED" Click="BsbackTomainWindow" Foreground="#FFFBFAFA" Grid.Column="1" BorderBrush="#FF2F80ED"/>
+        <Button x:Name="DownloadBtnBS" Content="Download" HorizontalAlignment="Left" Margin="636.467,0,0,45" Width="134" Height="46" Background="#FF2F80ED" Foreground="#FFF7F6F6" VerticalContentAlignment="Center" VerticalAlignment="Bottom" Click="DownloadBS" BorderBrush="#FFF7E9E9" FontSize="18" FontWeight="Bold" FontFamily="Segoe UI Historic"/>
         <Button x:Name="CMPS3233" Content="CMPS 3233 " HorizontalAlignment="Left" Margin="649.704,251.046,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.144,-1.348" Click="CMPS3233_Click">
             <Button.Style>
                 <Style TargetType="Button">
@@ -651,7 +654,7 @@
                     Width="200" Margin="10,32,10,10"><Run Text="Descriptive analysis, probability, variability, confidence intervals, hypotheses testing, analysis of variance, correlation and regression, and nonparametric statistics. "/><LineBreak/><Run Text="3 Credit hours"/></TextBlock>
             </Grid>
         </Popup>
-        <Menu HorizontalAlignment="Left" Height="43.174" Margin="61.555,558.711,0,0" VerticalAlignment="Top" Width="156.826">
+        <Menu HorizontalAlignment="Left" Height="43.174" Margin="41,532.084,0,0" VerticalAlignment="Top" Width="156.826">
 
             <MenuItem x:Name="Communication" Header="Communication" FontWeight="Bold" FontSize="16" Height="40" Width="502" >
                 <MenuItem.ToolTip>
@@ -671,7 +674,7 @@
             </MenuItem>
         </Menu>
 
-        <Menu HorizontalAlignment="Left" Height="43" Margin="266,559,0,0" VerticalAlignment="Top" Width="228">
+        <Menu HorizontalAlignment="Left" Height="43" Margin="244,532.084,0,0" VerticalAlignment="Top" Width="228">
 
             <MenuItem x:Name="LPS" Header="Life and Physical Science" FontWeight="Bold" FontSize="16" Height="40" Width="438" >
 
@@ -983,7 +986,7 @@
             </MenuItem>
 
         </Menu>
-        <Menu HorizontalAlignment="Left" Height="43.174" Margin="501.459,558.711,0,0" VerticalAlignment="Top" Width="269.008">
+        <Menu HorizontalAlignment="Left" Height="43.174" Margin="489.8,531.91,0,0" VerticalAlignment="Top" Width="269.008">
             <MenuItem x:Name="LPC" Header="Language,Philosophy and Culture" FontWeight="Bold" FontSize="16" Height="43" Width="570"   >
                 <MenuItem.ToolTip>
                     <ToolTip Content="3Credit hours"/>
@@ -1158,11 +1161,10 @@
             </MenuItem>
 
         </Menu>
-        <Menu  HorizontalAlignment="Left" Height="43" Margin="62,482,0,0" VerticalAlignment="Top" Width="197">
-
+        <Menu  HorizontalAlignment="Left" Height="43" Margin="41,455.547,0,0" VerticalAlignment="Top" Width="197">
             <MenuItem x:Name="CreativeArts" Header="Creative Arts" FontWeight="Bold" FontSize="16" Height="40" Width="399" >
                 <MenuItem.ToolTip>
-                    <ToolTip>3Credit hours</ToolTip>
+                    <ToolTip Content="3Credit hours"/>
                 </MenuItem.ToolTip>
                 <ScrollViewer VerticalScrollBarVisibility="Visible" Height="100">
                     <StackPanel x:Name="CreativeArtsy">
@@ -1231,7 +1233,7 @@
             </MenuItem>
 
         </Menu>
-        <Menu HorizontalAlignment="Left" Height="43.174" Margin="290,482.062,0,0" VerticalAlignment="Top" Width="156.826">
+        <Menu HorizontalAlignment="Left" Height="43.174" Margin="293,457.873,0,0" VerticalAlignment="Top" Width="156.826">
             <MenuItem x:Name="AHistory" Header="American History" FontWeight="Bold" FontSize="16" Height="40" Width="293" >
                 <MenuItem.ToolTip>
                     <ToolTip Content="6 Credit hours"/>
@@ -1256,7 +1258,7 @@
                 </ScrollViewer>
             </MenuItem>
         </Menu>
-        <Menu HorizontalAlignment="Left" Height="43.174" Margin="489.8,482.062,0,0" VerticalAlignment="Top" Width="280.667">
+        <Menu HorizontalAlignment="Left" Height="43.174" Margin="489.8,455.373,0,0" VerticalAlignment="Top" Width="280.667">
             <MenuItem  x:Name="GPS" Header="Government and Political Science" FontWeight="Bold" FontSize="16" Height="40" Width="566"  >
                 <MenuItem.ToolTip>
                     <ToolTip Content="6 Credit hours"/>
@@ -1281,7 +1283,7 @@
                 </ScrollViewer>
             </MenuItem>
         </Menu>
-        <Menu HorizontalAlignment="Left" Height="43" Margin="815,482,0,0" VerticalAlignment="Top" Width="256">
+        <Menu HorizontalAlignment="Left" Height="43" Margin="812.975,457.2,0,0" VerticalAlignment="Top" Width="256">
             <MenuItem  x:Name="SBS" Header="Social and Behavioral Sciences" FontWeight="Bold" FontSize="16" Height="40" Width="1197" FontFamily="Roboto"   >
                 <MenuItem.ToolTip>
                     <ToolTip Content="3 Credit hours"/>
@@ -1327,7 +1329,7 @@
                 </ScrollViewer>
             </MenuItem>
         </Menu>
-        <Menu HorizontalAlignment="Left" Height="43" Margin="67,662,0,0" VerticalAlignment="Top" Width="283">
+        <Menu HorizontalAlignment="Left" Height="43" Margin="48.975,610.573,0,0" VerticalAlignment="Top" Width="283">
             <MenuItem x:Name="CGU"  Header="Cultural and Global Understanding " FontWeight="Bold" FontSize="16" Height="43" Width="603" >
 
                 <MenuItem.ToolTip>
@@ -1476,7 +1478,7 @@
             </MenuItem>
 
         </Menu>
-        <Menu  HorizontalAlignment="Left" Height="43" Margin="788.8,560.211,0,0" VerticalAlignment="Top" Width="323.258">
+        <Menu  HorizontalAlignment="Left" Height="43" Margin="788.8,531.91,0,0" VerticalAlignment="Top" Width="323.258">
             <MenuItem x:Name="UIC" Header="Undergraduate Inquiry and Creativity " FontWeight="Bold" FontSize="16" Height="40" Width="674"  >
 
                 <MenuItem.ToolTip>
@@ -1568,7 +1570,7 @@
         <CheckBox x:Name="CSAE5box" Content="" HorizontalAlignment="Left" Margin="595,365,0,0" VerticalAlignment="Top"    Visibility="Hidden"/>
         <CheckBox x:Name="CSAE6box" Content="" HorizontalAlignment="Left" Margin="752,375,0,0" VerticalAlignment="Top"    Visibility="Hidden"/>
         <CheckBox x:Name="CSAE7box" Content="" HorizontalAlignment="Left" Margin="903,366,0,0" VerticalAlignment="Top"    Visibility="Hidden"/>
-        <Button x:Name="SaveEdit" Content="Save" Background="#FF075DB2" Foreground="#FFF7F6F6" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="1074,712,0,0" VerticalAlignment="Top" Width="64" Height="28" FontWeight="Bold" FontSize="14" Click="SaveEdit_Click" Visibility="Hidden" />
+        <Button x:Name="SaveEdit" Content="Save" Background="#FF2F80ED" Foreground="#FFF7F6F6" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="870.251,738.4,0,0" VerticalAlignment="Top" Width="113" Height="51" FontWeight="Bold" FontSize="20" Click="SaveEdit_Click" RenderTransformOrigin="-3.73,1.164" BorderBrush="#FFF5F1F1" FontFamily="Segoe UI Historic" Visibility="Hidden" />
         <CheckBox x:Name="MATH1534box" Content="" HorizontalAlignment="Left" Margin="312,65,0,0" VerticalAlignment="Top"  Visibility="Hidden"/>
         <Path Data="M7.332871,0.50000001 C7.6656469,53.998686 7.4995292,53.332605 7.4995292,53.332605 L0.50000001,48.166307 M7.4488105,0.50000001 C7.127759,53.998686 7.2880198,53.332603 7.2880198,53.332603 L14.041014,48.16631" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="49.396" Margin="453.504,126.799,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="13.455" Style="{DynamicResource downarrow}" RenderTransformOrigin="3.45,0.454">
             <Path.RenderTransform>
@@ -1582,7 +1584,7 @@
         </Path>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="22.905" Margin="784.8,290.6,0,0" VerticalAlignment="Top" Width="28.494"/>
         <Label Content="OR" HorizontalAlignment="Left" Height="28" Margin="784.8,290.6,0,0" VerticalAlignment="Top" Width="30" FontWeight="Bold"/>
-        <Menu HorizontalAlignment="Left" Height="42.8" Margin="441,663.827,0,0" VerticalAlignment="Top" Width="207.893">
+        <Menu HorizontalAlignment="Left" Height="42.8" Margin="397,610.573,0,0" VerticalAlignment="Top" Width="207.893">
             <MenuItem  x:Name="ADDR" Header="Additional Requirements" FontWeight="Bold" FontSize="16" Height="40" Width="226" FontFamily="Roboto">
                 <ScrollViewer VerticalScrollBarVisibility="Visible" Height="100">
                     <StackPanel x:Name="MAthreq">
@@ -1625,7 +1627,7 @@
                 </ScrollViewer>
             </MenuItem>
         </Menu>
-        <Menu HorizontalAlignment="Left" Height="43" Margin="725,662,0,0" VerticalAlignment="Top" Width="270.975">
+        <Menu HorizontalAlignment="Left" Height="43" Margin="720,608.746,0,0" VerticalAlignment="Top" Width="270.975">
             <MenuItem  x:Name="MM" Header="Government and Political Science" FontWeight="Bold" FontSize="16" Height="40" Width="270.975"  >
                 <MenuItem.ToolTip>
                     <ToolTip Content="3 Credit hours"/>

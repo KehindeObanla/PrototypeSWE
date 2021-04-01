@@ -28,6 +28,7 @@ namespace PrototypeSWE
         private MainWindow dashboard;
         private CreateAccount CA;
         private UpdatePass fgpass;
+        
         public loginScreen()
         {
             InitializeComponent();
@@ -40,11 +41,12 @@ namespace PrototypeSWE
         /* checks if the user is a valid user*/
         private void Login(object sender, RoutedEventArgs e)
         {
+           
             Username = txtUser.Text;
             Password = txtpass.Password;
             Securelogin = new Security();
             ID = Securelogin.GetUserIdByUsernameAndPassword(Username, Password);
-            Console.WriteLine(ID);
+            
             if (ID == 0)
             {
                 loginError.Content = " invalid username or password";
@@ -53,6 +55,8 @@ namespace PrototypeSWE
             }
             else
             {
+                
+                Properties.Settings.Default.userset = txtUser.Text;
                 dashboard = new MainWindow();
                 dashboard.Show();
                 this.Close();
@@ -72,5 +76,8 @@ namespace PrototypeSWE
             fgpass.Show();
             this.Close();
         }
+      
+       
+
     }
 }

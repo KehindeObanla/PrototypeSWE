@@ -4,28 +4,29 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"  
-        
+        SizeToContent="WidthAndHeight"
         xmlns:local="clr-namespace:PrototypeSWE"
         mc:Ignorable="d"
         
-        Title="BA ComputerScience" Height="859" Width="1174" >
+        Title="BA ComputerScience"  >
     <Window.Resources>
         <Style x:Key="down" TargetType="{x:Type Path}"/>
         <Style x:Key="downarrow" TargetType="{x:Type Path}"/>
     </Window.Resources>
-    <Grid x:Name= "MainGrid_Copy" >
-        <Label Content="GET THE Courses You Need" Height="30" Margin="0,10,0,0" VerticalAlignment="Top"  Background="#FF075DB2" Foreground="#FFFBF8F8" FontSize="14" HorizontalContentAlignment="Center" />
+    <Window.Background>
+        <ImageBrush ImageSource="C:\Users\kehin\source\repos\WpfApp3\WpfApp3\Home Page (6).jpg" />
+    </Window.Background>
+    <Grid x:Name= "MainGrid_Copy" Loaded="MainGrid_Copy_Loaded" Margin="1" Height="801" >
 
         <Grid HorizontalAlignment="Left" Height="337" Margin="10,65,0,0" VerticalAlignment="Top" Width="237">
             <Label x:Name="legend1" Content="&#x9;Legend" HorizontalAlignment="Left" Height="26" Margin="20,20,0,0" VerticalAlignment="Top" Width="178" Foreground="#FFF9F9F9" Background="#FF075DB2"/>
             <Button Content="CourseID" HorizontalAlignment="Left" Height="30" Margin="10,81,0,0" VerticalAlignment="Top" Width="59" />
             <Label Content="Click to see Description" HorizontalAlignment="Left" Height="30" Margin="74,81,0,0" VerticalAlignment="Top" Width="135"/>
         </Grid>
-        <Border BorderBrush="#FF0655A4" BorderThickness="2" HorizontalAlignment="Left" Height="374.823" Margin="7,54.453,0,0" VerticalAlignment="Top" Width="240"/>
+        <Border BorderBrush="#FF2F80ED" BorderThickness="2" HorizontalAlignment="Left" Height="374.823" Margin="7,54.453,0,0" VerticalAlignment="Top" Width="240"/>
         <Label Content="Arrows show relationships" HorizontalAlignment="Left" Height="29" Margin="90,201,0,0" VerticalAlignment="Top" Width="148"/>
-        <Button x:Name="EditBA1" Content="Edit Map" HorizontalAlignment="Right" Margin="0,0,21,38" VerticalAlignment="Bottom" Width="97" Height="26" Background="#FF075DB2" Foreground="#FFF7F6F6" VerticalContentAlignment="Center" Click="EditBA1_Click"/>
-        <Button x:Name="BackBtnBA1" Content="Back" HorizontalAlignment="Right" Margin="0,9,17,0" VerticalAlignment="Top" Width="75" Height="31" Background="#FF075DB2" Click="BacktoMainWindow" Foreground="#FFF9F9F9" FontWeight="Bold"/>
-        <Button x:Name="DownloadBtnBA1" Content="Download" HorizontalAlignment="Left" Margin="911,0,0,38" Width="109" Height="26" Background="#FF075DB2" Foreground="#FFF7F6F6" VerticalContentAlignment="Center" VerticalAlignment="Bottom" Click="DownloadBA" RenderTransformOrigin="0.573,2.81"/>
+        <Button x:Name="EditBA1" Content="Edit Map" Margin="651,0,0,30" Width="113" Height="51" Background="#FF2F80ED" Foreground="#FFF7F6F6" VerticalContentAlignment="Center" Click="EditBA1_Click" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontSize="20" FontFamily="Segoe UI Historic" FontWeight="Bold" BorderBrush="#FFF4F2F2"/>
+        <Button x:Name="DownloadBtnBA1" Content="Download" Margin="935,0,0,30" Width="134" Height="51" Background="#FF2F80ED" Foreground="#FFF7F6F6" VerticalContentAlignment="Center" Click="DownloadBA" RenderTransformOrigin="0.573,2.81" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontSize="20" FontFamily="Segoe UI Historic" BorderBrush="#FFEDE7E7" FontWeight="Bold"/>
         <Button x:Name="CMPS3233" Content="CMPS 3233 " HorizontalAlignment="Left" Margin="649.704,251.046,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.144,-1.348" Click="CMPS3233_Click">
             <Button.Style>
                 <Style TargetType="Button">
@@ -165,7 +166,7 @@
 
             </Grid>
         </Popup>
-        <Button x:Name="CMPS4143" Content="CMPS 4143 " HorizontalAlignment="Left" Margin="397,250.34,0,0" VerticalAlignment="Top" Width="75" Click="CMPS4143_Click">
+        <Button x:Name="CMPS4143" Content="CMPS 4143 " HorizontalAlignment="Left" Margin="401.9,257.833,0,0" VerticalAlignment="Top" Width="75" Click="CMPS4143_Click">
             <Button.Style>
                 <Style TargetType="Button">
                     <Style.Triggers>
@@ -271,7 +272,7 @@
                     Width="200" Margin="10,32,10,10"><Run Text="Study of topics related to the design of modern microprocessors, including Boolean algebra, logic gates, design simplification techniques, memory design, programmable control units, and use of hardware description languages. "/><LineBreak/><Run Text="3 Credit hours"/></TextBlock>
             </Grid>
         </Popup>
-        <Button x:Name="CMPS4991" Content="CMPS 4991 " HorizontalAlignment="Left" Margin="1049,386,0,0" VerticalAlignment="Top" Width="75" Click="CMPS4991_Click" >
+        <Button x:Name="CMPS4991" Content="CMPS 4991 " HorizontalAlignment="Left" Margin="1049,388,0,0" VerticalAlignment="Top" Width="75" Click="CMPS4991_Click" Height="20" >
             <Button.Style>
                 <Style TargetType="Button">
                     <Style.Triggers>
@@ -401,20 +402,9 @@
                     Width="200" Margin="10,32,10,10"><Run Text="An introduction to the components, functions, and logical relationships present in current scalar computers, including the central processing unit, different levels of memory, control signals, bus systems, data channels, and input/output devices. Also covered are instruction sets and assembly language programming."/><LineBreak/><Run Text="4 Credit hours"/></TextBlock>
             </Grid>
         </Popup>
-        <Path Data="M7.332871,0.50000001 C7.6656469,53.998686 7.4995292,53.332605 7.4995292,53.332605 L0.50000001,48.166307 M7.4488105,0.50000001 C7.127759,53.998686 7.2880198,53.332603 7.2880198,53.332603 L14.041014,48.16631" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="53.833" Margin="547.163,125.24,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="14.541" Style="{DynamicResource downarrow}" RenderTransformOrigin="3.45,0.454"/>
+        <Path Data="M7.332871,0.50000001 C7.6656469,53.998686 7.4995292,53.332605 7.4995292,53.332605 L0.50000001,48.166307 M7.4488105,0.50000001 C7.127759,53.998686 7.2880198,53.332603 7.2880198,53.332603 L14.041014,48.16631" HorizontalAlignment="Left" Height="53.833" Margin="547.163,125.24,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="14.541" Style="{DynamicResource downarrow}" RenderTransformOrigin="3.45,0.454"/>
         <Label Content="OR" HorizontalAlignment="Left" Height="27.82" Margin="448.406,99.24,0,0" VerticalAlignment="Top" Width="28.494" RenderTransformOrigin="1,0.471" FontWeight="Bold"/>
-        <Path Data="M492.8,80.6 C440.8,111.6 439.29999,111.1 439.29999,111.1 439.29999,111.1 502.29999,144.10102 491.29999,139.10094" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="60.016" Margin="389.035,82.593,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="60" RenderTransformOrigin="0.5,0.5"
->
-            <Path.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform ScaleX="-1"/>
-                    <SkewTransform/>
-                    <RotateTransform/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Path.RenderTransform>
-        </Path>
-        <Path Data="M7.332871,0.50000001 C7.6656469,53.998686 7.4995292,53.332605 7.4995292,53.332605 L0.50000001,48.166307 M7.4488105,0.50000001 C7.127759,53.998686 7.2880198,53.332603 7.2880198,53.332603 L14.041014,48.16631" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="46.852" Margin="445,138.148,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="13.51" Style="{DynamicResource downarrow}" RenderTransformOrigin="4.384,0.638">
+        <Path Data="M7.332871,0.50000001 C7.6656469,53.998686 7.4995292,53.332605 7.4995292,53.332605 L0.50000001,48.166307 M7.4488105,0.50000001 C7.127759,53.998686 7.2880198,53.332603 7.2880198,53.332603 L14.041014,48.16631" HorizontalAlignment="Left" Height="46.852" Margin="445,138.148,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="13.51" Style="{DynamicResource downarrow}" RenderTransformOrigin="4.384,0.638">
             <Path.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleY="-1"/>
@@ -424,7 +414,7 @@
                 </TransformGroup>
             </Path.RenderTransform>
         </Path>
-        <Path Data="M7.332871,0.50000001 C7.6656469,53.998686 7.4995292,53.332605 7.4995292,53.332605 L0.50000001,48.166307 M7.4488105,0.50000001 C7.127759,53.998686 7.2880198,53.332603 7.2880198,53.332603 L14.041014,48.16631" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="59.831" Margin="583.628,44.145,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="14.541" Style="{DynamicResource downarrow}" RenderTransformOrigin="3.45,0.454">
+        <Path Data="M7.332871,0.50000001 C7.6656469,53.998686 7.4995292,53.332605 7.4995292,53.332605 L0.50000001,48.166307 M7.4488105,0.50000001 C7.127759,53.998686 7.2880198,53.332603 7.2880198,53.332603 L14.041014,48.16631" HorizontalAlignment="Left" Height="59.831" Margin="583.628,44.145,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="14.541" Style="{DynamicResource downarrow}" RenderTransformOrigin="3.45,0.454">
             <Path.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -434,8 +424,8 @@
                 </TransformGroup>
             </Path.RenderTransform>
         </Path>
-        <Path Data="M7.332871,0.50000001 C7.6656469,53.998686 7.4995292,53.332605 7.4995292,53.332605 L0.50000001,48.166307 M7.4488105,0.50000001 C7.127759,53.998686 7.2880198,53.332603 7.2880198,53.332603 L14.041014,48.16631" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="50.432" Margin="547.163,201.666,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="14.541" Style="{DynamicResource downarrow}" RenderTransformOrigin="3.45,0.454"/>
-        <Path Data="M7.332871,0.50000001 C7.6656469,53.998686 7.4995292,53.332605 7.4995292,53.332605 L0.50000001,48.166307 M7.4488105,0.50000001 C7.127759,53.998686 7.2880198,53.332603 7.2880198,53.332603 L14.041014,48.16631" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="38.226" Margin="463.05,274.913,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="9.84" Style="{DynamicResource downarrow}" RenderTransformOrigin="3.45,0.454">
+        <Path Data="M7.332871,0.50000001 C7.6656469,53.998686 7.4995292,53.332605 7.4995292,53.332605 L0.50000001,48.166307 M7.4488105,0.50000001 C7.127759,53.998686 7.2880198,53.332603 7.2880198,53.332603 L14.041014,48.16631" HorizontalAlignment="Left" Height="50.432" Margin="547.163,201.666,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="14.541" Style="{DynamicResource downarrow}" RenderTransformOrigin="3.45,0.454"/>
+        <Path Data="M7.332871,0.50000001 C7.6656469,53.998686 7.4995292,53.332605 7.4995292,53.332605 L0.50000001,48.166307 M7.4488105,0.50000001 C7.127759,53.998686 7.2880198,53.332603 7.2880198,53.332603 L14.041014,48.16631" HorizontalAlignment="Left" Height="38.226" Margin="465.05,277.913,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="9.84" Style="{DynamicResource downarrow}" RenderTransformOrigin="3.45,0.454">
             <Path.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -445,8 +435,8 @@
                 </TransformGroup>
             </Path.RenderTransform>
         </Path>
-        <Path Data="M7.332871,0.50000001 C7.6656469,53.998686 7.4995292,53.332605 7.4995292,53.332605 L0.50000001,48.166307 M7.4488105,0.50000001 C7.127759,53.998686 7.2880198,53.332603 7.2880198,53.332603 L14.041014,48.16631" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="50.363" Margin="547.163,275.97,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="14.541" Style="{DynamicResource downarrow}" RenderTransformOrigin="3.45,0.454"/>
-        <Path Data="M7.332871,0.50000001 C7.6656469,53.998686 7.4995292,53.332605 7.4995292,53.332605 L0.50000001,48.166307 M7.4488105,0.50000001 C7.127759,53.998686 7.2880198,53.332603 7.2880198,53.332603 L14.041014,48.16631" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="67.422" Margin="722.903,36.295,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="15.558" Style="{DynamicResource downarrow}" RenderTransformOrigin="3.45,0.454">
+        <Path Data="M7.332871,0.50000001 C7.6656469,53.998686 7.4995292,53.332605 7.4995292,53.332605 L0.50000001,48.166307 M7.4488105,0.50000001 C7.127759,53.998686 7.2880198,53.332603 7.2880198,53.332603 L14.041014,48.16631" HorizontalAlignment="Left" Height="50.363" Margin="547.163,275.97,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="14.541" Style="{DynamicResource downarrow}" RenderTransformOrigin="3.45,0.454"/>
+        <Path Data="M7.332871,0.50000001 C7.6656469,53.998686 7.4995292,53.332605 7.4995292,53.332605 L0.50000001,48.166307 M7.4488105,0.50000001 C7.127759,53.998686 7.2880198,53.332603 7.2880198,53.332603 L14.041014,48.16631" HorizontalAlignment="Left" Height="67.422" Margin="722.903,36.295,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="15.558" Style="{DynamicResource downarrow}" RenderTransformOrigin="3.45,0.454">
             <Path.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -456,7 +446,7 @@
                 </TransformGroup>
             </Path.RenderTransform>
         </Path>
-        <Path Data="M7.332871,0.50000001 C7.6656469,53.998686 7.4995292,53.332605 7.4995292,53.332605 L0.50000001,48.166307 M7.4488105,0.50000001 C7.127759,53.998686 7.2880198,53.332603 7.2880198,53.332603 L14.041014,48.16631" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="46.359" Margin="571.609,125.837,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="14.541" Style="{DynamicResource downarrow}" RenderTransformOrigin="3.45,0.454">
+        <Path Data="M7.332871,0.50000001 C7.6656469,53.998686 7.4995292,53.332605 7.4995292,53.332605 L0.50000001,48.166307 M7.4488105,0.50000001 C7.127759,53.998686 7.2880198,53.332603 7.2880198,53.332603 L14.041014,48.16631" HorizontalAlignment="Left" Height="46.359" Margin="571.609,125.837,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="14.541" Style="{DynamicResource downarrow}" RenderTransformOrigin="3.45,0.454">
             <Path.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -466,7 +456,7 @@
                 </TransformGroup>
             </Path.RenderTransform>
         </Path>
-        <Path Data="M7.332871,0.50000001 C7.6656469,53.998686 7.4995292,53.332605 7.4995292,53.332605 L0.50000001,48.166307 M7.4488105,0.50000001 C7.127759,53.998686 7.2880198,53.332603 7.2880198,53.332603 L14.041014,48.16631" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="49.38" Margin="671.05,201.666,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="14.541" Style="{DynamicResource downarrow}" RenderTransformOrigin="3.45,0.454"/>
+        <Path Data="M7.332871,0.50000001 C7.6656469,53.998686 7.4995292,53.332605 7.4995292,53.332605 L0.50000001,48.166307 M7.4488105,0.50000001 C7.127759,53.998686 7.2880198,53.332603 7.2880198,53.332603 L14.041014,48.16631" HorizontalAlignment="Left" Height="49.38" Margin="677.434,201,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="14.541" Style="{DynamicResource downarrow}" RenderTransformOrigin="3.45,0.454"/>
         <Path Data="M7.332871,0.50000001 C7.6656469,53.998686 7.4995292,53.332605 7.4995292,53.332605 L0.50000001,48.166307 M7.4488105,0.50000001 C7.127759,53.998686 7.2880198,53.332603 7.2880198,53.332603 L14.041014,48.16631" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="38.315" Margin="690.076,131.165,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="14.541" Style="{DynamicResource downarrow}" RenderTransformOrigin="3.45,0.454">
             <Path.RenderTransform>
                 <TransformGroup>
@@ -478,10 +468,10 @@
             </Path.RenderTransform>
         </Path>
         <Border HorizontalAlignment="Left" Height="25.5" Margin="743.8,293.1,0,0" VerticalAlignment="Top" Width="26.667" >
-            <Border/>
+            <Border HorizontalAlignment="Left" VerticalAlignment="Top"/>
         </Border>
         <Label Content="And" HorizontalAlignment="Left" Height="24.97" Margin="849.3,251,0,0" VerticalAlignment="Top" Width="32.167" FontWeight="Bold"/>
-        <Path Data="M642.8,134.93333 L642.29999,148.43367 822.96665,146.43395" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="15.443" Margin="690.967,122.2,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="181.667" RenderTransformOrigin="0.5,0.5">
+        <Path Data="M642.8,134.93333 L642.29999,148.43367 822.96665,146.43395" HorizontalAlignment="Left" Height="15.443" Margin="700.957,124.149,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="161.671" RenderTransformOrigin="0.5,0.5">
             <Path.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -491,13 +481,12 @@
                 </TransformGroup>
             </Path.RenderTransform>
         </Path>
-        <Path Data="M823.46667,146.93333 C826.42928,184.95352 823.63598,226.80625 824.13333,265.6" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="122.14" Margin="870.251,133.87,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="2.383"/>
+        <Path Data="M823.28478,147.91081 C826.24739,185.931 823.45409,227.78373 823.95144,266.57748" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="122.14" Margin="859.957,133.87,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="2.383"/>
         <Path Data="M752.8,215.6" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="1" Margin="752.8,215.6,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="1"/>
-        <Path Data="M751.8,215.1 L752.29999,300.60001" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="96.944" Margin="788.8,196.656,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="2.75"/>
         <Path Data="M788.8,304.1" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="1" Margin="788.8,304.1,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="1"/>
-        <Path Data="M771.3,305.1 C830.8,305.1 830.29999,304.60001 830.29999,304.60001 L830.80011,272.60001" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="24.113" Margin="813.294,275.97,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="59.34" RenderTransformOrigin="0.795,-0.138"/>
+        <Path Data="M771.3,305.1 C830.8,305.1 830.29999,304.60001 830.29999,304.60001 L830.80011,272.60001" HorizontalAlignment="Left" Height="24.113" Margin="813.294,275.97,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="49.046" RenderTransformOrigin="0.795,-0.138"/>
         <Path Data="M849.3,267.6" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="1" Margin="849.3,267.6,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="1"/>
-        <Path Data="M7.332871,0.50000001 C7.6656469,53.998686 7.4995292,53.332605 7.4995292,53.332605 L0.50000001,48.166307 M7.4488105,0.50000001 C7.127759,53.998686 7.2880198,53.332603 7.2880198,53.332603 L14.041014,48.16631" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="42.723" Margin="853.396,205.407,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="14.541" Style="{DynamicResource downarrow}" RenderTransformOrigin="3.45,0.454">
+        <Path Data="M7.332871,0.50000001 C7.6656469,53.998686 7.4995292,53.332605 7.4995292,53.332605 L0.50000001,48.166307 M7.4488105,0.50000001 C7.127759,53.998686 7.2880198,53.332603 7.2880198,53.332603 L14.041014,48.16631" HorizontalAlignment="Left" Height="42.723" Margin="853.396,205.407,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="14.541" Style="{DynamicResource downarrow}" RenderTransformOrigin="3.45,0.454">
             <Path.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -509,8 +498,8 @@
         </Path>
         <Border x:Name="andlabel" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="19.96" Margin="849.3,256.01,0,0" VerticalAlignment="Top" Width="35.667"/>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="22.905" Margin="448.406,102.335,0,0" VerticalAlignment="Top" Width="28.494"/>
-        <Path Data="M551.8,264.85 L583.04999,264.10001 582.79999,303.60001 745.04999,305.35001" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="42.25" Margin="589.55,257.833,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="194.25"/>
-        <Button x:Name="CSAE3" Content=" CS Advanced Elective" HorizontalAlignment="Left" Margin="290,386,0,0" VerticalAlignment="Top" Width="123">
+        <Path Data="M551.8,264.85 L583.04999,264.10001 582.79999,303.60001 745.04999,305.35001" HorizontalAlignment="Left" Height="42.25" Margin="590.55,257.833,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="194.25"/>
+        <Button x:Name="CSAE3" Content=" CS Advanced Elective" HorizontalAlignment="Left" Margin="281,388,0,0" VerticalAlignment="Top" Width="123" Height="20">
             <Button.Style>
                 <Style TargetType="Button">
                     <Style.Triggers>
@@ -522,7 +511,7 @@
                 </Style>
             </Button.Style>
         </Button>
-        <Button x:Name="CSAE6" Content="CS Advanced Elective" HorizontalAlignment="Left" Margin="735,390,0,0" VerticalAlignment="Top" Width="140" Height="20">
+        <Button x:Name="CSAE6" Content="CS Advanced Elective" HorizontalAlignment="Left" Margin="733,388,0,0" VerticalAlignment="Top" Width="140" Height="20">
             <Button.Style>
                 <Style TargetType="Button">
                     <Style.Triggers>
@@ -546,7 +535,7 @@
                 </Style>
             </Button.Style>
         </Button>
-        <Button x:Name="CSAE7" Content=" CS Advanced Elective" HorizontalAlignment="Left" Margin="900,388,0,0" VerticalAlignment="Top" Width="123" RenderTransformOrigin="0.352,0.576">
+        <Button x:Name="CSAE7" Content=" CS Advanced Elective" HorizontalAlignment="Left" Margin="900,388,0,0" VerticalAlignment="Top" Width="123" RenderTransformOrigin="0.352,0.576" Height="20">
             <Button.Style>
                 <Style TargetType="Button">
                     <Style.Triggers>
@@ -558,7 +547,7 @@
                 </Style>
             </Button.Style>
         </Button>
-        <Button x:Name="CSAE4" Content=" CS Advanced Elective" HorizontalAlignment="Left" Margin="441,387,0,0" VerticalAlignment="Top" Width="123" RenderTransformOrigin="0.656,0.211">
+        <Button x:Name="CSAE4" Content=" CS Advanced Elective" HorizontalAlignment="Left" Margin="441,388,0,0" VerticalAlignment="Top" Width="123" RenderTransformOrigin="0.656,0.211" Height="20">
             <Button.Style>
                 <Style TargetType="Button">
                     <Style.Triggers>
@@ -582,7 +571,7 @@
                 </Style>
             </Button.Style>
         </Button>
-        <Button x:Name="CSAE5" Content=" CS Advanced Elective" HorizontalAlignment="Left" Margin="592.3,386,0,0" VerticalAlignment="Top" Width="123">
+        <Button x:Name="CSAE5" Content=" CS Advanced Elective" HorizontalAlignment="Left" Margin="592.3,386,0,0" VerticalAlignment="Top" Width="123" Height="22">
             <Button.Style>
                 <Style TargetType="Button">
                     <Style.Triggers>
@@ -594,7 +583,7 @@
                 </Style>
             </Button.Style>
         </Button>
-        <Path Data="M7.332871,0.50000001 C7.6656469,53.998686 7.4995292,53.332605 7.4995292,53.332605 L0.50000001,48.166307 M7.4488105,0.50000001 C7.127759,53.998686 7.2880198,53.332603 7.2880198,53.332603 L14.041014,48.16631" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="45.414" Margin="340.467,154.781,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="13.455" Style="{DynamicResource downarrow}" RenderTransformOrigin="3.45,0.454">
+        <Path Data="M7.332871,0.50000001 C7.6656469,53.998686 7.4995292,53.332605 7.4995292,53.332605 L0.50000001,48.166307 M7.4488105,0.50000001 C7.127759,53.998686 7.2880198,53.332603 7.2880198,53.332603 L14.041014,48.16631" HorizontalAlignment="Left" Height="45.414" Margin="340.467,154.781,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="13.455" Style="{DynamicResource downarrow}" RenderTransformOrigin="3.45,0.454">
             <Path.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -656,11 +645,10 @@
                     Width="200" Margin="10,32,10,10"><Run Text="Descriptive analysis, probability, variability, confidence intervals, hypotheses testing, analysis of variance, correlation and regression, and nonparametric statistics. "/><LineBreak/><Run Text="3 Credit hours"/></TextBlock>
             </Grid>
         </Popup>
-        <Menu HorizontalAlignment="Left" Height="43.174" Margin="61.555,558.711,0,0" VerticalAlignment="Top" Width="156.826">
-
-            <MenuItem x:Name="Communication" Header="Communication" FontWeight="Bold" FontSize="16" Height="40" Width="502" >
+        <Menu Height="43.174" Margin="61.555,530.758,0,0" Width="156.826" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <MenuItem x:Name="Communication" Header="Communication" FontWeight="Bold" FontSize="16" Height="40" Width="156.826" HorizontalAlignment="Left" VerticalAlignment="Top" >
                 <MenuItem.ToolTip>
-                    <ToolTip>6 Credit hours</ToolTip>
+                    <ToolTip Content="6 Credit hours"/>
                 </MenuItem.ToolTip>
                 <MenuItem Header="ENGL 1143*"/>
                 <Separator />
@@ -676,9 +664,9 @@
             </MenuItem>
         </Menu>
 
-        <Menu HorizontalAlignment="Left" Height="43" Margin="266,559,0,0" VerticalAlignment="Top" Width="228">
+        <Menu Height="41.674" Margin="266.5,533.584,0,0" Width="228" HorizontalAlignment="Left" VerticalAlignment="Top">
 
-            <MenuItem x:Name="LPS" Header="Life and Physical Science" FontWeight="Bold" FontSize="16" Height="40" Width="438" >
+            <MenuItem x:Name="LPS" Header="Life and Physical Science" FontWeight="Bold" FontSize="16" Height="40" Width="228" HorizontalAlignment="Left" VerticalAlignment="Top" >
 
                 <MenuItem.ToolTip>
                     <ToolTip>6 Credit hours</ToolTip>
@@ -988,8 +976,8 @@
             </MenuItem>
 
         </Menu>
-        <Menu HorizontalAlignment="Left" Height="43.174" Margin="501.459,558.711,0,0" VerticalAlignment="Top" Width="269.008">
-            <MenuItem x:Name="LPC" Header="Language,Philosophy and Culture" FontWeight="Bold" FontSize="16" Height="43" Width="570"   >
+        <Menu Height="43.174" Margin="514.792,530.584,0,0" Width="269.008" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <MenuItem x:Name="LPC" Header="Language,Philosophy and Culture" FontWeight="Bold" FontSize="16" Height="43" Width="269.008" HorizontalAlignment="Left" VerticalAlignment="Top"   >
                 <MenuItem.ToolTip>
                     <ToolTip Content="3Credit hours"/>
                 </MenuItem.ToolTip>
@@ -1163,11 +1151,10 @@
             </MenuItem>
 
         </Menu>
-        <Menu  HorizontalAlignment="Left" Height="43" Margin="62,482,0,0" VerticalAlignment="Top" Width="197">
-
-            <MenuItem x:Name="CreativeArts" Header="Creative Arts" FontWeight="Bold" FontSize="16" Height="40" Width="399" >
+        <Menu Height="43" Margin="61.555,455.435,0,0" Width="197" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <MenuItem x:Name="CreativeArts" Header="Creative Arts" FontWeight="Bold" FontSize="16" Height="40" Width="197" HorizontalAlignment="Left" VerticalAlignment="Top" >
                 <MenuItem.ToolTip>
-                    <ToolTip>3Credit hours</ToolTip>
+                    <ToolTip Content="3Credit hours"/>
                 </MenuItem.ToolTip>
                 <ScrollViewer VerticalScrollBarVisibility="Visible" Height="100">
                     <StackPanel x:Name="CreativeArtsy">
@@ -1236,8 +1223,8 @@
             </MenuItem>
 
         </Menu>
-        <Menu HorizontalAlignment="Left" Height="43.174" Margin="290,482.062,0,0" VerticalAlignment="Top" Width="156.826">
-            <MenuItem x:Name="AHistory" Header="American History" FontWeight="Bold" FontSize="16" Height="40" Width="293" >
+        <Menu Height="43.174" Margin="290,455.261,0,0" Width="156.826" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <MenuItem x:Name="AHistory" Header="American History" FontWeight="Bold" FontSize="16" Height="40" Width="156.826" HorizontalAlignment="Left" VerticalAlignment="Top" >
                 <MenuItem.ToolTip>
                     <ToolTip Content="6 Credit hours"/>
                 </MenuItem.ToolTip>
@@ -1261,8 +1248,8 @@
                 </ScrollViewer>
             </MenuItem>
         </Menu>
-        <Menu HorizontalAlignment="Left" Height="43.174" Margin="489.8,482.062,0,0" VerticalAlignment="Top" Width="280.667">
-            <MenuItem  x:Name="GPS" Header="Government and Political Science" FontWeight="Bold" FontSize="16" Height="40" Width="566"  >
+        <Menu Height="43.174" Margin="491.308,455.261,0,0" Width="280.667" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <MenuItem  x:Name="GPS" Header="Government and Political Science" FontWeight="Bold" FontSize="16" Height="40" Width="280.667" HorizontalAlignment="Left" VerticalAlignment="Top"  >
                 <MenuItem.ToolTip>
                     <ToolTip Content="6 Credit hours"/>
                 </MenuItem.ToolTip>
@@ -1286,8 +1273,8 @@
                 </ScrollViewer>
             </MenuItem>
         </Menu>
-        <Menu HorizontalAlignment="Left" Height="43" Margin="815,482,0,0" VerticalAlignment="Top" Width="256">
-            <MenuItem  x:Name="SBS" Header="Social and Behavioral Sciences" FontWeight="Bold" FontSize="16" Height="40" Width="1197" FontFamily="Roboto"   >
+        <Menu Height="43" Margin="803,455.435,0,0" Width="253.975" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <MenuItem  x:Name="SBS" Header="Social and Behavioral Sciences" FontWeight="Bold" FontSize="16" Height="40" Width="1163" FontFamily="Roboto" HorizontalAlignment="Left" VerticalAlignment="Top"   >
                 <MenuItem.ToolTip>
                     <ToolTip Content="3 Credit hours"/>
                 </MenuItem.ToolTip>
@@ -1332,8 +1319,8 @@
                 </ScrollViewer>
             </MenuItem>
         </Menu>
-        <Menu HorizontalAlignment="Left" Height="43" Margin="67,662,0,0" VerticalAlignment="Top" Width="283">
-            <MenuItem x:Name="CGU"  Header="Cultural and Global Understanding " FontWeight="Bold" FontSize="16" Height="43" Width="720" >
+        <Menu HorizontalAlignment="Left" Height="43" Margin="61.555,626,0,132" Width="283" VerticalAlignment="Top">
+            <MenuItem x:Name="CGU"  Header="Cultural and Global Understanding " FontWeight="Bold" FontSize="16" Height="43" Width="339" HorizontalAlignment="Left" VerticalAlignment="Top" >
 
                 <MenuItem.ToolTip>
                     <ToolTip Content="3Credit hours"/>
@@ -1481,8 +1468,8 @@
             </MenuItem>
 
         </Menu>
-        <Menu  HorizontalAlignment="Left" Height="43" Margin="788.8,560.211,0,0" VerticalAlignment="Top" Width="323.258">
-            <MenuItem x:Name="UIC" Header="Undergraduate Inquiry and Creativity " FontWeight="Bold" FontSize="16" Height="40" Width="674"  >
+        <Menu Height="43" Margin="803,530.758,-2.258,0" Width="323.258" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <MenuItem x:Name="UIC" Header="Undergraduate Inquiry and Creativity " FontWeight="Bold" FontSize="16" Height="40" Width="674" HorizontalAlignment="Left" VerticalAlignment="Top"  >
 
                 <MenuItem.ToolTip>
                     <ToolTip Content="3 Credit hours"/>
@@ -1573,9 +1560,9 @@
         <CheckBox x:Name="CSAE5box" Content="" HorizontalAlignment="Left" Margin="595,365,0,0" VerticalAlignment="Top"    Visibility="Hidden"/>
         <CheckBox x:Name="CSAE6box" Content="" HorizontalAlignment="Left" Margin="752,375,0,0" VerticalAlignment="Top"    Visibility="Hidden"/>
         <CheckBox x:Name="CSAE7box" Content="" HorizontalAlignment="Left" Margin="903,366,0,0" VerticalAlignment="Top"    Visibility="Hidden"/>
-        <Button x:Name="SaveEdit" Content="Save" Background="#FF075DB2" Foreground="#FFF7F6F6" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="1074,712,0,0" VerticalAlignment="Top" Width="64" Height="28" FontWeight="Bold" FontSize="14" Click="SaveEdit_Click" Visibility="Hidden" />
+        <Button x:Name="SaveEdit" Content="Save" Background="#FF2F80ED" Foreground="#FFF7F6F6" VerticalContentAlignment="Center" Margin="803,0,0,30" Width="113" Height="51" FontWeight="Bold" FontSize="20" Click="SaveEdit_Click" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontFamily="Segoe UI Historic" BorderBrush="#FFFDF9F9" Visibility="Hidden" />
         <CheckBox x:Name="MATH1534box" Content="" HorizontalAlignment="Left" Margin="312,65,0,0" VerticalAlignment="Top"  Visibility="Hidden"/>
-        <Path Data="M7.332871,0.50000001 C7.6656469,53.998686 7.4995292,53.332605 7.4995292,53.332605 L0.50000001,48.166307 M7.4488105,0.50000001 C7.127759,53.998686 7.2880198,53.332603 7.2880198,53.332603 L14.041014,48.16631" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="49.396" Margin="453.504,126.799,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="13.455" Style="{DynamicResource downarrow}" RenderTransformOrigin="3.45,0.454">
+        <Path Data="M7.332871,0.50000001 C7.6656469,53.998686 7.4995292,53.332605 7.4995292,53.332605 L0.50000001,48.166307 M7.4488105,0.50000001 C7.127759,53.998686 7.2880198,53.332603 7.2880198,53.332603 L14.041014,48.16631" HorizontalAlignment="Left" Height="49.396" Margin="453.504,126.799,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="13.455" Style="{DynamicResource downarrow}" RenderTransformOrigin="3.45,0.454">
             <Path.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -1587,6 +1574,19 @@
         </Path>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="22.905" Margin="784.8,290.6,0,0" VerticalAlignment="Top" Width="28.494"/>
         <Label Content="OR" HorizontalAlignment="Left" Height="28" Margin="784.8,290.6,0,0" VerticalAlignment="Top" Width="30" FontWeight="Bold"/>
+        <ToolBar Height="39.453" Margin="0,10,0,0" VerticalAlignment="Top" Header="&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;   GET THE Courses You Need" FontWeight="Bold" FontSize="16" FontStyle="Italic" Background="#FF2F80ED" Foreground="#FFFBFBFB"/>
+        <Button x:Name="BackBtnBA1" Content="Back" HorizontalAlignment="Right" VerticalAlignment="Top" Width="75" Height="31" Background="#FF2F80ED" Click="BacktoMainWindow" Foreground="#FFF9F9F9" FontWeight="Bold" RenderTransformOrigin="-0.056,-0.726" Margin="0,15.883,19.797,0" BorderBrush="#FF2F80ED"/>
+        <Path Data="M387.8,90.6 L445.29999,110.1 385.29999,141.1" HorizontalAlignment="Left" Height="51.5" Margin="385.3,90.6,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="61"/>
+        <Path Data="M793.8,201.6 L796.29999,286.10001" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="90.999" Margin="793.825,199.601,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="3.5" RenderTransformOrigin="0.5,0.5">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="1.413"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
 
 
     </Grid>

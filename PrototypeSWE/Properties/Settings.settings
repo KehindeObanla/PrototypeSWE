@@ -3,7 +3,19 @@
   <Profiles />
   <Settings>
     <Setting Name="Connection_String" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\kehin\source\repos\PrototypeSWE\PrototypeSWE\data\DBSwe.mdf;Integrated Security=True</Value>
+      <Value Profile="(Default)">Data Source=DESKTOP-R0I7FGT\SQLEXPRESS;Initial Catalog=Advisingtool;Integrated Security=True</Value>
+    </Setting>
+    <Setting Name="userset" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="password" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="BaSetting" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="bsSetting" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
     </Setting>
   </Settings>
 </SettingsFile>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -23,7 +24,12 @@ namespace PrototypeSWE
     {
         private MainWindow mw;
         List<Button> coloredButtons = new List<Button>();
-       
+        Security updatesettings;
+        string username = Properties.Settings.Default.userset;
+        public static List<string> otherbuttons = new List<string>() { "DownloadBtnBS", "EditBS", "Backbtn", "SaveEdit", "EditBA1", "BackBtnBA1", "DownloadBtnBA1", "SaveEdit" };
+        public static List<string> menuitemnames = new List<string>() { "Communication", "LPSy", "CreativeArtsy", "AHistoryy", "GPSy",
+        "SBSy","CGUy","UICy","MRlist","ADDrlist"};
+        public static Dictionary<string, bool> savedsettingsBA = new Dictionary<string, bool>();
         public BAWindow()
         {
             InitializeComponent();
@@ -149,7 +155,58 @@ namespace PrototypeSWE
             var UIClist = UICy.Children.OfType<MenuItem>().ToList();
             makecheckable(UIClist);
         }
+        public void calldb(string settings, string user)
+        {
+            updatesettings = new Security();
+            updatesettings.updatesavedsettingBA(settings, user);
 
+        }
+        public static void savesetting(List<Button> buttonlist)
+        {
+            foreach (var item in buttonlist)
+            {
+                if (!otherbuttons.Contains(item.Name))
+                {
+                    
+                    if (!item.IsEnabled)
+                    {
+                        savedsettingsBA.Add(item.Name, false);
+                    }
+                    else
+                    {
+                        savedsettingsBA.Add(item.Name, true);
+                    }
+                    
+
+                }
+            }
+        }
+        public static void savemenuitem(List<Menu> menus)
+        {
+            foreach (var item in menus)
+            {
+                var itemlist = item.Items.OfType<MenuItem>().ToList();
+                
+                if (!itemlist[0].IsEnabled)
+                {
+                    savedsettingsBA.Add(itemlist[0].Name, false);
+                }
+                else
+                {
+                    savedsettingsBA.Add(itemlist[0].Name, true);
+                }
+                
+            }
+        }
+        public string get_BaButtons()
+        {
+            var buttonlist = MainGrid_Copy.Children.OfType<Button>().ToList();
+            var menu = MainGrid_Copy.Children.OfType<Menu>().ToList();
+            savesetting(buttonlist);
+            savemenuitem(menu);
+            string jsonsavedba = JsonConvert.SerializeObject(savedsettingsBA, Formatting.Indented);
+            return jsonsavedba;
+        }
         private void SaveEdit_Click(object sender, RoutedEventArgs e)
         {
 
@@ -200,6 +257,9 @@ namespace PrototypeSWE
             var UIClist = UICy.Children.OfType<MenuItem>().ToList();
             checkitem(UIClist, UIC);
             makecheckable(UIClist,false);
+            string stoerebs = get_BaButtons();
+            string name = Properties.Settings.Default.userset;
+            calldb(stoerebs, name);
         }
         private void makecheckable(List<MenuItem> list,bool check =true)
         {
@@ -253,6 +313,28 @@ namespace PrototypeSWE
             }
             
 
+        }
+        public void settingsBA(Dictionary<string, bool> set)
+        {
+           
+            var buttonlist = MainGrid_Copy.Children.OfType<Button>().ToList();
+            var menus = MainGrid_Copy.Children.OfType<Menu>().ToList();
+            foreach (var item in buttonlist)
+            {
+                
+                var name = item.Name;
+                if (!otherbuttons.Contains(name))
+                {
+                    item.IsEnabled = set[name];
+                }
+                
+            }
+            foreach (var item in menus)
+            {
+                var itemlist = item.Items.OfType<MenuItem>().ToList();
+                var name = itemlist[0].Name;
+                item.IsEnabled = set[name];
+            }
         }
 
         private void MATH1534_Click(object sender, RoutedEventArgs e)
@@ -404,6 +486,27 @@ namespace PrototypeSWE
             coloredButtons.Add(MATH1233);
             coloredButtons.Add(MATH1534);
 
+        }
+        public Dictionary<string, bool> getsettings(string username)
+        {
+            Dictionary<string, bool> baSettings = new Dictionary<string, bool>();
+            Security Securelogin = new Security();
+            var usersettings = Securelogin.getusersettingsBaandbs(username);
+            var ba = usersettings.Item1;
+            baSettings = JsonConvert.DeserializeObject<Dictionary<string, bool>>(ba);
+            return baSettings;
+
+        }
+
+        private void MainGrid_Copy_Loaded(object sender, RoutedEventArgs e)
+        {
+         var setting =  getsettings(username);
+            if(setting != null)
+            {
+                settingsBA(setting);
+            }
+         
+            
         }
     }
 }

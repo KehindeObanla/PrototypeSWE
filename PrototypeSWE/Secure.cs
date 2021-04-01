@@ -6,13 +6,15 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows;
+using Newtonsoft.Json;
+
 
 namespace PrototypeSWE
 {
     internal class Security
     {
         //database connection string
-        private  string connectString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\kehin\source\repos\PrototypeSWE\PrototypeSWE\data\DBSwe.mdf;Integrated Security=True";
+        private  string connectString = @"Data Source=DESKTOP-R0I7FGT\SQLEXPRESS;Initial Catalog=Advisingtool;Integrated Security=True";
         //creates a hasvalue given a string
         public  string Hashvalue(string value)
         {
@@ -31,10 +33,11 @@ namespace PrototypeSWE
         public  bool AddUser(string username, string password, string Answer)
         {
             Guid userGuid = Guid.NewGuid();
-            string hashedPassword = Hashvalue(password + userGuid.ToString());
+            string guid = userGuid.ToString().ToUpper();
+            string hashedPassword = Hashvalue(password + guid);
             string hashedseq = Hashvalue(Answer + userGuid.ToString());
              SqlConnection con = new SqlConnection(connectString);
-        string queryInsert = "INSERT INTO tbl_login ([Username],[Password], [UserGuid],[SecureAnswer])  VALUES (@username, @password,@userguid,@ans )";
+        string queryInsert = "INSERT INTO tbl_login ([username],[Password], [UserGuid],[SecureAnswer])  VALUES (@username, @password,@userguid,@ans )";
             try
             {
                 using (SqlCommand cmd = new SqlCommand(queryInsert, con))
@@ -89,6 +92,8 @@ namespace PrototypeSWE
         //checks if a user is in the database
         public  int GetUserIdByUsernameAndPassword(string username, string password)
         {
+            Console.WriteLine("useid", username);
+            Console.WriteLine("pass", password);
             // this is the value we will return
             int userId = 0;
             SqlConnection con = new SqlConnection(connectString);
@@ -113,8 +118,9 @@ namespace PrototypeSWE
                         string hashedPassword = Hashvalue(password + dbUserGuid);
 
                         // if its correct password the result of the hash is the same as in the database
-                        if (dbPassword == hashedPassword)
+                         if (dbPassword == hashedPassword.ToUpper())
                         {
+                            Console.WriteLine("i was here");
                             // The password is correct
                             userId = dbUserId;
                         }
@@ -178,7 +184,7 @@ namespace PrototypeSWE
             string hashedans = Hashvalue(newpass + id);
             try
             {
-                using (SqlCommand cmd = new SqlCommand("UPDATE  [tbl_login] SET Password = @Password WHERE Username = @username", con))
+                using (SqlCommand cmd = new SqlCommand("UPDATE  [tbl_login] SET Password = @Password WHERE username = @username", con))
                 {
                     cmd.Parameters.AddWithValue("@username", username);
                     cmd.Parameters.AddWithValue("@Password", hashedans);
@@ -195,6 +201,85 @@ namespace PrototypeSWE
             }
             return true;
         }
+        public void updatesavedsettingBs(string settingssave,string username)
+        {
+            SqlConnection con = new SqlConnection(connectString);
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand("UPDATE  [tbl_login] SET settings = @settingssave WHERE Username = @username", con))
+                {
+                    cmd.Parameters.AddWithValue("@username", username);
+                    cmd.Parameters.AddWithValue("@settingssave", settingssave);
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                }
+            }
 
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+           
+        }
+        public void updatesavedsettingBA(string settingssaveBA, string username)
+        {
+            SqlConnection con = new SqlConnection(connectString);
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand("UPDATE  [tbl_login] SET settingsBA = @settingssaveBA WHERE username = @username", con))
+                {
+                    cmd.Parameters.AddWithValue("@username", username);
+                    cmd.Parameters.AddWithValue("@settingssaveBA", settingssaveBA);
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                }
+            }
+
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+        public Tuple<string,string> getusersettingsBaandbs(string username)
+        {
+           
+            string ba = "";
+            string bs = "";
+            SqlConnection con = new SqlConnection(connectString);
+            try
+            {
+                string query = "SELECT settings, settingsBA FROM [tbl_login] WHERE username=@username";
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@username", username);
+                    con.Open();
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        // dr.Read() = we found user(s) with matching username!
+                       ba= Convert.ToString(dr["settingsBA"]);
+                       bs= Convert.ToString(dr["settings"]);
+                       
+                    }
+                    con.Close();
+                }
+            }
+
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+            Properties.Settings.Default.BaSetting = ba;
+            Properties.Settings.Default.bsSetting= bs;
+            var ans = Tuple.Create(ba, bs);
+            return ans;
+            
+        }
     }
 }

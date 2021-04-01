@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -22,6 +23,9 @@ namespace PrototypeSWE
     {
         private MainWindow mw;
         List<Button> coloredButtons = new List<Button>();
+        string username = Properties.Settings.Default.userset;
+        public static List<string> otherbuttons = new List<string>() { "DownloadBtnBS", "EditBS", "Backbtn", "SaveEdit", "EditBA1", "BackBtnBA1", "DownloadBtnBA1", "SaveEdit" };
+        Security updatesettings;
         public BSWindow()
         {
             InitializeComponent();
@@ -355,6 +359,12 @@ namespace PrototypeSWE
             makecheckable(ADDrlist);
 
         }
+        public void calldb(string settings, string user)
+        {
+            updatesettings = new Security();
+            updatesettings.updatesavedsettingBs(settings, user);
+            
+        }
         private void SaveEdit_Click(object sender, RoutedEventArgs e)
         {
 
@@ -409,6 +419,54 @@ namespace PrototypeSWE
             checkitem(mathreqlist, ADDR);
             var MMlist = MM.Items.OfType<MenuItem>().ToList();
             checkitem(MMlist, MM);
+            string stoerebs = buttonSettings.get_BsButtons_menu();
+            string name = Properties.Settings.Default.userset;
+            calldb(stoerebs, name);
+
+        }
+        public void settings(Dictionary<string, bool> set)
+        {
+            
+            var buttonlist = getbtn.Children.OfType<Button>().ToList();
+            var menus =  getbtn.Children.OfType<Menu>().ToList();
+            foreach (var item in buttonlist)
+            {
+                var name = item.Name;
+                if (!otherbuttons.Contains(name))
+                {
+                    item.IsEnabled = set[name];
+                }
+               
+                
+            }
+            foreach (var item in menus)
+            {
+                var itemlist = item.Items.OfType<MenuItem>().ToList();
+                var name = itemlist[0].Name;
+                item.IsEnabled = set[name];
+            }
+        }
+        public Dictionary<string, bool> getsettings(string username)
+         {
+                 Dictionary<string, bool> bsSettings = new Dictionary<string, bool>();
+                Security Securelogin = new Security();
+                var usersettings = Securelogin.getusersettingsBaandbs(username);
+                var bs= usersettings.Item2;
+               bsSettings = JsonConvert.DeserializeObject<Dictionary<string, bool>>(bs);
+            return bsSettings;
+
+        }
+        
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+          var setting =  getsettings(username);
+            if (setting != null)
+            {
+                settings(setting);
+
+            }
+
         }
     }
 }
