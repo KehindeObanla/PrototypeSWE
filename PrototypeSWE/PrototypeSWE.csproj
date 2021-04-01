@@ -185,13 +185,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="data\Home Page %285%29.jpg" />
+    <Resource Include="data\Register %284%29.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="data\Login %284%29.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="data\Register %283%29.jpg" />
+    <Resource Include="data\Home Page %287%29.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets')" />

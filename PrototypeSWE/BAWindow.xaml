@@ -14,19 +14,19 @@
         <Style x:Key="downarrow" TargetType="{x:Type Path}"/>
     </Window.Resources>
     <Window.Background>
-        <ImageBrush ImageSource="C:\Users\kehin\source\repos\WpfApp3\WpfApp3\Home Page (6).jpg" />
+        <ImageBrush ImageSource="C:\Users\kehin\source\repos\PrototypeSWE\PrototypeSWE\data\Home Page (7).jpg" />
     </Window.Background>
-    <Grid x:Name= "MainGrid_Copy" Loaded="MainGrid_Copy_Loaded" Margin="1" Height="801" >
+    <Grid x:Name= "MainGrid_Copy" Loaded="MainGrid_Copy_Loaded" Margin="1" Height="795" Width="1146.5" >
 
         <Grid HorizontalAlignment="Left" Height="337" Margin="10,65,0,0" VerticalAlignment="Top" Width="237">
             <Label x:Name="legend1" Content="&#x9;Legend" HorizontalAlignment="Left" Height="26" Margin="20,20,0,0" VerticalAlignment="Top" Width="178" Foreground="#FFF9F9F9" Background="#FF075DB2"/>
             <Button Content="CourseID" HorizontalAlignment="Left" Height="30" Margin="10,81,0,0" VerticalAlignment="Top" Width="59" />
             <Label Content="Click to see Description" HorizontalAlignment="Left" Height="30" Margin="74,81,0,0" VerticalAlignment="Top" Width="135"/>
         </Grid>
-        <Border BorderBrush="#FF2F80ED" BorderThickness="2" HorizontalAlignment="Left" Height="374.823" Margin="7,54.453,0,0" VerticalAlignment="Top" Width="240"/>
+        <Border BorderBrush="#FF0B356C" BorderThickness="2" HorizontalAlignment="Left" Height="374.823" Margin="7,54.453,0,0" VerticalAlignment="Top" Width="240"/>
         <Label Content="Arrows show relationships" HorizontalAlignment="Left" Height="29" Margin="90,201,0,0" VerticalAlignment="Top" Width="148"/>
-        <Button x:Name="EditBA1" Content="Edit Map" Margin="651,0,0,30" Width="113" Height="51" Background="#FF2F80ED" Foreground="#FFF7F6F6" VerticalContentAlignment="Center" Click="EditBA1_Click" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontSize="20" FontFamily="Segoe UI Historic" FontWeight="Bold" BorderBrush="#FFF4F2F2"/>
-        <Button x:Name="DownloadBtnBA1" Content="Download" Margin="935,0,0,30" Width="134" Height="51" Background="#FF2F80ED" Foreground="#FFF7F6F6" VerticalContentAlignment="Center" Click="DownloadBA" RenderTransformOrigin="0.573,2.81" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontSize="20" FontFamily="Segoe UI Historic" BorderBrush="#FFEDE7E7" FontWeight="Bold"/>
+        <Button x:Name="EditBA1" Content="Edit Map" Margin="651,0,0,30" Width="113" Height="51" Background="#FF0B356C" Foreground="#FFF7F6F6" VerticalContentAlignment="Center" Click="EditBA1_Click" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontSize="20" FontFamily="Segoe UI Historic" FontWeight="Bold" BorderBrush="#FFF4F2F2"/>
+        <Button x:Name="DownloadBtnBA1" Content="Download" Margin="935,0,0,30" Width="134" Height="51" Background="#FF0B356C" Foreground="#FFF7F6F6" VerticalContentAlignment="Center" Click="DownloadBA" RenderTransformOrigin="0.573,2.81" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontSize="20" FontFamily="Segoe UI Historic" BorderBrush="#FFEDE7E7" FontWeight="Bold"/>
         <Button x:Name="CMPS3233" Content="CMPS 3233 " HorizontalAlignment="Left" Margin="649.704,251.046,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.144,-1.348" Click="CMPS3233_Click">
             <Button.Style>
                 <Style TargetType="Button">
@@ -1574,8 +1574,8 @@
         </Path>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="22.905" Margin="784.8,290.6,0,0" VerticalAlignment="Top" Width="28.494"/>
         <Label Content="OR" HorizontalAlignment="Left" Height="28" Margin="784.8,290.6,0,0" VerticalAlignment="Top" Width="30" FontWeight="Bold"/>
-        <ToolBar Height="39.453" Margin="0,10,0,0" VerticalAlignment="Top" Header="&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;   GET THE Courses You Need" FontWeight="Bold" FontSize="16" FontStyle="Italic" Background="#FF2F80ED" Foreground="#FFFBFBFB"/>
-        <Button x:Name="BackBtnBA1" Content="Back" HorizontalAlignment="Right" VerticalAlignment="Top" Width="75" Height="31" Background="#FF2F80ED" Click="BacktoMainWindow" Foreground="#FFF9F9F9" FontWeight="Bold" RenderTransformOrigin="-0.056,-0.726" Margin="0,15.883,19.797,0" BorderBrush="#FF2F80ED"/>
+        <ToolBar Height="39.453" Margin="0,10,0,0" VerticalAlignment="Top" Header="&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;   GET THE Courses You Need" FontWeight="Bold" FontSize="16" FontStyle="Italic" Background="#FF0B356C" Foreground="#FFFBFBFB"/>
+        <Button x:Name="BackBtnBA1" Content="Back" HorizontalAlignment="Right" VerticalAlignment="Top" Width="75" Height="31" Background="#FF0B356C" Click="BacktoMainWindow" Foreground="#FFF9F9F9" FontWeight="Bold" RenderTransformOrigin="-0.056,-0.726" Margin="0,15.883,19.797,0" BorderBrush="#FF0B356C"/>
         <Path Data="M387.8,90.6 L445.29999,110.1 385.29999,141.1" HorizontalAlignment="Left" Height="51.5" Margin="385.3,90.6,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="61"/>
         <Path Data="M793.8,201.6 L796.29999,286.10001" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="90.999" Margin="793.825,199.601,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="3.5" RenderTransformOrigin="0.5,0.5">
             <Path.RenderTransform>

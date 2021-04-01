@@ -7,26 +7,26 @@
        
         xmlns:local="clr-namespace:PrototypeSWE"
         mc:Ignorable="d"
-        Title="login" Height="624" Width="997" FontWeight="Bold" FontFamily="Segoe UI Historic" >
+        Title="login" Height="654" Width="1025.5" FontWeight="Bold" FontFamily="Segoe UI Historic" >
     <Window.Background>
-        <ImageBrush ImageSource="C:\Users\kehin\source\repos\PrototypeSWE\PrototypeSWE\data\Login (4).jpg" Stretch="UniformToFill" />
+        <ImageBrush ImageSource="C:\Users\kehin\source\repos\PrototypeSWE\PrototypeSWE\data\Register (4).jpg" Stretch="UniformToFill" />
     </Window.Background>
     <Viewbox  HorizontalAlignment="Left" >
         <Grid Height="594.4" Width="785.87" >
 
-            <Label x:Name="loginlbl" Content="LOGIN" HorizontalAlignment="Left" Margin="395,219,0,0" VerticalAlignment="Top" Width="331" Height="45" FontSize="20" FontStyle="Italic" Foreground="#FF2F80ED"/>
-            <Label Content="UserName *"  Margin="385,274,55,0" VerticalAlignment="Top" Height="30" FontSize="14" FontStyle="Italic" RenderTransformOrigin="1.919,0.768" Foreground="#FF2F80ED" FontFamily="Segoe UI" FontWeight="Normal" Width="345.51"/>
-            <TextBox x:Name="txtUser" Height="38" Margin="385,299,85,0" TextWrapping="Wrap" VerticalAlignment="Top" TextChanged="TextBox_TextChanged" AutomationProperties.IsRequiredForForm="True" Foreground="#FF2F80ED" BorderBrush="#FF2F80ED" Width="315.87" />
-            <Label Content="Password *"  Margin="385,339,40,0" VerticalAlignment="Top" FontSize="14" RenderTransformOrigin="0.592,1.529" Height="30" FontStyle="Italic" FontFamily="Segoe UI" FontWeight="Normal" Foreground="#FF2F80ED"/>
-            <PasswordBox x:Name="txtpass"  Margin="385,376,85,0" VerticalAlignment="Top" Height="38" AutomationProperties.IsRequiredForForm="True" BorderBrush="#FF2F80ED" Width="315.87"/>
-            <Button Content="login"  Margin="618.86,466,21.86,0" VerticalAlignment="Top" Background="#FF2F80ED" Click="Login" RenderTransformOrigin="0.513,1.033" Height="38.29" FontWeight="Bold" FontStyle="Italic" Foreground="#FFF3EEEE" FontFamily="Segoe UI" FontSize="18" Width="145.15" BorderBrush="#FFFBFAFA">
+            <Label x:Name="loginlbl" Content="LOGIN" HorizontalAlignment="Left" Margin="371.065,215,0,0" VerticalAlignment="Top" Width="331" Height="45" FontSize="20" FontStyle="Italic" Foreground="#FF2F80ED"/>
+            <Label Content="UserName *"  Margin="378,260,61.87,0" VerticalAlignment="Top" Height="30" FontSize="14" FontStyle="Italic" RenderTransformOrigin="1.919,0.768" Foreground="#FF2F80ED" FontFamily="Segoe UI" FontWeight="Normal" Width="345.51"/>
+            <TextBox x:Name="txtUser" Height="38" Margin="371,293,98.87,0" TextWrapping="Wrap" VerticalAlignment="Top" TextChanged="TextBox_TextChanged" AutomationProperties.IsRequiredForForm="True" Foreground="#FF2F80ED" BorderBrush="#FF2F80ED" Width="315.87" />
+            <Label Content="Password *"  Margin="368,338,56.87,0" VerticalAlignment="Top" FontSize="14" RenderTransformOrigin="0.592,1.529" Height="30" FontStyle="Italic" FontFamily="Segoe UI" FontWeight="Normal" Foreground="#FF2F80ED"/>
+            <PasswordBox x:Name="txtpass"  Margin="368,365,101.87,0" VerticalAlignment="Top" Height="38" AutomationProperties.IsRequiredForForm="True" BorderBrush="#FF2F80ED" Width="315.87"/>
+            <Button Content="login"  Margin="618.86,466,21.86,0" VerticalAlignment="Top" Background="#FF0B356C" Click="Login" RenderTransformOrigin="0.513,1.033" Height="38.29" FontWeight="Bold" FontStyle="Italic" Foreground="#FFF3EEEE" FontFamily="Segoe UI" FontSize="18" Width="145.15" BorderBrush="#FFFBFAFA">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="10"/>
                     </Style>
                 </Button.Resources>
             </Button>
-            <Button Content="Forgot password?" Click="ForgotPAss"  x:Name="forgotpass"  HorizontalAlignment="Left" Margin="651,420,0,0" VerticalAlignment="Top" Width="124" FontStyle="Italic" Foreground="#FF2F80ED" RenderTransformOrigin="0.571,-0.624" Height="19" FontWeight="Bold" FontSize="12">
+            <Button Content="Forgot password?" Click="ForgotPAss"  x:Name="forgotpass"  HorizontalAlignment="Left" Margin="651,420,0,0" VerticalAlignment="Top" Width="124" FontStyle="Italic" Foreground="#FFEFF2F5" RenderTransformOrigin="0.571,-0.624" Height="19" FontWeight="Bold" FontSize="14" Background="#FFF3EEEE">
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <ContentPresenter />

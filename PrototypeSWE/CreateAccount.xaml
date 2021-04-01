@@ -6,17 +6,17 @@
        
         xmlns:local="clr-namespace:PrototypeSWE"
         mc:Ignorable="d"
-        Title="CreateAccount" Width="1078.6" Height="616.4" >
+        Title="CreateAccount" Width="1117.6" Height="685.4" >
     <Window.Background>
-        <ImageBrush ImageSource="C:\Users\kehin\source\repos\WpfApp3\WpfApp3\Register (3).jpg" Stretch="UniformToFill" />
+        <ImageBrush ImageSource="C:\Users\kehin\source\repos\PrototypeSWE\PrototypeSWE\data\Register (4).jpg" Stretch="UniformToFill" />
     </Window.Background>
     <Viewbox Height="650" Stretch="Fill" Width="1060">
         <Grid Height="650" Width="1060">
-            <Label Content="Register" HorizontalAlignment="Left" Height="65" Margin="440,104,0,0" VerticalAlignment="Top" Width="190" Foreground="#FF2F80ED" FontWeight="Normal" FontSize="36" FontFamily="Segoe UI Semibold"/>
+            <Label Content="Register" HorizontalAlignment="Left" Height="66" Margin="486,114,0,0" VerticalAlignment="Top" Width="190" Foreground="#FF0B356C" FontWeight="Normal" FontSize="36" FontFamily="Segoe UI Semibold"/>
             <Label Content="UserName *" HorizontalAlignment="Left" Margin="308,199,0,0" VerticalAlignment="Top" Height="35" Width="87" FontSize="14" Foreground="#FF2F80ED"/>
             <TextBox x:Name="txtUser" HorizontalAlignment="Left" Height="34" Margin="431,189,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="309"  AutomationProperties.IsRequiredForForm="True" Foreground="#FF2F80ED" FontSize="14" BorderBrush="#FF2F80ED"  />
             <Label Content="Password *" HorizontalAlignment="Left" Margin="310,255,0,0" VerticalAlignment="Top" Height="29" Width="90" FontSize="14" Foreground="#FF2F80ED"/>
-            <PasswordBox x:Name="txtpass" HorizontalAlignment="Left" Margin="426,259,0,0" VerticalAlignment="Top" Width="309" Height="37" AutomationProperties.IsRequiredForForm="True" BorderBrush="#FF2F80ED">
+            <PasswordBox x:Name="txtpass" HorizontalAlignment="Left" Margin="431,261,0,0" VerticalAlignment="Top" Width="309" Height="37" AutomationProperties.IsRequiredForForm="True" BorderBrush="#FF2F80ED">
                 <PasswordBox.BindingGroup>
                     <BindingGroup NotifyOnValidationError="True"/>
                 </PasswordBox.BindingGroup>
@@ -29,11 +29,11 @@
                 </PasswordBox.ToolTip>
 
             </PasswordBox>
-            <PasswordBox x:Name="confirmPass" HorizontalAlignment="Left" Margin="425,327,0,0" VerticalAlignment="Top" Width="309" AutomationProperties.IsRequiredForForm="True" Height="37" BorderBrush="#FF2F80ED"/>
+            <PasswordBox x:Name="confirmPass" HorizontalAlignment="Left" Margin="431,334,0,0" VerticalAlignment="Top" Width="309" AutomationProperties.IsRequiredForForm="True" Height="37" BorderBrush="#FF2F80ED"/>
             <Label Content="Confirm Password *" HorizontalAlignment="Left" Margin="260,329,0,0" VerticalAlignment="Top" Height="29" Width="140" FontSize="14" Foreground="#FF2F80ED"/>
             <Label Content="Security Question: &#xA; favorite color*" HorizontalAlignment="Left" Margin="262,384,0,179" Width="133" FontSize="14" Foreground="#FF2F80ED"/>
-            <TextBox x:Name="seqAns" HorizontalAlignment="Left" Height="41" Margin="430,393,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="309" AutomationProperties.IsRequiredForForm="True" BorderBrush="#FF2F80ED"/>
-            <Button Content="Register" HorizontalAlignment="Left" Margin="683,515,0,0" VerticalAlignment="Top" Width="142" Background="#FF2F80ED" Click="CreateUserAccount" RenderTransformOrigin="0.607,2.698" Height="40" FontSize="18" Foreground="#FFFAF6F6" BorderBrush="#FFF7F3F3">
+            <TextBox x:Name="seqAns" HorizontalAlignment="Left" Height="40" Margin="432,399,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="308" AutomationProperties.IsRequiredForForm="True" BorderBrush="#FF2F80ED"/>
+            <Button Content="Register" HorizontalAlignment="Left" Margin="683,515,0,0" VerticalAlignment="Top" Width="142" Background="#FF0B356C" Click="CreateUserAccount" RenderTransformOrigin="0.607,2.698" Height="40" FontSize="18" Foreground="#FFFAF6F6" BorderBrush="#FFF7F3F3">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="10"/>
@@ -42,7 +42,7 @@
             </Button>
             <Label x:Name="ExistUser" Content="" HorizontalAlignment="Left" Margin="453,229,0,0" VerticalAlignment="Top" Width="217" Height="27" Foreground="#FFE80B0B"/>
             <Label x:Name="incorrect" Content="" HorizontalAlignment="Left" Margin="438,434,0,0" VerticalAlignment="Top" Width="277" Height="29" Foreground="#FFF30606" RenderTransformOrigin="0.487,1.381"/>
-            <Label x:Name="PassFormat" Content="" HorizontalAlignment="Left" Height="27" Margin="461,367,0,0" VerticalAlignment="Top" Width="204" RenderTransformOrigin="0.721,2.187"/>
+            <Label x:Name="PassFormat" Content="" HorizontalAlignment="Left" Height="27" Margin="453,371,0,0" VerticalAlignment="Top" Width="204" RenderTransformOrigin="0.721,2.187"/>
         </Grid>
     </Viewbox>
 </Window>

@@ -8,20 +8,20 @@
         mc:Ignorable="d"
         Title="MainWindow" >
     <Window.Background>
-        <ImageBrush ImageSource="C:\Users\kehin\source\repos\PrototypeSWE\PrototypeSWE\data\Home Page (5).jpg" />
+        <ImageBrush ImageSource="C:\Users\kehin\source\repos\PrototypeSWE\PrototypeSWE\data\Register (4).jpg" />
     </Window.Background>
     <Grid>
         <Grid Margin="-2,-10,1.6,9.6" >
-            <Label   x:Name="Heading" Content="&#x9;&#x9;Advising tool&#xA;&#x9;"  HorizontalAlignment="Center" Height="66" Margin="77,55.1,89.6,0" VerticalAlignment="Top" Width="595" FontSize="24" FontWeight="Bold" FontStyle="Italic" Foreground="#FFF7F3F3" FontFamily="Segoe UI Semibold"/>
-            <Label   x:Name="headingSmall" Content="&#x9;Suggested program plan for a Computer Science major" Height="40" Margin="167,81.1,238,0" VerticalAlignment="Top" Foreground="#FFE8E9EC" FontStyle="Italic"/>
-            <Button x:Name="BSCMPS" Content="BS" HorizontalAlignment="Left" Height="40" Margin="322.6,188.2,0,0" VerticalAlignment="Top" Width="201" Click="OpenWindowBS" Background="#F4F9FE" Foreground="#FF2F80ED" FontSize="20" FontWeight="Bold" FontStyle="Italic" BorderBrush="#FF2F80ED">
+            <Label   x:Name="Heading" Content="&#x9;&#x9;Advising tool&#xA;&#x9;"  HorizontalAlignment="Center" Height="66" Margin="79,34,88.4,0" VerticalAlignment="Top" Width="595" FontSize="24" FontWeight="Bold" FontStyle="Italic" Foreground="#FFF7F3F3" FontFamily="Segoe UI Semibold"/>
+            <Label   x:Name="headingSmall" Content="&#x9;Suggested program plan for a Computer Science major" Height="28" Margin="161,66,244.4,0" VerticalAlignment="Top" Foreground="#FFE8E9EC" FontStyle="Italic" HorizontalAlignment="Center"/>
+            <Button x:Name="BSCMPS" Content="BS" HorizontalAlignment="Center" Height="40" Margin="322.6,188.2,0,0" VerticalAlignment="Top" Width="201" Click="OpenWindowBS" Background="#FF0B356C" Foreground="#FFF2F4F7" FontSize="20" FontWeight="Bold" FontStyle="Italic" BorderBrush="#FF2F80ED">
                 <Button.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="7"/>
                     </Style>
                 </Button.Resources>
             </Button>
-            <Button x:Name="BACMP1" Content="BA" HorizontalAlignment="Right" Height="40" Margin="0,297.6,238,0" VerticalAlignment="Top" Width="201" Background="#F4F9FE"  Foreground="#FF2F80ED" FontWeight="Bold" FontSize="20" FontStyle="Italic" Click="OpenWindowBA" RenderTransformOrigin="0.542,-0.46" BorderBrush="#FF2F80ED">
+            <Button x:Name="BACMP1" Content="BA" HorizontalAlignment="Center" Height="40" Margin="0,297.6,238,0" VerticalAlignment="Top" Width="201" Background="#FF0B356C"  Foreground="#FFF8FAFB" FontWeight="Bold" FontSize="20" FontStyle="Italic" Click="OpenWindowBA" RenderTransformOrigin="0.542,-0.46" BorderBrush="#FF2F80ED">
                 <Button.Resources>
                     
                     <Style TargetType="Border">
