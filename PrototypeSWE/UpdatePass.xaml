@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PrototypeSWE"
         mc:Ignorable="d"
-        Title="UpdatePass" Height="752.4" Width="1035.7">
+        Title="UpdatePass" Height="752.4" Width="1035.7" WindowStartupLocation="CenterScreen">
     <Window.Background>
         <ImageBrush ImageSource="C:\Users\kehin\source\repos\PrototypeSWE\PrototypeSWE\data\Register (4).jpg" Stretch="UniformToFill" />
 

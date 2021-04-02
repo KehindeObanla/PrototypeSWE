@@ -7,7 +7,7 @@
        
         xmlns:local="clr-namespace:PrototypeSWE"
         mc:Ignorable="d"
-        Title="login" Height="654" Width="1025.5" FontWeight="Bold" FontFamily="Segoe UI Historic" >
+        Title="login" Height="654" Width="1025.5" FontWeight="Bold" FontFamily="Segoe UI Historic" WindowStartupLocation="CenterScreen" >
     <Window.Background>
         <ImageBrush ImageSource="C:\Users\kehin\source\repos\PrototypeSWE\PrototypeSWE\data\Register (4).jpg" Stretch="UniformToFill" />
     </Window.Background>

@@ -6,7 +6,7 @@
         
         xmlns:local="clr-namespace:PrototypeSWE"
         mc:Ignorable="d"
-        Title="MainWindow" >
+        Title="MainWindow" WindowStartupLocation="CenterScreen" >
     <Window.Background>
         <ImageBrush ImageSource="C:\Users\kehin\source\repos\PrototypeSWE\PrototypeSWE\data\Register (4).jpg" />
     </Window.Background>

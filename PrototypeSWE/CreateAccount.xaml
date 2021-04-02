@@ -6,7 +6,7 @@
        
         xmlns:local="clr-namespace:PrototypeSWE"
         mc:Ignorable="d"
-        Title="CreateAccount" Width="1117.6" Height="685.4" >
+        Title="CreateAccount" Width="1117.6" Height="685.4" WindowStartupLocation="CenterScreen" >
     <Window.Background>
         <ImageBrush ImageSource="C:\Users\kehin\source\repos\PrototypeSWE\PrototypeSWE\data\Register (4).jpg" Stretch="UniformToFill" />
     </Window.Background>

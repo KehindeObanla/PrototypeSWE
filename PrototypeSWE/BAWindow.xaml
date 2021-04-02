@@ -3,12 +3,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"  
-        SizeToContent="WidthAndHeight"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:PrototypeSWE"
         mc:Ignorable="d"
         
-        Title="BA ComputerScience"  >
+        Title="BA ComputerScience" Height="859" Width="1174" WindowStartupLocation="CenterScreen"   >
     <Window.Resources>
         <Style x:Key="down" TargetType="{x:Type Path}"/>
         <Style x:Key="downarrow" TargetType="{x:Type Path}"/>
@@ -16,7 +15,7 @@
     <Window.Background>
         <ImageBrush ImageSource="C:\Users\kehin\source\repos\PrototypeSWE\PrototypeSWE\data\Home Page (7).jpg" />
     </Window.Background>
-    <Grid x:Name= "MainGrid_Copy" Loaded="MainGrid_Copy_Loaded" Margin="1" Height="795" Width="1146.5" >
+    <Grid x:Name= "MainGrid_Copy" Loaded="MainGrid_Copy_Loaded"  >
 
         <Grid HorizontalAlignment="Left" Height="337" Margin="10,65,0,0" VerticalAlignment="Top" Width="237">
             <Label x:Name="legend1" Content="&#x9;Legend" HorizontalAlignment="Left" Height="26" Margin="20,20,0,0" VerticalAlignment="Top" Width="178" Foreground="#FFF9F9F9" Background="#FF075DB2"/>

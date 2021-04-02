@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:PrototypeSWE"
         mc:Ignorable="d"
         
-        Title="BSComputerScience"  Height="859" Width="1174" Loaded="Window_Loaded">
+        Title="BSComputerScience"  Height="859" Width="1174" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
     <Window.Background>
         <ImageBrush ImageSource="C:\Users\kehin\source\repos\PrototypeSWE\PrototypeSWE\data\Home Page (7).jpg" />
     </Window.Background>
