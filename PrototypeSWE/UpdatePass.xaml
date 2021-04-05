@@ -12,9 +12,10 @@
     </Window.Background>
     <Viewbox Height="650" Stretch="Fill" Width="1060">
         <Grid Height="655.927" Width="1062.745">
-            <Label Content="Update Password" HorizontalAlignment="Left" Height="43.809" Margin="454,125,0,0" VerticalAlignment="Top" Width="280" Foreground="#FF0B356C" FontWeight="Normal" FontSize="24" FontFamily="Segoe UI Semibold"/>
+           
+            <Label Content="Update Password" HorizontalAlignment="Left" Height="44" Margin="478,125,0,0" VerticalAlignment="Top" Width="280" Foreground="#FF0B356C" FontWeight="Normal" FontSize="24" FontFamily="Segoe UI Semibold"/>
             <Label Content="UserName *" HorizontalAlignment="Left" Margin="308,199,0,0" VerticalAlignment="Top" Height="35" Width="87" FontSize="14" Foreground="#FF2F80ED"/>
-            <TextBox x:Name="UserName" HorizontalAlignment="Left" Height="34" Margin="422,188,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="308"  AutomationProperties.IsRequiredForForm="True" Foreground="#FF2F80ED" FontSize="14" BorderBrush="#FF2F80ED"  />
+            <TextBox x:Name="UserName" HorizontalAlignment="Left" Height="34" Margin="422,188,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="308"  AutomationProperties.IsRequiredForForm="True" Foreground="#FF00070F" FontSize="14" BorderBrush="#FF2F80ED"  />
             <Label Content="Password *" HorizontalAlignment="Left" Margin="310,255,0,0" VerticalAlignment="Top" Height="29" Width="90" FontSize="14" Foreground="#FF2F80ED"/>
             <PasswordBox x:Name="NewPass" HorizontalAlignment="Left" Margin="425,255,0,0" VerticalAlignment="Top" Width="309" Height="37" AutomationProperties.IsRequiredForForm="True" BorderBrush="#FF2F80ED">
                 <PasswordBox.BindingGroup>
@@ -31,7 +32,7 @@
             </PasswordBox>
             <PasswordBox x:Name="RnewPass" HorizontalAlignment="Left" Margin="425,327,0,0" VerticalAlignment="Top" Width="309" AutomationProperties.IsRequiredForForm="True" Height="37" BorderBrush="#FF2F80ED"/>
             <Label Content="Confirm Password *" HorizontalAlignment="Left" Margin="260,327,0,0" VerticalAlignment="Top" Height="29" Width="140" FontSize="14" Foreground="#FF2F80ED"/>
-            <Label Content="Security Question: &#xA; favorite color*" HorizontalAlignment="Left" Margin="240,395,0,206.304" Width="133" FontSize="14" Foreground="#FF2F80ED" RenderTransformOrigin="-0.692,0.42"/>
+            <Label Content="Security Question: &#xA; favorite color*" HorizontalAlignment="Left" Margin="263,389,0,211.927" Width="133" FontSize="14" Foreground="#FF2F80ED" RenderTransformOrigin="-0.692,0.42"/>
             <TextBox x:Name="SeqAnswer" HorizontalAlignment="Left" Height="41" Margin="422,395,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="308" AutomationProperties.IsRequiredForForm="True" BorderBrush="#FF2F80ED"/>
             <Button Content="Submit" HorizontalAlignment="Left" Margin="683,515,0,0" VerticalAlignment="Top" Width="142" Background="#FF0B356C" RenderTransformOrigin="0.607,2.698" Height="40" FontSize="18" Foreground="#FFFAF6F6" BorderBrush="#FFF7F3F3"  Click="Updatepassword">
                 <Button.Resources>
@@ -40,7 +41,7 @@
                     </Style>
                 </Button.Resources>
             </Button>
-            <Label  x:Name="wrngpass" Content="" HorizontalAlignment="Left" Margin="475,374,0,0" VerticalAlignment="Top" Width="217" Height="27" Foreground="#FFE80B0B" RenderTransformOrigin="0.3,-3.536"/>
+            <Label  x:Name="wrngpass" Content="" HorizontalAlignment="Left" Margin="469,366,0,0" VerticalAlignment="Top" Width="217" Height="27" Foreground="#FFE80B0B" RenderTransformOrigin="0.3,-3.536"/>
             <Label  x:Name="notuser" Content="" HorizontalAlignment="Left" Margin="438,227,0,0" VerticalAlignment="Top" Width="277" Height="29" Foreground="#FFF30606" RenderTransformOrigin="0.487,1.381"/>
 
         </Grid>

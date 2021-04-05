@@ -31,56 +31,64 @@ namespace PrototypeSWE
         {
             InitializeComponent();
         }
-
+        // update user password
         private void Updatepassword(object sender, RoutedEventArgs e)
         {
             username = UserName.Text;
             seqanswer = SeqAnswer.Text;
             newpass = NewPass.Password;
              Renter = RnewPass.Password;
-            
+            // regex to match user password
             string pattern = @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,15}$";
-            if (newpass == Renter)
+            if (!String.IsNullOrEmpty(username) && !String.IsNullOrEmpty(seqanswer) && !String.IsNullOrEmpty(newpass) && !String.IsNullOrEmpty(Renter))
             {
-                if (Regex.IsMatch(newpass, pattern))
+
+                if (newpass == Renter)
                 {
-                    var same = UpdatesPass.CheckAnswer(username, seqanswer);
-                    int ans1 = same.Item1;
-                    string ans2 = same.Item2;
-                    if (ans1 != 0)
+                    if (Regex.IsMatch(newpass, pattern))
                     {
-                        bool update = UpdatesPass.Updatetable(newpass, username, ans2);
-                        if (update == true)
+                        var same = UpdatesPass.CheckAnswer(username, seqanswer);
+                        int ans1 = same.Item1;
+                        string ans2 = same.Item2;
+                        if (ans1 != 0)
                         {
-                            wrngpass.Content = "password Updated";
-                            UserName.Clear();
-                            SeqAnswer.Clear();
-                            NewPass.Clear();
-                            RnewPass.Clear();
-                             lg = new loginScreen();
-                            lg.Show();
-                            this.Close();
+                            bool update = UpdatesPass.Updatetable(newpass, username, ans2);
+                            if (update == true)
+                            {
+                                wrngpass.Content = "password Updated";
+                                UserName.Clear();
+                                SeqAnswer.Clear();
+                                NewPass.Clear();
+                                RnewPass.Clear();
+                                lg = new loginScreen();
+                                lg.Show();
+                                this.Close();
+                            }
+                            else
+                            {
+                                notuser.Content = "invalid username";
+
+                            }
                         }
                         else
                         {
-                            wrngpass.Content = "invalid username";
-
+                            wrngpass.Content = "False Answer";
                         }
                     }
                     else
                     {
-                        wrngpass.Content = "False Answer";
+                        wrngpass.Content = "Wrong Password Format";
                     }
+
                 }
                 else
                 {
-                    wrngpass.Content = "Wrong Password Format";
+                    wrngpass.Content = "Password is not same";
                 }
-                   
             }
             else
             {
-                wrngpass.Content = "Password is not same";
+                wrngpass.Content = "all fields are required";
             }
            
         }

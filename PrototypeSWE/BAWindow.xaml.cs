@@ -68,7 +68,8 @@ namespace PrototypeSWE
             }
             MessageBox.Show("ScreenShot on Desktop");
         }
-        
+        /*this function changes user button to default color
+         */
         private void checkbuttons()
         {
             if (coloredButtons.Count != 0)
@@ -82,6 +83,9 @@ namespace PrototypeSWE
 
             }
         }
+        /*this function changes the color of preq and 
+         * future classes of CMPS1044
+         */
         private void CMPS1044_Click(object sender, RoutedEventArgs e)
         {
             checkbuttons();
@@ -98,8 +102,10 @@ namespace PrototypeSWE
             coloredButtons.Add(CMPS1044);
         }
 
-       
 
+        /*this function changes the color of preq and 
+        * future classes of CMPS1063
+        */
         private void CMPS1063__Click(object sender, RoutedEventArgs e)
         {
             checkbuttons();
@@ -113,7 +119,9 @@ namespace PrototypeSWE
 
 
         }
-
+        /*this fuction makes all the checkbox visible
+         * and meuitem clickable
+         */
         private void EditBA1_Click(object sender, RoutedEventArgs e)
         {
             SaveEdit.Visibility= Visibility.Visible;
@@ -156,12 +164,15 @@ namespace PrototypeSWE
             var UIClist = UICy.Children.OfType<MenuItem>().ToList();
             makecheckable(UIClist);
         }
+        /* this fuction update user settings*/
         public void calldb(string settings, string user)
         {
             updatesettings = new Security();
             updatesettings.updatesavedsettingBA(settings, user);
 
         }
+        /* this fuction saves the user  button settings to a dictionary
+             */
         public static void savesetting(List<Button> buttonlist)
         {
             foreach (var item in buttonlist)
@@ -196,6 +207,8 @@ namespace PrototypeSWE
                 }
             }
         }
+        /* this fuction saves the user  menu settings to a dictionary
+        */
         public static void savemenuitem(List<Menu> menus)
         {
             foreach (var item in menus)
@@ -226,6 +239,9 @@ namespace PrototypeSWE
 
             }
         }
+        /* this fuction gets user setting and Serialize
+        * the dictionary
+        */
         public string get_BaButtons()
         {
             var buttonlist = MainGrid_Copy.Children.OfType<Button>().ToList();
@@ -235,6 +251,9 @@ namespace PrototypeSWE
             string jsonsavedba = JsonConvert.SerializeObject(savedsettingsBA, Formatting.Indented);
             return jsonsavedba;
         }
+        /* this fucion checks the buttons that
+            * need to be diabled
+            */
         public void checkedboxes()
         {
             var checkboxes = MainGrid_Copy.Children.OfType<CheckBox>().ToList();
@@ -248,6 +267,7 @@ namespace PrototypeSWE
                 }
             }
         }
+        /* this fuction disable buttons*/
         public void disablechecked()
         {
             var buttonlist = MainGrid_Copy.Children.OfType<Button>().ToList();
@@ -259,6 +279,9 @@ namespace PrototypeSWE
                 }
             }
         }
+        /* this fuction saves user settings
+        * and disable edit button
+        */
         private void SaveEdit_Click(object sender, RoutedEventArgs e)
         {
 
@@ -315,6 +338,8 @@ namespace PrototypeSWE
             string name = Properties.Settings.Default.userset;
             calldb(stoerebs, name);
         }
+        /*this fuction makes drop down menus clickabel
+             */
         private void makecheckable(List<MenuItem> list,bool check =true)
         {
             if (check == true)
@@ -333,7 +358,9 @@ namespace PrototypeSWE
             }
            
         }
-
+        /*
+       *  if a menus has 2 clicked menuitem it disables the menu
+       */
         private void checkitem(List<IEnumerable<MenuItem>> j, MenuItem lPS)
         {
             int countedcheckbox = 0;
@@ -350,7 +377,9 @@ namespace PrototypeSWE
                 lPS.IsEnabled = false;
             }
         }
-
+        /*
+       *  if a menus has 2 clicked menuitem it disables the menu
+       */
         private void checkitem(List<MenuItem> list,MenuItem tolock)
         {
             int countedcheckbox = 0;
@@ -368,6 +397,8 @@ namespace PrototypeSWE
             
 
         }
+        /* this fuction saves the user  button settings to a dictionary
+             */
         public void settingsBA(Dictionary<string, bool> set)
         {
            
@@ -390,19 +421,25 @@ namespace PrototypeSWE
                 item.IsEnabled = set[name];
             }
         }
-
+        /*this function changes the color of preq and 
+        * future classes of  MATH1534
+        */
         private void MATH1534_Click(object sender, RoutedEventArgs e)
         {
             checkbuttons();
             MATH1534Popup.IsOpen = true;
         }
-
+        /*this function changes the color of preq and 
+         * future classes of  MATH1233
+         */
         private void MATH1233_Click(object sender, RoutedEventArgs e)
         {
             checkbuttons();
             MATH1233Popup.IsOpen = true;
         }
-
+        /*this function changes the color of preq and 
+           * future classes of  CMPS4143
+           */
         private void MATH1443_Click(object sender, RoutedEventArgs e)
         {
             checkbuttons();
@@ -422,7 +459,9 @@ namespace PrototypeSWE
             coloredButtons.Add(CMPS4143);
             coloredButtons.Add(CMPS2143);
         }
-
+        /*this function changes the color of preq and 
+           * future classes of   CMPS2143
+           */
         private void CMPS2143_Click(object sender, RoutedEventArgs e)
         {
             checkbuttons();
@@ -436,7 +475,9 @@ namespace PrototypeSWE
             coloredButtons.Add(CMPS4103);
             coloredButtons.Add(CMPS4143);
         }
-
+        /*this function changes the color of preq and 
+            * future classes of    CMPS4113
+            */
         private void CMPS4113_Click(object sender, RoutedEventArgs e)
         {
             checkbuttons();
@@ -448,7 +489,9 @@ namespace PrototypeSWE
             coloredButtons.Add(CMPS3013);
             coloredButtons.Add(CMPS2143);
         }
-
+        /*this function changes the color of preq and 
+        * future classes of    CMPS2084
+         */
         private void CMPS2084_Click(object sender, RoutedEventArgs e)
         {
             checkbuttons();
@@ -463,7 +506,9 @@ namespace PrototypeSWE
             coloredButtons.Add(CMPS4103);
 
         }
-
+        /*this function changes the color of preq and 
+        * future classes of    CMPS2433
+       */
         private void CMPS2433_Click(object sender, RoutedEventArgs e)
         {
             checkbuttons();
@@ -477,7 +522,9 @@ namespace PrototypeSWE
             coloredButtons.Add(CMPS3013);
            
         }
-
+        /*this function changes the color of preq and 
+         * future classes of    CMPS3233
+        */
         private void CMPS3233_Click(object sender, RoutedEventArgs e)
         {
             checkbuttons();
@@ -487,7 +534,9 @@ namespace PrototypeSWE
             coloredButtons.Add(CMPS3233);
             coloredButtons.Add(CMPS2433);
         }
-
+        /*this function changes the color of preq and 
+        * future classes of   CMPS3013
+       */
         private void CMPS3013_Click(object sender, RoutedEventArgs e)
         {
             checkbuttons();
@@ -501,7 +550,9 @@ namespace PrototypeSWE
             coloredButtons.Add(CMPS4103);
             coloredButtons.Add(CMPS4113);
         }
-
+        /*this function changes the color of preq and 
+        * future classes of  CMPS3023
+        */
         private void CMPS3023_Click(object sender, RoutedEventArgs e)
         {
             checkbuttons();
@@ -512,7 +563,9 @@ namespace PrototypeSWE
             coloredButtons.Add(CMPS2084);
            
         }
-
+        /*this function changes the color of preq and 
+      * future classes of CMPS4103
+      */
         private void CMPS4103_Click(object sender, RoutedEventArgs e)
         {
             checkbuttons();
@@ -522,13 +575,17 @@ namespace PrototypeSWE
             coloredButtons.Add(CMPS3233);
             coloredButtons.Add(CMPS2433);
         }
-
+        /*this function changes the color of preq and 
+        * future classes of CMPS4991
+       */
         private void CMPS4991_Click(object sender, RoutedEventArgs e)
         {
             checkbuttons();
             CMPS4991Popup.IsOpen = true;
         }
-
+        /*this function changes the color of preq and 
+        * future classes of STAT3573
+       */
         private void STAT3573_Click(object sender, RoutedEventArgs e)
         {
             checkbuttons();
@@ -541,6 +598,7 @@ namespace PrototypeSWE
             coloredButtons.Add(MATH1534);
 
         }
+        // this fuction get user settings from dictionary
         public Dictionary<string, bool> getsettings(string username)
         {
             Dictionary<string, bool> baSettings = new Dictionary<string, bool>();
@@ -552,6 +610,9 @@ namespace PrototypeSWE
             return baSettings;
 
         }
+        /*this fuction adds current user
+         * settings to old settings
+         */
         public void  mergedic(Dictionary<string, bool> dic)
         {
             foreach (var item in dic)
@@ -563,6 +624,8 @@ namespace PrototypeSWE
                 
             }
         }
+        /*this function updates bs user settings onload
+        */
         private void MainGrid_Copy_Loaded(object sender, RoutedEventArgs e)
         {
          var setting =  getsettings(username);

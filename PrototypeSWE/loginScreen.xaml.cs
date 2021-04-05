@@ -44,23 +44,32 @@ namespace PrototypeSWE
            
             Username = txtUser.Text;
             Password = txtpass.Password;
+            string message = "";
             Securelogin = new Security();
             ID = Securelogin.GetUserIdByUsernameAndPassword(Username, Password);
-            
-            if (ID == 0)
+            if (!String.IsNullOrEmpty(Username) && !String.IsNullOrEmpty(Password))
             {
-                loginError.Content = " invalid username or password";
-                txtpass.Clear();
-                txtUser.Clear();
+                if (ID == 0)
+                {
+                    message = "invalid username or password";
+                    loginError.Content = message;
+                    txtpass.Clear();
+                    txtUser.Clear();
+                }
+                else
+                {
+
+                    Properties.Settings.Default.userset = txtUser.Text;
+                    dashboard = new MainWindow();
+                    dashboard.Show();
+                    this.Close();
+                }
             }
             else
             {
-                
-                Properties.Settings.Default.userset = txtUser.Text;
-                dashboard = new MainWindow();
-                dashboard.Show();
-                this.Close();
+                loginError.Content = "username or password is empty";
             }
+            
         }
         /*sends the user to the Create user page*/
         public void CallCreate(object sender, RoutedEventArgs e)

@@ -2,8 +2,11 @@
 <ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
   <Class Name="PrototypeSWE.BAWindow">
     <Position X="8" Y="2" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>AQAAAAAAAAAAAAAAAAAAAAAAAAAEAAACAAAAAAAAAAA=</HashCode>
+      <HashCode>gUABcAgiAADIEIAGAEACQgEVAAKUEAACAQCoAACEIAQ=</HashCode>
       <FileName>BAWindow.xaml.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -13,8 +16,11 @@
   </Class>
   <Class Name="PrototypeSWE.BSWindow">
     <Position X="10.25" Y="2" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>AACAAAAAAAAAAAAAAAAAAAAAAAAEAAAAgAAAAAAAAAA=</HashCode>
+      <HashCode>gECAcAgiAADIFIAGAEACQgkVAgCEEAAAgQCoAACEAAA=</HashCode>
       <FileName>BSWindow.xaml.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -36,6 +42,9 @@
   </Class>
   <Class Name="PrototypeSWE.loginScreen">
     <Position X="5.5" Y="2" Width="1.75" />
+    <Members>
+      <Field Name="ID" Hidden="true" />
+    </Members>
     <TypeIdentifier>
       <HashCode>IAEAAGgSAAAAgAAAAQAAAAAAAAAAAAACAAAQAAAAAAA=</HashCode>
       <FileName>loginScreen.xaml.cs</FileName>
@@ -51,7 +60,7 @@
   <Class Name="PrototypeSWE.MainWindow">
     <Position X="12.5" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>EAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>MainWindow.xaml.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -59,7 +68,7 @@
   <Class Name="PrototypeSWE.UpdatePass">
     <Position X="14.75" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>QgAAAAAAAAACAAgAAAAAAAEAAAgAAAgQAAAAAAAAgAA=</HashCode>
+      <HashCode>AgAAAAAAAAAAAAgAAAAAAAEAAAgAAAgQAAAAAAAAgAA=</HashCode>
       <FileName>UpdatePass.xaml.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -69,9 +78,12 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="PrototypeSWE.Security">
-    <Position X="8.75" Y="4.5" Width="1.5" />
+    <Position X="6.5" Y="5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>AEAAQAAAAAAAAAAAAAACAEAAAAAEAAAgAAAAAAAAAAA=</HashCode>
+      <HashCode>AECAAAAAAAAAAAQQAAACAEAAAAAEEAAgAAAAAAAEAAA=</HashCode>
       <FileName>Secure.cs</FileName>
     </TypeIdentifier>
   </Class>

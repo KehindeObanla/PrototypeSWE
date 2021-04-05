@@ -23,7 +23,7 @@ namespace PrototypeSWE
     /// </summary>
     public partial class CreateAccount : Window
     {
-        private static string connectString = Properties.Settings.Default.Connection_String;
+        
         private string Username { get; set; }
         private string Password1 { get; set; }
         private string Password2 { get; set; }
@@ -45,19 +45,27 @@ namespace PrototypeSWE
             Password2 = confirmPass.Password;
             Username = txtUser.Text;
             Ans1 = seqAns.Text;
-            if (Password1 == Password2)
+            if(!String.IsNullOrEmpty(Username) && !String.IsNullOrEmpty(Password1) && !String.IsNullOrEmpty(Password2) && !String.IsNullOrEmpty(Ans1))
             {
-                checkFormat(Password1, Username);
+                if (Password1 == Password2)
+                {
+                    checkFormat(Password1, Username);
+                }
+                else
+                {
+
+                    incorrect.Content = "password not the same";
+                    txtUser.Clear();
+                    confirmPass.Clear();
+                    txtpass.Clear();
+
+                }
             }
             else
             {
-
-                incorrect.Content = "password not the same";
-                txtUser.Clear();
-                confirmPass.Clear();
-                txtpass.Clear();
-
+                incorrect.Content = "all fields are required";
             }
+           
         }
        
        /* check password format

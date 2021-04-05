@@ -14,11 +14,11 @@
     <Viewbox  HorizontalAlignment="Left" >
         <Grid Height="594.4" Width="785.87" >
 
-            <Label x:Name="loginlbl" Content="LOGIN" HorizontalAlignment="Left" Margin="371.065,215,0,0" VerticalAlignment="Top" Width="331" Height="45" FontSize="20" FontStyle="Italic" Foreground="#FF2F80ED"/>
-            <Label Content="UserName *"  Margin="378,260,61.87,0" VerticalAlignment="Top" Height="30" FontSize="14" FontStyle="Italic" RenderTransformOrigin="1.919,0.768" Foreground="#FF2F80ED" FontFamily="Segoe UI" FontWeight="Normal" Width="345.51"/>
-            <TextBox x:Name="txtUser" Height="38" Margin="371,293,98.87,0" TextWrapping="Wrap" VerticalAlignment="Top" TextChanged="TextBox_TextChanged" AutomationProperties.IsRequiredForForm="True" Foreground="#FF2F80ED" BorderBrush="#FF2F80ED" Width="315.87" />
-            <Label Content="Password *"  Margin="368,338,56.87,0" VerticalAlignment="Top" FontSize="14" RenderTransformOrigin="0.592,1.529" Height="30" FontStyle="Italic" FontFamily="Segoe UI" FontWeight="Normal" Foreground="#FF2F80ED"/>
-            <PasswordBox x:Name="txtpass"  Margin="368,365,101.87,0" VerticalAlignment="Top" Height="38" AutomationProperties.IsRequiredForForm="True" BorderBrush="#FF2F80ED" Width="315.87"/>
+            <Label x:Name="loginlbl" Content="LOGIN" HorizontalAlignment="Left" Margin="364,179,0,0" VerticalAlignment="Top" Width="331" Height="45" FontSize="20" FontStyle="Italic" Foreground="#FF2F80ED"/>
+            <Label Content="UserName *"  Margin="358,232,82.87,0" VerticalAlignment="Top" Height="30" FontSize="14" FontStyle="Italic" RenderTransformOrigin="1.919,0.768" Foreground="#FF2F80ED" FontFamily="Segoe UI" FontWeight="Normal" Width="345.51"/>
+            <TextBox x:Name="txtUser" Height="38" Margin="357,266,112.87,0" TextWrapping="Wrap" VerticalAlignment="Top" TextChanged="TextBox_TextChanged" AutomationProperties.IsRequiredForForm="True" Foreground="#FF2F80ED" BorderBrush="#FF2F80ED" Width="315.87" />
+            <Label Content="Password *"  Margin="360,311,63.87,0" VerticalAlignment="Top" FontSize="14" RenderTransformOrigin="0.592,1.529" Height="30" FontStyle="Italic" FontFamily="Segoe UI" FontWeight="Normal" Foreground="#FF2F80ED"/>
+            <PasswordBox x:Name="txtpass"  Margin="356,339,113.87,0" VerticalAlignment="Top" Height="38" AutomationProperties.IsRequiredForForm="True" BorderBrush="#FF2F80ED" Width="315.87"/>
             <Button Content="login"  Margin="618.86,466,21.86,0" VerticalAlignment="Top" Background="#FF0B356C" Click="Login" RenderTransformOrigin="0.513,1.033" Height="38.29" FontWeight="Bold" FontStyle="Italic" Foreground="#FFF3EEEE" FontFamily="Segoe UI" FontSize="18" Width="145.15" BorderBrush="#FFFBFAFA">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
@@ -33,14 +33,14 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button Content="New Here? Register" Click="CallCreate"  HorizontalAlignment="Left" Margin="455,0,0,35.4" VerticalAlignment="Bottom" Width="124" FontStyle="Italic" Foreground="#FFF5F7F9" RenderTransformOrigin="0.571,-0.624" Height="19" FontWeight="Bold" FontSize="12">
+            <Button Content="New Here? Register" Click="CallCreate"  HorizontalAlignment="Left" Margin="420,0,0,83.4" VerticalAlignment="Bottom" Width="124" FontStyle="Italic" Foreground="#FFF5F7F9" RenderTransformOrigin="0.571,-0.624" Height="19" FontWeight="Bold" FontSize="12">
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <ContentPresenter />
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Label x:Name="loginError" Content="" Height="27" Margin="0,417,141,0" VerticalAlignment="Top" RenderTransformOrigin="0.515,0.957" HorizontalAlignment="Right" Width="260"/>
+            <Label x:Name="loginError" Content="" Height="27" Margin="0,385,163.87,0" VerticalAlignment="Top" RenderTransformOrigin="0.515,0.957" HorizontalAlignment="Right" Width="260" Foreground="#FFFB1616"/>
 
 
         </Grid>
