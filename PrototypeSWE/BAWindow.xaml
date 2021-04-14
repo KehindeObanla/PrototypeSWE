@@ -223,7 +223,7 @@
             <Button.Style>
                 <Style TargetType="Button">
                     <Style.Triggers>
-                        <DataTrigger Binding="{Binding IsChecked, ElementName=math1233box}"
+                        <DataTrigger Binding="{Binding IsChecked, ElementName=MATH1233box}"
                              Value="True">
                             <Setter Property="IsEnabled" Value="False"/>
                         </DataTrigger>
@@ -456,7 +456,7 @@
             </Path.RenderTransform>
         </Path>
         <Path Data="M7.332871,0.50000001 C7.6656469,53.998686 7.4995292,53.332605 7.4995292,53.332605 L0.50000001,48.166307 M7.4488105,0.50000001 C7.127759,53.998686 7.2880198,53.332603 7.2880198,53.332603 L14.041014,48.16631" HorizontalAlignment="Left" Height="49.38" Margin="677.434,201,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="14.541" Style="{DynamicResource downarrow}" RenderTransformOrigin="3.45,0.454"/>
-        <Path Data="M7.332871,0.50000001 C7.6656469,53.998686 7.4995292,53.332605 7.4995292,53.332605 L0.50000001,48.166307 M7.4488105,0.50000001 C7.127759,53.998686 7.2880198,53.332603 7.2880198,53.332603 L14.041014,48.16631" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="38.315" Margin="690.076,131.165,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="14.541" Style="{DynamicResource downarrow}" RenderTransformOrigin="3.45,0.454">
+        <Path Data="M7.332871,0.50000001 C7.6656469,53.998686 7.4995292,53.332605 7.4995292,53.332605 L0.50000001,48.166307 M7.4488105,0.50000001 C7.127759,53.998686 7.2880198,53.332603 7.2880198,53.332603 L14.041014,48.16631" HorizontalAlignment="Left" Height="38.315" Margin="690.076,131.165,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="14.541" Style="{DynamicResource downarrow}" RenderTransformOrigin="3.45,0.454">
             <Path.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -622,7 +622,7 @@
             <Button.Style>
                 <Style TargetType="Button">
                     <Style.Triggers>
-                        <DataTrigger Binding="{Binding IsChecked, ElementName=stat3573box}"
+                        <DataTrigger Binding="{Binding IsChecked, ElementName=STAT3573box}"
                              Value="True">
                             <Setter Property="IsEnabled" Value="False"/>
                         </DataTrigger>
@@ -644,7 +644,7 @@
                     Width="200" Margin="10,32,10,10"><Run Text="Descriptive analysis, probability, variability, confidence intervals, hypotheses testing, analysis of variance, correlation and regression, and nonparametric statistics. "/><LineBreak/><Run Text="3 Credit hours"/></TextBlock>
             </Grid>
         </Popup>
-        <Menu Height="43.174" Margin="61.555,530.758,0,0" Width="156.826" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Menu Height="43.174" Margin="61.555,547.131,0,0" Width="156.826" HorizontalAlignment="Left" VerticalAlignment="Top">
             <MenuItem x:Name="Communication" Header="Communication" FontWeight="Bold" FontSize="16" Height="40" Width="156.826" HorizontalAlignment="Left" VerticalAlignment="Top" >
                 <MenuItem.ToolTip>
                     <ToolTip Content="6 Credit hours"/>
@@ -663,7 +663,7 @@
             </MenuItem>
         </Menu>
 
-        <Menu Height="41.674" Margin="266.5,533.584,0,0" Width="228" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Menu Height="41.674" Margin="266.5,547.131,0,0" Width="228" HorizontalAlignment="Left" VerticalAlignment="Top">
 
             <MenuItem x:Name="LPS" Header="Life and Physical Science" FontWeight="Bold" FontSize="16" Height="40" Width="228" HorizontalAlignment="Left" VerticalAlignment="Top" >
 
@@ -975,7 +975,7 @@
             </MenuItem>
 
         </Menu>
-        <Menu Height="43.174" Margin="514.792,530.584,0,0" Width="269.008" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Menu Height="43.174" Margin="522,547.131,0,0" Width="269.008" HorizontalAlignment="Left" VerticalAlignment="Top">
             <MenuItem x:Name="LPC" Header="Language,Philosophy and Culture" FontWeight="Bold" FontSize="16" Height="43" Width="269.008" HorizontalAlignment="Left" VerticalAlignment="Top"   >
                 <MenuItem.ToolTip>
                     <ToolTip Content="3Credit hours"/>
@@ -1150,7 +1150,7 @@
             </MenuItem>
 
         </Menu>
-        <Menu Height="43" Margin="61.555,455.435,0,0" Width="197" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Menu Height="43" Margin="61.555,471.808,0,0" Width="197" HorizontalAlignment="Left" VerticalAlignment="Top">
             <MenuItem x:Name="CreativeArts" Header="Creative Arts" FontWeight="Bold" FontSize="16" Height="40" Width="197" HorizontalAlignment="Left" VerticalAlignment="Top" >
                 <MenuItem.ToolTip>
                     <ToolTip Content="3Credit hours"/>
@@ -1222,7 +1222,7 @@
             </MenuItem>
 
         </Menu>
-        <Menu Height="43.174" Margin="290,455.261,0,0" Width="156.826" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Menu Height="43.174" Margin="293,471.634,0,0" Width="156.826" HorizontalAlignment="Left" VerticalAlignment="Top">
             <MenuItem x:Name="AHistory" Header="American History" FontWeight="Bold" FontSize="16" Height="40" Width="156.826" HorizontalAlignment="Left" VerticalAlignment="Top" >
                 <MenuItem.ToolTip>
                     <ToolTip Content="6 Credit hours"/>
@@ -1247,7 +1247,7 @@
                 </ScrollViewer>
             </MenuItem>
         </Menu>
-        <Menu Height="43.174" Margin="491.308,455.261,0,0" Width="280.667" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Menu Height="43.174" Margin="491.308,471.634,0,0" Width="280.667" HorizontalAlignment="Left" VerticalAlignment="Top">
             <MenuItem  x:Name="GPS" Header="Government and Political Science" FontWeight="Bold" FontSize="16" Height="40" Width="280.667" HorizontalAlignment="Left" VerticalAlignment="Top"  >
                 <MenuItem.ToolTip>
                     <ToolTip Content="6 Credit hours"/>
@@ -1272,7 +1272,7 @@
                 </ScrollViewer>
             </MenuItem>
         </Menu>
-        <Menu Height="43" Margin="803,455.435,0,0" Width="253.975" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Menu Height="43" Margin="820,471.634,0,0" Width="253.975" HorizontalAlignment="Left" VerticalAlignment="Top">
             <MenuItem  x:Name="SBS" Header="Social and Behavioral Sciences" FontWeight="Bold" FontSize="16" Height="40" Width="1163" FontFamily="Roboto" HorizontalAlignment="Left" VerticalAlignment="Top"   >
                 <MenuItem.ToolTip>
                     <ToolTip Content="3 Credit hours"/>
@@ -1318,7 +1318,7 @@
                 </ScrollViewer>
             </MenuItem>
         </Menu>
-        <Menu HorizontalAlignment="Left" Height="43" Margin="61.555,626,0,132" Width="283" VerticalAlignment="Top">
+        <Menu HorizontalAlignment="Left" Height="43" Margin="61.555,640,0,0" Width="283" VerticalAlignment="Top">
             <MenuItem x:Name="CGU"  Header="Cultural and Global Understanding " FontWeight="Bold" FontSize="16" Height="43" Width="339" HorizontalAlignment="Left" VerticalAlignment="Top" >
 
                 <MenuItem.ToolTip>
@@ -1467,7 +1467,7 @@
             </MenuItem>
 
         </Menu>
-        <Menu Height="43" Margin="803,530.758,-2.258,0" Width="323.258" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Menu Height="43" Margin="803,545.805,0,0" Width="323.258" HorizontalAlignment="Left" VerticalAlignment="Top">
             <MenuItem x:Name="UIC" Header="Undergraduate Inquiry and Creativity " FontWeight="Bold" FontSize="16" Height="40" Width="674" HorizontalAlignment="Left" VerticalAlignment="Top"  >
 
                 <MenuItem.ToolTip>
@@ -1537,9 +1537,9 @@
             </MenuItem>
         </Menu>
         <Label Content="Program Requirements" HorizontalAlignment="Left" Height="37.91" Margin="943.86,84.29,0,0" VerticalAlignment="Top" Width="168.198" FontWeight="Bold" FontSize="14"/>
-        <CheckBox x:Name="math1233box" Content="" HorizontalAlignment="Left" Margin="311,117,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <CheckBox x:Name="MATH1233box" Content="" HorizontalAlignment="Left" Margin="311,117,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
         <CheckBox x:Name="MATH1443box" Content="" HorizontalAlignment="Left" Margin="313,182,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
-        <CheckBox x:Name="stat3573box" Content="" HorizontalAlignment="Left" Margin="420,165,0,0" VerticalAlignment="Top" RenderTransformOrigin="3.5,-1.2" Height="13" Visibility="Hidden"/>
+        <CheckBox x:Name="STAT3573box" Content="" HorizontalAlignment="Left" Margin="420,165,0,0" VerticalAlignment="Top" RenderTransformOrigin="3.5,-1.2" Height="13" Visibility="Hidden"/>
         <CheckBox x:Name="CMPS4991box" Content="" HorizontalAlignment="Left" Margin="1049,366,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
         <CheckBox x:Name="CMPS1044box" Content="" HorizontalAlignment="Left" Margin="532,83,0,0" VerticalAlignment="Top"  Visibility="Hidden"/>
         <CheckBox x:Name="CMPS4143box" Content="" HorizontalAlignment="Left" Margin="397,230,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
@@ -1586,6 +1586,15 @@
                 </TransformGroup>
             </Path.RenderTransform>
         </Path>
+        <TextBox x:Name="CAT" HorizontalAlignment="Left" Height="20.408" Margin="241.491,446.226,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="17.064" RenderTransformOrigin="1.281,0.5" BorderBrush="#FF1904FD"/>
+        <TextBox x:Name="CGUT" HorizontalAlignment="Left" Height="20.408" Margin="327.491,614.592,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="17.064" RenderTransformOrigin="1.281,0.5" BorderBrush="#FF1904FD"/>
+        <TextBox x:Name="UICT" HorizontalAlignment="Left" Height="20.408" Margin="1109.194,525.397,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="17.064" RenderTransformOrigin="1.281,0.5" BorderBrush="#FF1904FD"/>
+        <TextBox x:Name="LPCT" HorizontalAlignment="Left" Height="20.408" Margin="773.944,531.855,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="17.064" RenderTransformOrigin="1.281,0.5" BorderBrush="#FF1904FD"/>
+        <TextBox x:Name="LPST" HorizontalAlignment="Left" Height="20.408" Margin="477.436,521.723,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="17.064" RenderTransformOrigin="1.281,0.5" BorderBrush="#FF1904FD"/>
+        <TextBox x:Name="CommT" HorizontalAlignment="Left" Height="20.408" Margin="201.317,521.723,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="17.064" RenderTransformOrigin="1.281,0.5" BorderBrush="#FF1904FD"/>
+        <TextBox x:Name="SBST" HorizontalAlignment="Left" Height="20.408" Margin="1056.911,451.226,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="17.064" RenderTransformOrigin="1.281,0.5" BorderBrush="#FF1904FD"/>
+        <TextBox x:Name="GPST" HorizontalAlignment="Left" Height="20.408" Margin="752,446.226,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="17.064" RenderTransformOrigin="1.281,0.5" BorderBrush="#FF1904FD"/>
+        <TextBox x:Name="AHistoryT" HorizontalAlignment="Left" Height="20.408" Margin="432.762,446.226,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="17.064" RenderTransformOrigin="1.281,0.5" BorderBrush="#FF1904FD"/>
 
 
     </Grid>

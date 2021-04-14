@@ -6,7 +6,7 @@
       <Compartment Name="Methods" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>gUABcAgiAADIEIAGAEACQgEVAAKUEAACAQCoAACEIAQ=</HashCode>
+      <HashCode>gUABYAgiAADIEIAGAEACQAEVAAKEEAACAQCoAACEIAQ=</HashCode>
       <FileName>BAWindow.xaml.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -20,7 +20,7 @@
       <Compartment Name="Methods" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>gECAcAgiAADIFIAGAEACQgkVAgCEEAAAgQCoAACEAAA=</HashCode>
+      <HashCode>gECAYAgiAADIFIAGAEACQAkVAgCEEAAAgQCoAACEAAA=</HashCode>
       <FileName>BSWindow.xaml.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -30,8 +30,11 @@
   </Class>
   <Class Name="PrototypeSWE.CreateAccount">
     <Position X="2.75" Y="2" Width="2" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>AEAAAAAAAAACAAgAAQAAAAAIEAAAAAAKAAAAAAAAAAI=</HashCode>
+      <HashCode>AAAAAAAAAAACAAgAAQAAAAAIEAAAAAAKAAAAAAAAAAI=</HashCode>
       <FileName>CreateAccount.xaml.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -45,6 +48,9 @@
     <Members>
       <Field Name="ID" Hidden="true" />
     </Members>
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>IAEAAGgSAAAAgAAAAQAAAAAAAAAAAAACAAAQAAAAAAA=</HashCode>
       <FileName>loginScreen.xaml.cs</FileName>
@@ -92,7 +98,7 @@
     <TypeIdentifier />
   </Class>
   <Class Name="System.Data.SqlClient.SqlConnection" Collapsed="true">
-    <Position X="17.25" Y="0.5" Width="1.5" />
+    <Position X="17.25" Y="6.5" Width="1.5" />
     <TypeIdentifier />
     <Lollipop Position="0.2" />
   </Class>

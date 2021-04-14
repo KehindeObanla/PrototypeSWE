@@ -105,5 +105,13 @@ namespace PrototypeSWE
                 txtpass.Clear();
             }
         }
+       
+
+        private void Login(object sender, RoutedEventArgs e)
+        {
+            lg = new loginScreen();
+            lg.Show();
+            this.Close();
+        }
     }
 }

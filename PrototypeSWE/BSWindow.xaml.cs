@@ -25,10 +25,10 @@ namespace PrototypeSWE
         List<Button> coloredButtons = new List<Button>();
         string username = Properties.Settings.Default.userset;
         public static List<string> otherbuttons = new List<string>() { "DownloadBtnBS", "EditBS", "Backbtn", "SaveEdit" };
-        public static Dictionary<string, bool> savedsettings = new Dictionary<string, bool>();
         public static List<string> menuitemnames = new List<string>() { "Communication", "LPSy", "CreativeArtsy", "AHistoryy", "GPSy",
         "SBSy","CGUy","UICy","MRlist","ADDrlist"};
-        public static List<string> box = new List<string>();
+        public static List<string> checkeditem = new List<string>();
+        public static int count = 0;
         Security updatesettings;
         public BSWindow()
         {
@@ -118,15 +118,33 @@ namespace PrototypeSWE
 
 
         }
+        private void nameMenuitem (List<MenuItem> list)
+        {
+            string n = "MT";
+            foreach (MenuItem item in list)
+            {
+                string scount = count.ToString();
+                item.Name = n + scount;
+                count++;
+            }
+        }
             /*this fuction makes drop down menus clickabel
              */
         private void makecheckable(List<MenuItem> list, bool check = true)
         {
+            List<string> tc = new List<string>();
+            var listtocheck = Properties.Settings.Default.bslist;
+            tc = JsonConvert.DeserializeObject<List<string>>(listtocheck);
             if (check == true)
             {
                 foreach (MenuItem item in list)
                 {
                     item.IsCheckable = true;
+                    if (tc!=null && tc.Contains(item.Name))
+                    {
+                        item.IsChecked = true;
+
+                    }
                 }
             }
             else
@@ -161,7 +179,7 @@ namespace PrototypeSWE
         /*
         *  if a menus has 2 clicked menuitem it disables the menu
         */
-        private void checkitem(List<MenuItem> list, MenuItem tolock)
+        private int checkitem(List<MenuItem> list, MenuItem tolock)
         {
             int countedcheckbox = 0;
             foreach (MenuItem item in list)
@@ -169,44 +187,45 @@ namespace PrototypeSWE
                 if (item.IsChecked)
                 {
                     countedcheckbox++;
+                    checkeditem.Add(item.Name);
                 }
             }
             if (countedcheckbox >= 2)
             {
                 tolock.IsEnabled = false;
             }
-
+            return countedcheckbox;
 
         }
             /* this fuction saves the user  button settings to a dictionary
              */
-        public static void savesetting(List<Button> buttonlist)
+        public static void savesetting(List<Button> buttonlist, ref Dictionary<string, bool> savedsettings)
         {
             foreach (var item in buttonlist)
             {
                 if (!otherbuttons.Contains(item.Name))
                 {
-
                     if (savedsettings.ContainsKey(item.Name))
                     {
-                        if (box.Contains(item.Name))
-                        {
-                            savedsettings[item.Name] = false;
-                        }
-                        else
+                        if (item.IsEnabled)
                         {
                             savedsettings[item.Name] = true;
                         }
+                        else
+                        {
+                            savedsettings[item.Name] = false;
+                        }
                     }
+                    
                     else
                     {
-                        if (box.Contains(item.Name))
+                        if (item.IsEnabled)
                         {
-                            savedsettings.Add(item.Name, false);
+                            savedsettings.Add(item.Name, true);
                         }
                         else
                         {
-                            savedsettings.Add(item.Name, true);
+                            savedsettings.Add(item.Name, false);
                         }
                     }
 
@@ -216,7 +235,7 @@ namespace PrototypeSWE
         }
         /* this fuction saves the user  menu settings to a dictionary
           */
-        public static void savemenuitem(List<Menu> menus)
+        public static void savemenuitem(List<Menu> menus, ref Dictionary<string, bool> savedsettings)
         {
             foreach (var item in menus)
             {
@@ -255,9 +274,10 @@ namespace PrototypeSWE
            
             var buttonlist = getbtn.Children.OfType<Button>().ToList();
             var menus = getbtn.Children.OfType<Menu>().ToList();
-            savesetting(buttonlist);
-            savemenuitem(menus);
-            string jsonsavedbs = JsonConvert.SerializeObject(savedsettings, Formatting.Indented);
+            var setting = getsettings(username);
+            savesetting(buttonlist, ref setting);
+            savemenuitem(menus, ref setting);
+            string jsonsavedbs = JsonConvert.SerializeObject(setting, Formatting.Indented);
             return jsonsavedbs;
 
 
@@ -265,9 +285,10 @@ namespace PrototypeSWE
             /* this fucion checks the buttons that
              * need to be diabled
              */
-        public void checkedboxes()
+        public List<string> checkedboxes()
         {
             var checkboxes = getbtn.Children.OfType<CheckBox>().ToList();
+            List<string> box = new List<string>();
             foreach (var item in checkboxes)
             {
                 if (item.IsChecked == true)
@@ -277,6 +298,7 @@ namespace PrototypeSWE
                     box.Add(name);
                 }
             }
+            return box;
         }
         /*this function changes the color of preq and 
          * future classes of  MATH1534
@@ -462,60 +484,75 @@ namespace PrototypeSWE
          */
         private void EditBS_Click(object sender, RoutedEventArgs e)
         {
+            string message = "all changes made to map are permanent ";
+            MessageBox.Show(message);
+            var checkboxes = getbtn.Children.OfType<CheckBox>().ToList();
+            foreach (var item in checkboxes)
+            {
+                    item.Visibility = Visibility.Visible;
+                
+            }
             SaveEdit.Visibility = Visibility.Visible;
-            MATH1534box.Visibility = Visibility.Visible;
-            math1233box.Visibility = Visibility.Visible;
-            MATH1443box.Visibility = Visibility.Visible;
-            stat3573box.Visibility = Visibility.Visible;
-            CMPS4991box.Visibility = Visibility.Visible;
-            CMPS1044box.Visibility = Visibility.Visible;
-            CMPS4143box.Visibility = Visibility.Visible;
-            CMPS1063box.Visibility = Visibility.Visible;
-            CMPS4113box.Visibility = Visibility.Visible;
-            CMPS2084box.Visibility = Visibility.Visible;
-            CMPS3023box.Visibility = Visibility.Visible;
-            CMPS4103box.Visibility = Visibility.Visible;
-            CMPS3013box.Visibility = Visibility.Visible;
-            CMPS2143box.Visibility = Visibility.Visible;
-            CMPS2433box.Visibility = Visibility.Visible;
-            CSAE1box.Visibility = Visibility.Visible;
-            CSAE2box.Visibility = Visibility.Visible;
-            CSAE3box.Visibility = Visibility.Visible;
-            CSAE4box.Visibility = Visibility.Visible;
-            CSAE5box.Visibility = Visibility.Visible;
-            CSAE6box.Visibility = Visibility.Visible;
-            CSAE7box.Visibility = Visibility.Visible;
+          
             var communicationlist = Communication.Items.OfType<MenuItem>().ToList();
-            makecheckable(communicationlist);
+            nameMenuitem(communicationlist);
+           
             var LPSlist = LPSy.Children.OfType<MenuItem>().ToList();
-            makecheckable(LPSlist);
+            nameMenuitem(LPSlist);
             var CreativeArtslist = CreativeArtsy.Children.OfType<MenuItem>().ToList();
-            makecheckable(CreativeArtslist);
+            nameMenuitem(CreativeArtslist);
             var AHistorylist = AHistoryy.Children.OfType<MenuItem>().ToList();
-            makecheckable(AHistorylist);
+            nameMenuitem(AHistorylist);
             var GPSlist = GPSy.Children.OfType<MenuItem>().ToList();
-            makecheckable(GPSlist);
+            nameMenuitem(GPSlist);
             var SBSlist = SBSy.Children.OfType<MenuItem>().ToList();
-            makecheckable(SBSlist);
+            nameMenuitem(SBSlist);
             var CGUlist = CGUy.Children.OfType<MenuItem>().ToList();
-            makecheckable(CGUlist);
+            nameMenuitem(CGUlist);
             var UIClist = UICy.Children.OfType<MenuItem>().ToList();
-            makecheckable(UIClist);
+            nameMenuitem(UIClist);
             var MRlist = MMY.Children.OfType<MenuItem>().ToList();
-            makecheckable(MRlist);
+            nameMenuitem(MRlist);
             var ADDrlist = MAthreq.Children.OfType<MenuItem>().ToList();
+            nameMenuitem(ADDrlist);
+            var lpcylist = LPCy.Children.OfType<MenuItem>().ToList();
+            nameMenuitem(lpcylist);
+            makecheckable(lpcylist);
+            makecheckable(AHistorylist);
+            makecheckable(GPSlist);
+            makecheckable(SBSlist);
+            makecheckable(CGUlist);
+            makecheckable(UIClist);
+            makecheckable(MRlist);
+            makecheckable(CreativeArtslist);
+            makecheckable(communicationlist);
+            makecheckable(LPSlist);
             makecheckable(ADDrlist);
 
         }
+        public string updateDBs(Dictionary<string, string> dic)
+        {
+            var textboxes = getbtn.Children.OfType<TextBox>().ToList();
+            foreach (var item in textboxes)
+            {
+                if (dic.ContainsKey(item.Name))
+                {
+                    dic[item.Name] = item.Text;
+                }
+            }
+            string jsonsavedbs = JsonConvert.SerializeObject(dic, Formatting.Indented);
+            return jsonsavedbs;
+        }
+        
         /* this fuction update user settings*/
-        public void calldb(string settings, string user)
+        public void calldb(string settings, string user,string dbs,string mbs)
         {
             updatesettings = new Security();
-            updatesettings.updatesavedsettingBs(settings, user);
+            updatesettings.updatesavedsettingBs(settings, user,dbs,mbs);
             
         }
          /* this fuction disable buttons*/
-        public void disablechecked()
+        public void disablechecked(List<string> box)
         {
             var buttonlist = getbtn.Children.OfType<Button>().ToList();
             foreach (var item in buttonlist)
@@ -531,66 +568,68 @@ namespace PrototypeSWE
          */
         private void SaveEdit_Click(object sender, RoutedEventArgs e)
         {
+            
+            var checkboxes = getbtn.Children.OfType<CheckBox>().ToList();
+            foreach (var item in checkboxes)
+            {
+                item.Visibility = Visibility.Hidden;
 
-            SaveEdit.Visibility = Visibility.Hidden;
-            MATH1534box.Visibility = Visibility.Hidden;
-            math1233box.Visibility = Visibility.Hidden;
-            MATH1443box.Visibility = Visibility.Hidden;
-            stat3573box.Visibility = Visibility.Hidden;
-            CMPS4991box.Visibility = Visibility.Hidden;
-            CMPS1044box.Visibility = Visibility.Hidden;
-            CMPS4143box.Visibility = Visibility.Hidden;
-            CMPS1063box.Visibility = Visibility.Hidden;
-            CMPS4113box.Visibility = Visibility.Hidden;
-            CMPS2084box.Visibility = Visibility.Hidden;
-            CMPS3023box.Visibility = Visibility.Hidden;
-            CMPS4103box.Visibility = Visibility.Hidden;
-            CMPS3013box.Visibility = Visibility.Hidden;
-            CMPS2143box.Visibility = Visibility.Hidden;
-            CMPS2433box.Visibility = Visibility.Hidden;
-            CSAE1box.Visibility = Visibility.Hidden;
-            CSAE2box.Visibility = Visibility.Hidden;
-            CSAE3box.Visibility = Visibility.Hidden;
-            CSAE4box.Visibility = Visibility.Hidden;
-            CSAE5box.Visibility = Visibility.Hidden;
-            CSAE6box.Visibility = Visibility.Hidden;
-            CSAE7box.Visibility = Visibility.Hidden;
+            }
+            SaveEdit.Visibility = Visibility.Visible;
+           
             var communicationlist = Communication.Items.OfType<MenuItem>().ToList();
-            checkitem(communicationlist, Communication);
+            int val = checkitem(communicationlist, Communication);
+            CommT.Text = val.ToString();
             makecheckable(communicationlist, false);
             var LPSlist = LPSy.Children.OfType<MenuItem>().ToList();
-            checkitem(LPSlist, LPS);
+            int v2 = checkitem(LPSlist, LPS);
+            LPST.Text = v2.ToString();
             makecheckable(LPSlist, false);
             var CreativeArtslist = CreativeArtsy.Children.OfType<MenuItem>().ToList();
-            checkitem(CreativeArtslist, CreativeArts);
+            int v3 = checkitem(CreativeArtslist, CreativeArts);
+            CAT.Text = v3.ToString();
             makecheckable(CreativeArtslist, false);
             var AHistorylist = AHistoryy.Children.OfType<MenuItem>().ToList();
-            checkitem(AHistorylist, AHistory);
+           int v4 = checkitem(AHistorylist, AHistory);
+            AHistoryT.Text = v4.ToString();
             makecheckable(AHistorylist, false);
             var GPSlist = GPSy.Children.OfType<MenuItem>().ToList();
-            checkitem(GPSlist, GPS);
+            int v5 = checkitem(GPSlist, GPS);
+            GPST.Text = v5.ToString();
             makecheckable(GPSlist, false);
             var SBSlist = SBSy.Children.OfType<MenuItem>().ToList();
-            checkitem(SBSlist, SBS);
+            int sbs = checkitem(SBSlist, SBS);
+            SBST.Text=sbs.ToString();
             makecheckable(SBSlist, false);
             var CGUlist = CGUy.Children.OfType<MenuItem>().ToList();
-            checkitem(CGUlist, CGU);
+            int v6 = checkitem(CGUlist, CGU);
+            CGUT.Text=v6.ToString();
             makecheckable(CGUlist, false);
             var UIClist = UICy.Children.OfType<MenuItem>().ToList();
-            checkitem(UIClist, UIC);
+            int v7 = checkitem(UIClist, UIC);
+            UICT.Text=v7.ToString();
             makecheckable(UIClist, false);
             var mathreqlist = ADDR.Items.OfType<MenuItem>().ToList();
-            checkitem(mathreqlist, ADDR);
+            int v8 = checkitem(mathreqlist, ADDR);
+            ADDRT.Text = v8.ToString();
+            makecheckable(mathreqlist, false);
             var MMlist = MM.Items.OfType<MenuItem>().ToList();
-            checkitem(MMlist, MM);
-            checkedboxes();
-            disablechecked();
+            int v9 = checkitem(MMlist, MM);
+            MMT.Text = v9.ToString();
+            makecheckable(MMlist, false);
+            var box =  checkedboxes();
+            disablechecked(box);
             string stoerebs = get_BsButtons_menu();
             string name = Properties.Settings.Default.userset;
-            calldb(stoerebs, name);
+            var dbs = Properties.Settings.Default.bsSetting;
+            Dictionary<string, string> bsSettings = new Dictionary<string, string>();
+            bsSettings = JsonConvert.DeserializeObject<Dictionary<string, string>>(dbs);
+            string dbss = updateDBs(bsSettings);
+            string jsonsavedbs = JsonConvert.SerializeObject(checkeditem, Formatting.Indented);
+            calldb(stoerebs, name,dbss, jsonsavedbs);
 
         }
-        /* this function stores user settings*/
+        /* this function updates BS window to  user previous settings*/
         public void settings(Dictionary<string, bool> set)
         {
             
@@ -611,45 +650,43 @@ namespace PrototypeSWE
                 item.IsEnabled = set[name];
             }
         }
-        // this fuction get user settings from dictionary
+        public void settextbox(Dictionary<string, string> tb)
+        {
+            var textboxes = getbtn.Children.OfType<TextBox>().ToList();
+            foreach (var item in textboxes)
+            {
+                var name = item.Name;
+                item.Text = tb[name];
+            }
+        }
+        // this fuction get user settings from database
         public Dictionary<string, bool> getsettings(string username)
         {
              Dictionary<string, bool> bsSettings = new Dictionary<string, bool>();
              Security Securelogin = new Security();
-             var usersettings = Securelogin.getusersettingsBaandbs(username);
+             var usersettings = Securelogin.getusersettingsbs(username);
              var bs= usersettings.Item2;
+           
              bsSettings = JsonConvert.DeserializeObject<Dictionary<string, bool>>(bs);
-            
-               
             return bsSettings;
-
         }
-         /*this fuction adds current user
-          * settings to old settings
-          */
-        public void mergedic(Dictionary<string, bool> dic)
-        {
-            foreach (var item in dic)
-            {
-                if (!savedsettings.ContainsKey(item.Key))
-                {
-                    savedsettings.Add(item.Key, item.Value);
-                }
-
-               
-            }
-        }
+         
         /*this function updates ba user settings onload
          */
+        
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
           var setting =  getsettings(username);
+            var dba = Properties.Settings.Default.bsSetting;
+            Dictionary<string, string> bsSettings = new Dictionary<string, string>();
+            bsSettings = JsonConvert.DeserializeObject<Dictionary<string, string>>(dba);
+
             if (setting != null)
             {
-                mergedic(setting);
                 settings(setting);
 
             }
+            settextbox(bsSettings);
 
         }
     }

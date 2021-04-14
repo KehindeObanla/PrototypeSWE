@@ -83,5 +83,29 @@ namespace PrototypeSWE.Properties {
                 this["bsSetting"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string balist {
+            get {
+                return ((string)(this["balist"]));
+            }
+            set {
+                this["balist"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string bslist {
+            get {
+                return ((string)(this["bslist"]));
+            }
+            set {
+                this["bslist"] = value;
+            }
+        }
     }
 }

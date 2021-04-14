@@ -43,6 +43,13 @@
             <Label x:Name="ExistUser" Content="" HorizontalAlignment="Left" Margin="453,216,0,0" VerticalAlignment="Top" Width="217" Height="26" Foreground="#FFE80B0B"/>
             <Label x:Name="incorrect" Content="" HorizontalAlignment="Left" Margin="438,434,0,0" VerticalAlignment="Top" Width="277" Height="29" Foreground="#FFF30606" RenderTransformOrigin="0.487,1.381"/>
             <Label x:Name="PassFormat" Content="" HorizontalAlignment="Left" Height="28" Margin="458,358,0,0" VerticalAlignment="Top" Width="204" RenderTransformOrigin="0.721,2.187" Foreground="#FFF51313"/>
+            <Button Content="Already have an account?login" Click="Login"  HorizontalAlignment="Left" Margin="463,0,0,77" VerticalAlignment="Bottom" Width="205" FontStyle="Italic" Foreground="#FFF5F7F9" RenderTransformOrigin="0.571,-0.624" Height="29" FontWeight="Bold" FontSize="14">
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <ContentPresenter />
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
         </Grid>
     </Viewbox>
 </Window>
