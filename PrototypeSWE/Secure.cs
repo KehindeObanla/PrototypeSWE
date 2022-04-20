@@ -14,7 +14,7 @@ namespace PrototypeSWE
     internal class Security
     {
         //database connection string
-        private  string connectString = @"Data Source=DESKTOP-R0I7FGT\SQLEXPRESS;Initial Catalog=Advisingtool;Integrated Security=True";
+        private  string connectString = "";
         //creates a hasvalue given a string
         public  string Hashvalue(string value)
         {
